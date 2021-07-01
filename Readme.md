@@ -10,7 +10,7 @@ This is not **the way** of building Umbraco sites, it's **a way**.
 This site is built in a way that I like to build my Umbraco sites, which is a very "backend way". 
 There are simpler ways of building Umbraco sites if you are new to Umbraco. [Read the official docs](https://our.umbraco.com/documentation/) for more info.
 
-### Included:
+### Content:
 - Every page is rendered through a RenderController.
 - **TODO v2**: Every block *(Blocklist vs. Nested Content?)* is rendered through a ViewComponent.
 - Every view uses strongly typed View Models *(inheriting from ContentModel)*.
