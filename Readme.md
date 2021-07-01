@@ -1,7 +1,7 @@
 # Umbraco v9 Demo
 Demo site build in Umbraco v.9.0.0-beta004 and .NET Core 5.0.
 
-## About this solution
+## About this solution:
 This is a demo site for Umbraco v9 build in the new .NET Core v5 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
@@ -24,5 +24,5 @@ To login to the Umbraco backoffice use these credentials:
 - Username: admin@admin.com
 - Password: adminadmin
 
-### Read more
+### Read more:
 Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit Testing articles.
