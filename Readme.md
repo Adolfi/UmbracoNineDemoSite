@@ -14,7 +14,7 @@ This site is build in the way that I like to build my Umbraco sites, which could
 - Page components that handles Umbraco logic are rendered through ViewComponents.
 - Non-logic components are rendered through Partial views.
 - Custom services are registered in the IUmbracoBuilder through an IUserComposer.
-- **TODO**: Forms are submitted through a SurfaceController.
+- **TODO v2**: Forms are submitted through a SurfaceController.
 - **TODO v4**: Searching is submitted and handled through a controller and Examine.
 - **TODO v3**: Unit Testing all the things!
 
