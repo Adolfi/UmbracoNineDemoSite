@@ -1,4 +1,4 @@
-# Umbraco v9 Demo Site
+# Umbraco v9 Demo
 Demo site build in Umbraco v.9.0.0-beta004 and .NET Core 5.0.
 
 ## About this solution
