@@ -11,7 +11,7 @@ This site is built in a way that I like to build my Umbraco sites, which is a ve
 There are simpler ways of building Umbraco sites *(using ModelsBuilder for example)*, so if you are new to Umbraco make sure you [read the official docs](https://our.umbraco.com/documentation/) for more info.
 
 ### Content:
-- Every page is rendered through a RenderController.
+- Every page is rendered through a RenderController *(aka Route Hijacking)*.
 - **TODO v2**: Every block *(Blocklist vs. Nested Content?)* is rendered through a ViewComponent.
 - Every view uses strongly typed View Models *(inheriting from ContentModel)*.
 - Page components that handles logic are rendered through ViewComponents.
