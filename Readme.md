@@ -1,8 +1,8 @@
-# UmbracoNineDemoSite
+# Umbraco 9 Demo Site
 Demo site build in Umbraco v.9.0.0-beta004 and .NET Core 5.0.
 
 ## About this solution
-This is a demo site for Umbraco v9 build in the new .NET Core version. 
+This is a demo site for Umbraco v9 build in the new .NET Core v5 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
 
