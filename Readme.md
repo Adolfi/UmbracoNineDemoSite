@@ -7,7 +7,7 @@ It is built as an experiment/investigation and should not be used as a template 
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
 
 This is not **the way** of building Umbraco sites, it's **a way**. 
-This site is build in the way that I like to build my Umbraco sites, which could be called a very "backend way" or "MVC way". 
+This site is built in a way that I like to build sites, which could be called a very "backend way" or "MVC way". 
 - Every page is rendered through a RenderController.
 - **TODO v2**: Every block *(Blocklist vs. Nested Content?)* is rendered through a ViewComponent.
 - Every view uses strongly typed View Models *(inheriting from ContentModel)*.
