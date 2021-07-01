@@ -11,7 +11,7 @@ This site is build in the way that I like to build my Umbraco sites, which could
 - Every page is rendered through a RenderController.
 - **TODO v2**: Every block *(Blocklist vs. Nested Content?)* is rendered through a ViewComponent.
 - Every view uses strongly typed View Models *(inheriting from ContentModel)*.
-- Page components that handles Umbraco logic are rendered through ViewComponents.
+- Page components that handles logic are rendered through ViewComponents.
 - Non-logic components are rendered through Partial views.
 - Custom services are registered in the IUmbracoBuilder through an IUserComposer.
 - **TODO v2**: Forms are submitted through a SurfaceController.
