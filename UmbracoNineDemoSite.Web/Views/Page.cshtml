@@ -1,0 +1,8 @@
+﻿@model UmbracoNineDemoSite.Core.Features.Page.PageViewModel
+@{
+    Layout = "Master.cshtml";
+}
+@if (Model != null)
+{
+    @(await Html.PartialAsync("_SectionHeader"))
+}

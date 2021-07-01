@@ -1,0 +1,23 @@
+﻿@model UmbracoNineDemoSite.Core.Features.Shared.Content.SitePageBase
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@(Model.Name)</title>
+    @(await Html.PartialAsync("_MetaTags"))
+    @(await Html.PartialAsync("_Stylesheets"))
+    @(RenderSection("Head", required: false))
+</head>
+<body class="@(Model.BodyClass)">
+    @(await Html.PartialAsync("_MobileNavigation"))
+    @(await Component.InvokeAsync("Header", new { selected = Model.Id }))
+    <main>
+        @RenderBody()
+    </main>
+    @(RenderSection("Footer", required: false))
+    @(await Component.InvokeAsync("Footer"))
+    @(await Html.PartialAsync("_Javascripts"))
+</body>
+</html>
