@@ -13,12 +13,12 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 ### Content:
 - [Every page is rendered through a RenderController](UmbracoNineDemoSite.Core/Features/Home/HomeController.cs) *(Route Hijacking)*.
 - **TODO v2**: Every block *(Blocklist vs. Nested Content?)* is rendered through a ViewComponent.
-- Every view uses strongly typed View Models *(inheriting from ContentModel)*.
-- Page components that handles logic are rendered through ViewComponents.
-- Non-logic components are rendered through Partial views.
-- Custom services are registered in the IUmbracoBuilder through an IUserComposer.
+- [Every view uses strongly typed View Models](UmbracoNineDemoSite.Web/Views/Home.cshtml) *(inheriting from ContentModel)*.
+- [Page components that handles logic are rendered through ViewComponents](UmbracoNineDemoSite.Core/Features/Shared/Components/Header/HeaderViewComponent.cs).
+- [Non-logic components are rendered through Partial views](UmbracoNineDemoSite.Web/Views/Partials/_SectionHeader.cshtml).
+- [Custom services are registered in the IUmbracoBuilder through an IUserComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
 - All content names, properties, descriptions are translated using #alias.
-- Constant classes are used when accessing content or property to avoid spreading magic strings.
+- [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - **TODO v2**: Forms are submitted through a SurfaceController.
 - **TODO v4**: Searching is submitted and handled through a controller using Examine.
 - **TODO v3**: Unit Testing all the things!
