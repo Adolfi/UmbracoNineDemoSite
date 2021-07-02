@@ -5,9 +5,7 @@
         <div class="logo">
             <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@Model.Heading</a>
         </div>
-        <nav class="nav-bar top-nav">
-            @(await Component.InvokeAsync("TopNavigation", new { selected = Model.Selected }))
-        </nav>
+        @(await Component.InvokeAsync("TopNavigation", new { selected = Model.Selected }))
         <div class="mobile-nav-handler">
             <div class="hamburger lines" id="toggle-nav">
                 <span></span>

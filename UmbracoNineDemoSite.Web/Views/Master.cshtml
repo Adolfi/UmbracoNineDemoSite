@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@(Model.Name)</title>
+    <title>@(Model.PageTitle) - @(Model.SiteName)</title>
     @(await Html.PartialAsync("_MetaTags"))
     @(await Html.PartialAsync("_Stylesheets"))
     @(RenderSection("Head", required: false))

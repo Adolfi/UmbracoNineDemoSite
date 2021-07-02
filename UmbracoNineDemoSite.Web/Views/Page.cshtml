@@ -5,4 +5,19 @@
 @if (Model != null)
 {
     @(await Html.PartialAsync("_SectionHeader"))
+
+    <section class="section">
+        <div class="container">            
+            @(await Component.InvokeAsync("SubNavigation", new { selected = Model.Id }))
+            <div class="col-md-9">
+                <article>
+                    @if (!string.IsNullOrEmpty(Model.BodyText))
+                    {
+                        <p>@Html.Raw(Model.BodyText)</p>
+                    }
+                </article>
+            </div>
+        </div>
+    </section>
 }
+

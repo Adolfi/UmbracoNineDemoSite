@@ -1,8 +1,11 @@
-﻿@model UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation.TopNavigationViewModel
+﻿@using UmbracoNineDemoSite.Core.Features.Shared.Extensions; 
+@model UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation.NavigationViewModel
 @if (Model != null)
 {
-    @foreach (var item in Model.Items.Where(x => x.IsVisible() && x.TemplateId != 0))
-    {
-        <a class="nav-link @(item.Id == Model.Selected ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a>
-    }
+    <nav class="nav-bar top-nav">
+        @foreach (var item in Model.Items.Where(x => x.IsVisible() && x.TemplateId != 0))
+        {
+            <a class="nav-link @(item.Id == Model.Selected ? "nav-link--active" : null)" href="@item.Url()">@(item.MenuName())</a>
+        }
+    </nav>
 }

@@ -2,12 +2,12 @@
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
 {
-    [ViewComponent(Name = "TopNavigation")]
-    public class TopNavigationViewComponent : ViewComponent
+    [ViewComponent(Name = "SubNavigation")]
+    public class SubNavigationViewComponent : ViewComponent
     {
         private readonly INavigationService navigationService;
 
-        public TopNavigationViewComponent(INavigationService navigationService)
+        public SubNavigationViewComponent(INavigationService navigationService)
         {
             this.navigationService = navigationService;
         }
@@ -17,8 +17,8 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
             return View(new NavigationViewModel()
             {
                 Selected = selected,
-                Items = this.navigationService.GetTopNavigation()
-        });
+                Items = this.navigationService.GetSubNavigation(selected)
+            });
         }
     }
 }
