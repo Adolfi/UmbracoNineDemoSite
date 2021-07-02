@@ -360,3 +360,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Custom project ignores
+/UmbracoNineDemoSite.Web/umbraco/Data/TEMP
+/UmbracoNineDemoSite.Web/umbraco/mediacache
