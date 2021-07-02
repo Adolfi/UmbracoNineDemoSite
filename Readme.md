@@ -1,6 +1,8 @@
 # Umbraco v9 Demo
 Demo site build in Umbraco v.9.0.0-beta004 and .NET Core 5.0.
 
+![cover image](cover.png)
+
 ## About this solution:
 This is a demo site for Umbraco v9 build in the new .NET Core v5 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
