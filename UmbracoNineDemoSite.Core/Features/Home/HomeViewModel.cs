@@ -15,19 +15,13 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 		public string BackgroundImage => this.Content.Value<string>(PropertyAlias.BackgroundImage);
 		public string CallToActionUrl => this.Content.Value<IPublishedContent>(PropertyAlias.CallToActionUrl)?.Url();
 		public string CallToActionLabel => this.Content.Value<string>(PropertyAlias.CallToActionLabel);
-		public HeroViewModel Hero
+		public HeroViewModel Hero => new()
 		{
-			get
-			{
-				return new HeroViewModel()
-				{
-					Heading = Heading,
-					Preamble = Preamble,
-					BackgroundImageUrl = BackgroundImage,
-					CallToActionUrl = CallToActionUrl,
-					CallToActionLabel = CallToActionLabel
-				};
-			}
-		}
+			Heading = this.Heading,
+			Preamble = this.Preamble,
+			BackgroundImageUrl = this.BackgroundImage,
+			CallToActionUrl = this.CallToActionUrl,
+			CallToActionLabel = this.CallToActionLabel
+		};
 	}
 }
