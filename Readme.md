@@ -17,6 +17,8 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - Page components that handles logic are rendered through ViewComponents.
 - Non-logic components are rendered through Partial views.
 - Custom services are registered in the IUmbracoBuilder through an IUserComposer.
+- All content names, properties, descriptions etc are translated using #alias.
+- Constant classes are used when accessing content or property types to avoid magic strings being spread around.
 - **TODO v2**: Forms are submitted through a SurfaceController.
 - **TODO v4**: Searching is submitted and handled through a controller using Examine.
 - **TODO v3**: Unit Testing all the things!
