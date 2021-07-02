@@ -1,16 +1,10 @@
 ﻿@model UmbracoNineDemoSite.Core.Features.Home.HomeViewModel
 @{
-    Layout = "Master.cshtml";
+	Layout = "Master.cshtml";
 }
 @if (Model != null)
 {
-    @(await Component.InvokeAsync("Hero", new {
-        heading = Model.Heading,
-        preamble = Model.Preamble,
-        backgroundImageUrl = Model.BackgroundImage,
-        callToActionUrl = Model.CallToActionUrl,
-        callToActionLabel = Model.CallToActionLabel
-    }))
+	@(await Component.InvokeAsync("Hero", Model.Hero))
 
-    @(await Html.PartialAsync("_BlogPosts"))
+	@(await Html.PartialAsync("_BlogPosts"))
 }
