@@ -1,0 +1,151 @@
+﻿<div ng-controller="uSyncSettingsController as vm">
+    <div class="alert alert-warning">Settings can not be saved via the UI in the beta, but they can be added to appsettings.json</div>
+    <div class="usync-settings">
+        <div class="usync-main-settings">
+            <umb-box>
+                <umb-box-header title="Settings" description="Controls what uSync does and when">
+                    <!-- 
+                    <umb-button type="button"
+                                button-style="success"
+                                label-key="usync_savesettings"
+                                action="vm.saveSettings()"
+                                disabled="vm.working">
+                    -->
+                </umb-box-header>
+                <umb-box-content>
+
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.settings.importAtStartup" 
+                                    disabled="vm.readonly"
+                                    value="vm.settings.importAtStartup"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.settings.importAtStartup = !vm.settings.importAtStartup">
+                            <div>Import at startup</div>
+                            <div class="umb-permission__description">Run an import of files from the disk when Umbraco starts</div>
+                        </div>
+                    </div>
+
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.settings.exportAtStartup"
+                                    value="vm.settings.exportAtStartup"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.settings.exportAtStartup = !vm.settings.exportAtStartup">
+                            <div>Export at startup</div>
+                            <div class="umb-permission__description">Export the Umbraco settings when the site starts up</div>
+                        </div>
+                    </div>
+
+
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.settings.exportOnSave"
+                                    value="vm.settings.exportOnSave"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.settings.exportOnSave= !vm.settings.exportOnSave">
+                            <div>Export on Save</div>
+                            <div class="umb-permission__description">Generate uSync files when items are saved</div>
+                        </div>
+                    </div>
+
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.settings.failOnMissingParent"
+                                    value="vm.settings.failOnMissingParent"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.settings.failOnMissingParent = !vm.settings.failOnMissingParent">
+                            <div>Fail on Missing Parent</div>
+                            <div class="umb-permission__description">Import of an item will fail if it's parent is not already in Umbraco or the current Import</div>
+                        </div>
+                    </div>
+
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.settings.enableHistory"
+                                    value="vm.settings.enableHistory"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.settings.enableHistory = !vm.settings.enableHistory">
+                            <div>Enable History</div>
+                            <div class="umb-permission__description">Save the result of imports/exports in the history folder</div>
+                        </div>
+                    </div>
+
+                </umb-box-content>
+            </umb-box>
+
+            <umb-box>
+                <umb-box-header title="Files and Folders"
+                                description="Control how uSync writes and reads files to disk"></umb-box-header>
+                <umb-box-content>
+                    <div class="umb-el-wrap usync-root-folder">
+                        <label for="rootFolder" class="control-label">Root Folder</label>
+                        <div class="controls">
+                            <div class="db">
+                                <input type="text" class="umb-textstring" id="rootFolder" ng-model="vm.settings.rootFolder"
+                                 disabled="true" />
+                            </div>
+                        </div>
+                    </div>
+                </umb-box-content>
+            </umb-box>
+        </div>
+        <div>
+            <umb-box>
+                <umb-box-header title="Handlers" description="Controllers for each type of object"></umb-box-header>
+            </umb-box> 
+            <umb-box>
+                <umb-box-header title="Default set" description="Default handler set from config"></umb-box-header>
+                <umb-box-content>
+                    <div>
+                        <p class="color-deep-orange">
+                            <em>If you change these settings, you should perform a 'Clean Export' as they alter the structure of the uSync folders</em>
+                        </p>
+                    </div>
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.handlerSet.handlerDefaults.useFlatStructure"
+                                    value="vm.handlerSet.handlerDefaults.useFlatStructure"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        <div class="umb-permission__content" ng-click="vm.handlerSet.handlerDefaults.useFlatStructure= !vm.handlerSet.handlerDefaults.useFlatStructure">
+                            <div>Flat structure</div>
+                            <div class="umb-permission__description">All items of a type are stored in a flat folder structure</div>
+                        </div>
+                    </div>
+                    <div class="umb-permission">
+                        <umb-checkbox model="vm.handlerSet.handlerDefaults.useGuidNames"
+                                    value="vm.handlerSet.handlerDefaults.useGuidNames"
+                                    disabled="vm.readonly"></umb-checkbox>
+                        </umb-toggle>
+                        <div class="umb-permission__content" ng-click="vm.handlerSet.handlerDefaults.useGuidNames= !vm.handlerSet.handlerDefaults.useGuidNames">
+                            <div>Use Guids for filenames</div>
+                            <div class="umb-permission__description">Use the guid of an item as the filename</div>
+                        </div>
+                    </div>
+                </umb-box-content>
+
+                <umb-box-content>
+                    <pre>{{vm.handlerSet}}</pre>
+                </umb-box-content>
+            </umb-box>
+
+
+            <umb-box ng-repeat="handlerSet in vm.settings.handlerSets" class="usync-handler-box">
+                <umb-box-header title="Handler Set: {{handlerSet.Name}}" ng-click="handlerSet.show = !handlerSet.show"></umb-box-header>
+                <umb-box-content ng-if="handlerSet.show">
+                    <div ng-repeat="handler in handlerSet.handlers" class="umb-permission">
+                        <umb-toggle class="umb-permission__toggle"
+                                    checked="handler.enabled"
+                                    on-click="handler.enabled = !handler.enabled">
+                        </umb-toggle>
+
+                        <div class="umb-permission__content">
+                            <div>
+                                {{handler.alias}}
+                            </div>
+                            <div class="umb-permission__description">
+                                Enabled for : 
+                                <ul ng-if="handler.actions.length > 0" class="usync-action-list">
+                                    <li ng-repeat="action in handler.actions">{{action}}</li></ul>
+                                <span ng-if="!handler.actions">All</span>
+                            </div>
+                        </div>
+                    </div>
+                </umb-box-content>
+            </umb-box>
+        </div>
+    </div>
+</div>
