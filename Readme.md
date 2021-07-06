@@ -17,6 +17,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Every block item (Blocklist Editor) is rendered through block specific ViewComponents with strongly typed view models](TODO).
 - [Every view uses strongly typed View Models](UmbracoNineDemoSite.Web/Views/Home.cshtml) *(inheriting from ContentModel)*.
 - [Page components that handles logic are rendered through ViewComponents](UmbracoNineDemoSite.Core/Features/Shared/Components/Header/HeaderViewComponent.cs).
+- [View components have Unit Tests](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs).
 - [Non-logic components are rendered through Partial views](UmbracoNineDemoSite.Web/Views/Partials/_SectionHeader.cshtml).
 - [Custom services are registered in the IUmbracoBuilder through an IUserComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
