@@ -8,12 +8,10 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Header
     public class HeaderViewComponent : ViewComponent
     {
         private readonly ISiteSettings siteSettings;
-        private readonly UmbracoHelper umbracoHelper;
 
-        public HeaderViewComponent(ISiteSettings siteSettings, UmbracoHelper umbracoHelper)
+        public HeaderViewComponent(ISiteSettings siteSettings)
         {
             this.siteSettings = siteSettings;
-            this.umbracoHelper = umbracoHelper;
         }
 
         public IViewComponentResult Invoke(int selected)
