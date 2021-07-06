@@ -13,7 +13,7 @@
                 {
                     if (!string.IsNullOrEmpty(Model.Heading))
                     {
-                        <h1>@Model.Heading</h1>
+                        <h2>@Model.Heading</h2>
                     }
                     using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
                     {

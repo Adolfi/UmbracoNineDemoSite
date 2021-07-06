@@ -1,5 +1,5 @@
 @model Umbraco.Cms.Core.Models.Blocks.BlockListModel
-@if (Model.Any())
+@if (Model?.Any() == true)
 {
     foreach (var block in Model)
     {

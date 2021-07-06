@@ -1,4 +1,5 @@
-﻿using Umbraco.Cms.Core.Models.PublishedContent;
+﻿using Umbraco.Cms.Core.Models.Blocks;
+using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
@@ -15,6 +16,7 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 		public string BackgroundImage => this.Content.Value<string>(PropertyAlias.BackgroundImage);
 		public string CallToActionUrl => this.Content.Value<IPublishedContent>(PropertyAlias.CallToActionUrl)?.Url();
 		public string CallToActionLabel => this.Content.Value<string>(PropertyAlias.CallToActionLabel);
+		public BlockListModel Blocks => this.Content.Value<BlockListModel>(PropertyAlias.Blocks);
 		public HeroViewModel Hero => new()
 		{
 			Heading = this.Heading,

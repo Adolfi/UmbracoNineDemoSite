@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Umbraco.Cms.Core.Models.Blocks;
+﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
