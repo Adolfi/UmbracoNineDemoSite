@@ -14,15 +14,16 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 
 ### Content:
 - [Every page is rendered through a RenderController](UmbracoNineDemoSite.Core/Features/Home/HomeController.cs) *(Route Hijacking)*.
-- [Every block item (Blocklist Editor) is rendered through block specific ViewComponents with strongly typed view models](TODO).
+- [Every Blocklist item is rendered with block specific ViewComponents with strongly typed view models](UmbracoNineDemoSite.Web/Views/Partials/_BlockList.cshtml).
 - [Every view uses strongly typed View Models](UmbracoNineDemoSite.Web/Views/Home.cshtml) *(inheriting from ContentModel)*.
 - [Page components that handles logic are rendered through ViewComponents](UmbracoNineDemoSite.Core/Features/Shared/Components/Header/HeaderViewComponent.cs).
+- [View components have Unit Tests](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs).
 - [Non-logic components are rendered through Partial views](UmbracoNineDemoSite.Web/Views/Partials/_SectionHeader.cshtml).
 - [Custom services are registered in the IUmbracoBuilder through an IUserComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
-- [Forms are submitted through a SurfaceController](TODO).
+- [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 - **TODO v3**: Searching is submitted and handled through a controller using Examine.
-- **TODO v4**: Unit Testing all the things!
+- **TODO v4**: More Unit Testing!
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
