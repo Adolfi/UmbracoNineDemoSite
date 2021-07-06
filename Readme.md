@@ -14,7 +14,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 
 ### Content:
 - [Every page is rendered through a RenderController](UmbracoNineDemoSite.Core/Features/Home/HomeController.cs) *(Route Hijacking)*.
-- [Every block item (Blocklist Editor) is rendered through block specific ViewComponents with strongly typed view models](UmbracoNineDemoSite.Web/Views/Partials/_BlockList.cshtml).
+- [Every Blocklist item is rendered with block specific ViewComponents with strongly typed view models](UmbracoNineDemoSite.Web/Views/Partials/_BlockList.cshtml).
 - [Every view uses strongly typed View Models](UmbracoNineDemoSite.Web/Views/Home.cshtml) *(inheriting from ContentModel)*.
 - [Page components that handles logic are rendered through ViewComponents](UmbracoNineDemoSite.Core/Features/Shared/Components/Header/HeaderViewComponent.cs).
 - [View components have Unit Tests](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs).
