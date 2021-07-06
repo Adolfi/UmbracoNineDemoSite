@@ -1,0 +1,9 @@
+@model Umbraco.Cms.Core.Models.Blocks.BlockListModel
+@if (Model.Any())
+{
+    foreach (var block in Model)
+    {
+        if (block?.ContentUdi == null) { continue; }
+        @(await Component.InvokeAsync(block.Content.ContentType.Alias, block))
+    }
+}

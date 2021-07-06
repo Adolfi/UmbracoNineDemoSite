@@ -6,6 +6,7 @@
     public static class PropertyAlias
     {
         public const string BackgroundImage = "backgroundImage";
+        public const string Blocks = "blocks";
         public const string BodyText = "bodyText";
         public const string CallToActionButtonLabel = "callToActionButtonLabel";
         public const string CallToActionDescription = "callToActionDescription";

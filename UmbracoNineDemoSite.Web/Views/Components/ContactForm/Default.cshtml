@@ -1,0 +1,41 @@
+﻿@using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+@model UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm.ContactFormViewModel
+@{
+    var responseMessage = TempData["CustomMessage"] as string;
+}
+@if (Model != null)
+{
+    <section class="section">
+        <div class="container">
+            <div class="col-md-12">
+                @if (string.IsNullOrEmpty(responseMessage))
+                {
+                    if (!string.IsNullOrEmpty(Model.Heading))
+                    {
+                        <h1>@Model.Heading</h1>
+                    }
+                    using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
+                    {
+                        <div>
+                            @Html.LabelFor(x => Model.Name)<br/>
+                            @Html.EditorFor(x => Model.Name)
+                        </div>
+                        <div>
+                            @Html.LabelFor(x => Model.Email)<br />
+                            @Html.EditorFor(x => Model.Email)
+                        </div>
+                        <div>
+                            @Html.LabelFor(x => Model.Comment)<br />
+                            @Html.TextAreaFor(x => Model.Comment)
+                        </div>
+                        <input type="submit" />
+                    }
+                }
+                else
+                {
+                    @Html.Raw(responseMessage)
+                }
+            </div>
+        </div>
+    </section>
+}

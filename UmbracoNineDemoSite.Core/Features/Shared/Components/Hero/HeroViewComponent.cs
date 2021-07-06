@@ -2,7 +2,8 @@
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Hero
 {
-	public class Hero : ViewComponent
+	[ViewComponent(Name = "Hero")]
+	public class HeroComponent : ViewComponent
 	{
 		public IViewComponentResult Invoke(HeroViewModel heroViewModel)
 		{

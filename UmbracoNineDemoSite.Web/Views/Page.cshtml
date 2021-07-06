@@ -7,7 +7,7 @@
     @(await Html.PartialAsync("_SectionHeader"))
 
     <section class="section">
-        <div class="container">            
+        <div class="container">
             @(await Component.InvokeAsync("SubNavigation", new { selected = Model.Id }))
             <div class="col-md-9">
                 <article>
@@ -19,5 +19,7 @@
             </div>
         </div>
     </section>
+
+    @(await Html.PartialAsync("_BlockList", Model.Blocks))
 }
 
