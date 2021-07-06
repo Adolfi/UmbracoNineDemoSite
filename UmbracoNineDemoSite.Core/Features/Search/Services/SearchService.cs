@@ -26,7 +26,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Services
 
             var query = searchQuery.BuildFilter(criteria);
 
-            return query.Execute(new QueryOptions(0, 100));
+            return query.Execute(new QueryOptions(criteria.Skip, criteria.Take));
         }
     }
 }
