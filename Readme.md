@@ -23,7 +23,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 - **TODO v3**: Searching is submitted and handled through a controller using Examine.
-- **TODO v4**: Unit Testing all the things!
+- **TODO v4**: More Unit Testing!
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
