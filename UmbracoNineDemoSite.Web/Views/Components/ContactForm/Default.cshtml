@@ -1,7 +1,8 @@
-﻿@using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+﻿@using UmbracoNineDemoSite.Core.Features.Shared.Constants
+@using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
 @model UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm.ContactFormViewModel
 @{
-    var responseMessage = TempData["CustomMessage"] as string;
+    var responseMessage = TempData[TempDataKey.ResponseMessage] as string;
 }
 @if (Model != null)
 {

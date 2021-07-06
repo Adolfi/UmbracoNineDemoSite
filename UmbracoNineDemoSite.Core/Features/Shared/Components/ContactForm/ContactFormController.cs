@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.ActionResults;
 using Umbraco.Cms.Web.Website.Controllers;
+using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
 {
@@ -21,8 +22,7 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
         public RedirectToUmbracoPageResult Submit(ContactForm model)
         {
             // Do some emails sending magic here, not relevant for this demo.
-
-            TempData.Add("CustomMessage", "Thank you!");
+            TempData.Add(TempDataKey.ResponseMessage, "Thank you!");
             return RedirectToCurrentUmbracoPage();
         }
     }
