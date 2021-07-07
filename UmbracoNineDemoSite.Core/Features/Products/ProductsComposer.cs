@@ -12,6 +12,7 @@ namespace UmbracoNineDemoSite.Core.Features.Products
         {
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
             builder.Services.AddTransient<IProductService, ProductService>();
+            builder.ContentFinders().Append<ProductPageContentFinder>();
         }
     }
 }
