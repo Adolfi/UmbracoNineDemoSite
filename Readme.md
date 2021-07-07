@@ -23,9 +23,21 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 
-### TODO:
+## TODO:
 - Searching using Examine. *(In progress by Andrey Karandashov)*
 - Product section with external data virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
+
+## Unit Tests:
+- RenderController: Home
+- RenderController: Page
+- ViewComponents: ConentBlock
+- ViewComponents: Header
+- ViewComponents: Hero
+- ViewComponents: Navigation
+- [ViewComponent: Footer](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs)
+- SurfaceController: ContactForm
+- Useromposer: SiteSettingsComposer
+- UmbracoHelper: SiteSettings
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
