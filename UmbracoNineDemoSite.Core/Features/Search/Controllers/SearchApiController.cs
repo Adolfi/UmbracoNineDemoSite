@@ -2,6 +2,7 @@
 using Umbraco.Cms.Infrastructure.Search;
 using Umbraco.Cms.Web.Common.Controllers;
 using UmbracoNineDemoSite.Core.Features.Search.Criteria;
+using UmbracoNineDemoSite.Core.Features.Search.Models;
 using UmbracoNineDemoSite.Core.Features.Search.Services;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Controllers
@@ -13,7 +14,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Controllers
         {
             _searchService = searchService;
         }
-        public ISearchResults Search(string searchTerm, int skip, int take)
+        public SearchResults Search(string searchTerm, int skip, int take)
         {
             var criteria = new BaseSearchCriteria { SearchTerm = searchTerm, Skip = skip, Take = take};
             var results = _searchService.Search(criteria);
