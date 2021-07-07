@@ -23,11 +23,11 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 
-## TODO:
+#### TODO:
 - Searching using Examine. *(In progress by Andrey Karandashov)*
 - Product section with external data virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
 
-## Unit Tests:
+#### Unit Tests:
 - RenderController: Home
 - RenderController: Page
 - ViewComponents: ConentBlock
