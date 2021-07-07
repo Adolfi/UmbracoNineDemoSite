@@ -24,8 +24,8 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 
 ### TODO:
-- Searching using Examine. *(Currently in progress by Andrey Karandashov)*
-- Product section with external data source and rendered using ContentFinder. *(Currently in progress by Dennis Adolfi)*
+- Searching using Examine. *(In progress by Andrey Karandashov)*
+- Product section with external data virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
