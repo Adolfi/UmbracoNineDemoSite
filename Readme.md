@@ -25,7 +25,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 
 #### TODO:
 - Searching using Examine. *(In progress by Andrey Karandashov)*
-- Product section with external data virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
+- Products from external data source virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
 
 #### Unit Tests:
 - RenderController: Home
