@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /UmbracoNineDemoSite.Web/umbraco/Data/*
 /UmbracoNineDemoSite.Web/umbraco/mediacache
 *.sdf
+/UmbracoNineDemoSite.Web/wwwroot/umbraco/lib
