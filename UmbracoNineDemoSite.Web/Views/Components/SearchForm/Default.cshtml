@@ -35,8 +35,8 @@
                 {
                     if (searchResults?.Results?.Any() == true)
                     {
-                        <p>Search term: @searchResults.SearchTerm</p>
-                        <p>Total items: <span>@searchResults.TotalCount</span></p>
+                        <p>@Model.SearchTermText @searchResults.SearchTerm</p>
+                        <p>@Model.TotalResults <span>@searchResults.TotalCount</span></p>
                         <ul>
                             @foreach (var result in searchResults.Results)
                             {
@@ -49,7 +49,7 @@
                     }
                     else
                     {
-                        <p>No results found</p>
+                        <p>@Model.NoResultsFound</p>
                     }
                 }
             </div>

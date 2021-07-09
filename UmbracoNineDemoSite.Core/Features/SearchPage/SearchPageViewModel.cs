@@ -9,7 +9,12 @@ namespace UmbracoNineDemoSite.Core.Features.SearchPage
     {
         public SearchPageViewModel(IPublishedContent content) : base(content)
         {
-            SearchForm = new SearchFormModel();
+            SearchForm = new SearchFormModel
+            {
+                NoResultsFound = this.Content.Value<string>(PropertyAlias.NoResultsFoundText),
+                TotalResults = this.Content.Value<string>(PropertyAlias.TotalResults),
+                SearchTermText = this.Content.Value<string>(PropertyAlias.SearchTermText)
+            };
         }
 
         public string Heading => this.Content.Value<string>(PropertyAlias.Heading);
