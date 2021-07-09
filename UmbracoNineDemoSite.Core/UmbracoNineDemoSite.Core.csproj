@@ -1,11 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-alpha004" />
+    <Compile Remove="Features\Search\Examine\Index\**" />
+    <EmbeddedResource Remove="Features\Search\Examine\Index\**" />
+    <None Remove="Features\Search\Examine\Index\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-beta004" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Search\Examine\" />
   </ItemGroup>
 
 </Project>

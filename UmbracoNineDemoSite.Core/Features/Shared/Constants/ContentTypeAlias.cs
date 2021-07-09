@@ -4,5 +4,6 @@
     {
         public const string Home = "home";
         public const string SiteSettings = "siteSettings";
+        public const string Page = "page";
     }
 }
