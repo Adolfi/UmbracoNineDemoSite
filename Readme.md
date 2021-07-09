@@ -22,9 +22,10 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [Custom services are registered in the IUmbracoBuilder through an IUserComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
+- [Examine searching. (#h5yr Andrey Karandashov)](UmbracoNineDemoSite.Core/Features/Search)
 
 #### TODO:
-- Searching using Examine. *(In progress by Andrey Karandashov)*
+
 - Products from external data source virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
 
 #### Unit Tests:
