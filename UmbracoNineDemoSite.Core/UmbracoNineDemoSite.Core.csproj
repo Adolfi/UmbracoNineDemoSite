@@ -5,17 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Features\Search\Examine\Index\**" />
-    <EmbeddedResource Remove="Features\Search\Examine\Index\**" />
-    <None Remove="Features\Search\Examine\Index\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-beta004" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Search\Examine\" />
   </ItemGroup>
 
 </Project>

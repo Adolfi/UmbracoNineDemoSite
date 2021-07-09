@@ -16,17 +16,12 @@
                 {
                     using (Html.BeginUmbracoForm<SearchController>(nameof(SearchController.Search)))
                     {
+                        @Html.HiddenFor(x => x.Skip)
+                        @Html.HiddenFor(x => x.Take)
+
                         <div>
                             @Html.LabelFor(x => Model.SearchTerm)<br />
                             @Html.EditorFor(x => Model.SearchTerm)
-                        </div>
-                        <div>
-                            @Html.LabelFor(x => Model.Skip)<br />
-                            @Html.EditorFor(x => Model.Skip)
-                        </div>
-                        <div>
-                            @Html.LabelFor(x => Model.Take)<br />
-                            @Html.TextAreaFor(x => Model.Take)
                         </div>
                         <input type="submit" />
                     }
@@ -35,13 +30,15 @@
                 {
                     if (searchResults?.Results?.Any() == true)
                     {
-                        <p>@Model.SearchTermText @searchResults.SearchTerm</p>
-                        <p>@Model.TotalResults <span>@searchResults.TotalCount</span></p>
+                        <p>
+                            @Model.SearchTermText "<strong>@searchResults.SearchTerm</strong>"<br />
+                            @Model.TotalResults <span>@searchResults.TotalCount</span>
+                        </p>
                         <ul>
                             @foreach (var result in searchResults.Results)
                             {
                                 <li>
-                                    <p>@result.Heading</p>
+                                    <strong>@result.Heading</strong>
                                     <p>@Html.Raw(result.Description)</p>
                                 </li>
                             }
