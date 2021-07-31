@@ -11,12 +11,12 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 	{
 		public HomeViewModel(IPublishedContent content) : base(content) { }
 
-		public string Heading => this.Content.Value<string>(PropertyAlias.Heading);
-		public string Preamble => this.Content.Value<string>(PropertyAlias.Preamble);
-		public string BackgroundImage => this.Content.Value<string>(PropertyAlias.BackgroundImage);
-		public string CallToActionUrl => this.Content.Value<IPublishedContent>(PropertyAlias.CallToActionUrl)?.Url();
-		public string CallToActionLabel => this.Content.Value<string>(PropertyAlias.CallToActionLabel);
-		public BlockListModel Blocks => this.Content.Value<BlockListModel>(PropertyAlias.Blocks);
+		public string Heading => this.Content.GetProperty(PropertyAlias.Heading).GetValue() as string;
+		public string Preamble => this.Content.GetProperty(PropertyAlias.Preamble).GetValue() as string;
+		public string BackgroundImage => this.Content.GetProperty(PropertyAlias.BackgroundImage).GetValue() as string;
+		public string CallToActionUrl => (this.Content.GetProperty(PropertyAlias.CallToActionUrl).GetValue() as IPublishedContent)?.Url();
+		public string CallToActionLabel => this.Content.GetProperty(PropertyAlias.CallToActionLabel).GetValue() as string;
+		public BlockListModel Blocks => this.Content.GetProperty(PropertyAlias.Blocks).GetValue() as BlockListModel;
 		public HeroViewModel Hero => new()
 		{
 			Heading = this.Heading,

@@ -14,7 +14,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.AddExamineLuceneIndex<CustomUmbracoIndex, ConfigurationEnabledDirectoryFactory>(IndexNames.CustomIndex);
+            // WIP: builder.Services.AddExamineLuceneIndex<CustomUmbracoIndex, ConfigurationEnabledDirectoryFactory>(IndexNames.CustomIndex);
         }
     }
 }
