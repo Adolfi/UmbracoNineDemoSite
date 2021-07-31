@@ -31,7 +31,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 #### Unit Tests:
 - RenderController: Home
 - RenderController: Page
-- ViewComponents: ConentBlock
+- ViewComponents: ContentBlock
 - ViewComponents: Header
 - ViewComponents: Hero
 - ViewComponents: Navigation
