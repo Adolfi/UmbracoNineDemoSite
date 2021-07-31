@@ -29,7 +29,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - Products from external data source virtually rendered using a ContentFinder. *(In progress by Dennis Adolfi)*
 
 #### Unit Tests:
-- RenderController: Home
+- [RenderController: Home](UmbracoNineDemoSite.Tests/Unit/Features/Home/HomeControllerTests.cs)
 - RenderController: Page
 - ViewComponents: ContentBlock
 - ViewComponents: Header
