@@ -37,9 +37,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - ViewComponents: Navigation
 - [ViewComponent: Footer](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs)
 - SurfaceController: ContactForm
-- UserComposer: SiteSettingsComposer
 - UmbracoHelper: SiteSettings
-- Examine: Searching
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
