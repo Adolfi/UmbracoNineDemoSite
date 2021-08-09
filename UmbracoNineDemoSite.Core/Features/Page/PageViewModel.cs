@@ -10,10 +10,10 @@ namespace UmbracoNineDemoSite.Core.Features.Page
     {
         public PageViewModel(IPublishedContent content) : base(content) { }
 
-        public string Heading => this.Content.Value<string>(PropertyAlias.Heading);
+        public string Heading => this.Content.GetProperty(PropertyAlias.Heading).GetValue() as string;
 
-        public string BodyText => this.Content.Value<string>(PropertyAlias.BodyText);
+        public string BodyText => this.Content.GetProperty(PropertyAlias.BodyText).GetValue() as string;
 
-        public BlockListModel Blocks => this.Content.Value<BlockListModel>(PropertyAlias.Blocks);
+        public BlockListModel Blocks => this.Content.GetProperty(PropertyAlias.Blocks).GetValue() as BlockListModel;
     }
 }
