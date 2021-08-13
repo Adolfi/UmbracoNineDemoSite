@@ -5,25 +5,24 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
-using Umbraco.Cms.Web.Website.ActionResults;
-using Umbraco.Cms.Web.Website.Controllers;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoNineDemoSite.Core.Features.Shared.Controllers;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
 {
     /// <summary>
     /// Documentation: https://our.umbraco.com/documentation/reference/templating/mvc/forms/tutorial-partial-views
     /// </summary>
-    public class ContactFormController : SurfaceController
+    public class ContactFormController : BaseSurfaceController
     {
         public ContactFormController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider) { }
 
         [HttpPost]
-        public RedirectToUmbracoPageResult Submit(ContactForm model)
+        public IActionResult Submit(ContactForm model)
         {
             // Do some emails sending magic here, not relevant for this demo.
-            TempData.Add(TempDataKey.ResponseMessage, "Thank you!");
-            return RedirectToCurrentUmbracoPage();
+            TempData.Add(TempDataKey.ResponseMessage, $"Thank you {model.Name}!");
+            return RedirectToUmbracoPage(CurrentPage);
         }
     }
 }

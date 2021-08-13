@@ -11,10 +11,11 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
     [TestFixture]
     public class FooterViewComponentTests
     {
-        private readonly Mock<ISiteSettings> siteSettings;
-        private readonly FooterViewComponent footerViewComponent;
+        private Mock<ISiteSettings> siteSettings;
+        private FooterViewComponent footerViewComponent;
 
-        public FooterViewComponentTests()
+        [SetUp]
+        public void SetUp()
         {
             this.siteSettings = new Mock<ISiteSettings>();
             this.footerViewComponent = new FooterViewComponent(this.siteSettings.Object);

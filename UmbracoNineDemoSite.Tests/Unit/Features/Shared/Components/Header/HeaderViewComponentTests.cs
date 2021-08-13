@@ -9,10 +9,11 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
     [TestFixture]
     public class HeaderViewComponentTests
     {
-        private readonly Mock<ISiteSettings> siteSettings;
-        private readonly HeaderViewComponent headerViewComponent;
+        private Mock<ISiteSettings> siteSettings;
+        private HeaderViewComponent headerViewComponent;
 
-        public HeaderViewComponentTests()
+        [SetUp]
+        public void SetUp()
         {
             this.siteSettings = new Mock<ISiteSettings>();
             this.headerViewComponent = new HeaderViewComponent(this.siteSettings.Object);

@@ -18,9 +18,10 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
     [TestFixture]
     public class HomeControllerTests
     {
-        private readonly HomeController controller;
+        private HomeController controller;
 
-        public HomeControllerTests()
+        [SetUp]
+        public void SetUp()
         {
             this.controller = new HomeController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
         }

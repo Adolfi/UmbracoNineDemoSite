@@ -19,9 +19,10 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
     [TestFixture]
     public class PageControllerTests
     {
-        private readonly PageController controller;
+        private PageController controller;
 
-        public PageControllerTests()
+        [SetUp]
+        public void SetUp()
         {
             this.controller = new PageController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
         }
