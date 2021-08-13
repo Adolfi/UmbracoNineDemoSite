@@ -32,7 +32,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [RenderController: Home](UmbracoNineDemoSite.Tests/Unit/Features/Home/HomeControllerTests.cs)
 - [RenderController: Page](UmbracoNineDemoSite.Tests/Unit/Features/Page/PageControllerTests.cs)
 - ViewComponents: ContentBlock
-- ViewComponents: Header
+- [ViewComponents: Header](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Header/HeaderViewComponentTests.cs)
 - ViewComponents: Hero
 - ViewComponents: Navigation
 - [ViewComponent: Footer](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs)
