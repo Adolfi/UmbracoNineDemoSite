@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using UmbracoNineDemoSite.Core.Features.Page;
@@ -44,13 +45,15 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
         [TestCase("Other BodyText")]
         public void Given_PublishedContentHasBodyText_When_PageAction_Then_ReturnViewModelWithBodyText(string bodyText)
         {
+            var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);
+
             var publishedContent = new Mock<IPublishedContent>();
-            publishedContent.SetupPropertyValue(PropertyAlias.BodyText, bodyText);
+            publishedContent.SetupPropertyValue(PropertyAlias.BodyText, bodyTextEncodedHtml);
             var contentModel = new ContentModel(publishedContent.Object);
 
             var viewModel = (PageViewModel)((ViewResult)this.controller.Page(contentModel)).ViewData.Model;
 
-            Assert.AreEqual(bodyText, viewModel.BodyText);
+            Assert.AreEqual(bodyTextEncodedHtml, viewModel.BodyText);
         }
 
         [Test]

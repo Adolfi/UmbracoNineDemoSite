@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Web.Common;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Header
