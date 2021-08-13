@@ -36,7 +36,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - ViewComponents: Hero
 - ViewComponents: Navigation
 - [ViewComponent: Footer](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs)
-- SurfaceController: ContactForm
+- [SurfaceController: ContactForm](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/ContactForm/ContactFormControllerTests.cs)
 - UmbracoHelper: SiteSettings
 
 ### Login:
