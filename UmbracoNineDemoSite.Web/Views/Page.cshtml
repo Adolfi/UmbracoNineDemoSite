@@ -11,10 +11,7 @@
             @(await Component.InvokeAsync("SubNavigation", new { selected = Model.Id }))
             <div class="col-md-9">
                 <article>
-                    @if (!string.IsNullOrEmpty(Model.BodyText))
-                    {
-                        <p>@Html.Raw(Model.BodyText)</p>
-                    }
+                    @Html.Raw(Model.BodyText)
                 </article>
             </div>
         </div>
