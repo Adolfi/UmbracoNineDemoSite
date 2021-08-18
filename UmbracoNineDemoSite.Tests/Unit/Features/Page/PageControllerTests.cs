@@ -14,7 +14,7 @@ using UmbracoNineDemoSite.Core.Features.Page;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Tests.Extensions;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
+namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
 {
     [TestFixture]
     public class PageControllerTests

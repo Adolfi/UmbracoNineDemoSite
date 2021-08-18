@@ -3,8 +3,7 @@ using Umbraco.Cms.Core.Models.Blocks;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock
 {
-	[ViewComponent(Name = "contentBlock")]
-	public class ContentBlockComponent : ViewComponent
+	public class ContentBlockViewComponent : ViewComponent
 	{
 		public IViewComponentResult Invoke(BlockListItem model)
 		{

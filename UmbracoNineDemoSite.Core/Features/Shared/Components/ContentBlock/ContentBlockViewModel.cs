@@ -1,5 +1,4 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock
@@ -13,8 +12,8 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock
             this.block = block;
         }
 
-        public string Heading => this.block.Content.Value<string>(PropertyAlias.Heading);
+        public string Heading => this.block.Content.GetProperty(PropertyAlias.Heading).GetValue() as string;
 
-        public string BodyText => this.block.Content.Value<string>(PropertyAlias.BodyText);
+        public string BodyText => this.block.Content.GetProperty(PropertyAlias.BodyText).GetValue() as string;
     }
 }
