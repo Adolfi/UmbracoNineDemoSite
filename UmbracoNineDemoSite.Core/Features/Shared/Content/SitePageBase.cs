@@ -15,7 +15,7 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Content
 
         public string Name => this.Content.Name;
         
-        public string PageTitle => this.Content.Value<string>(PropertyAlias.PageTitle);
+        public virtual string PageTitle => this.Content.Value<string>(PropertyAlias.PageTitle);
 
         public string SiteName => this.Content.AncestorOrSelf(1).Name;
     }

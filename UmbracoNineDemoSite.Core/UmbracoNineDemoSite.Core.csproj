@@ -8,4 +8,8 @@
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-beta004" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UmbracoNineDemoSite.Integrations.Products\UmbracoNineDemoSite.Integrations.Products.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
