@@ -34,6 +34,7 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [SurfaceController: ContactForm](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/ContactForm/ContactFormControllerTests.cs)
 - [UmbracoHelper: SiteSettings](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Settings/SiteSettingsTests.cs)
 - [Relations: NavigationService](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Navigation/NavigationServiceTests.cs)
+- [ContentFinder: Products](UmbracoNineDemoSite.Tests/Unit/Features/Products/ProductsContentFinderTests.cs)
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
