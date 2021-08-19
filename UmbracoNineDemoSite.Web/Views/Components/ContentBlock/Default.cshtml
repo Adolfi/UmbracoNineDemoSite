@@ -8,7 +8,7 @@
                 {
                     <h2>@Model.Heading</h2>
                 }
-                @if (!string.IsNullOrEmpty(Model.BodyText))
+                @if (Model.BodyText != null)
                 {
                     <p>@Html.Raw(Model.BodyText)</p>
                 }
