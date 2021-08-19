@@ -33,10 +33,10 @@ There are simpler ways of building Umbraco sites *(using ModelsBuilder for examp
 - [RenderController: Page](UmbracoNineDemoSite.Tests/Unit/Features/Page/PageControllerTests.cs)
 - [ViewComponents: ContentBlock](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/ContentBlock/ContentBlockViewComponentTests.cs)
 - [ViewComponents: Header](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Header/HeaderViewComponentTests.cs)
-- [ViewComponents: NavigationService](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Navigation/NavigationServiceTests.cs)
 - [ViewComponent: Footer](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs)
 - [SurfaceController: ContactForm](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/ContactForm/ContactFormControllerTests.cs)
 - [UmbracoHelper: SiteSettings](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Settings/SiteSettingsTests.cs)
+- [Relations: NavigationService](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Navigation/NavigationServiceTests.cs)
 
 ### Login:
 This site uses an embeded SQLCE database to avoid having to restore and keep updating a restore script.
