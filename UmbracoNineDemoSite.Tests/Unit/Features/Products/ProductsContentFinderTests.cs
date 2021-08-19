@@ -3,7 +3,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Web;
 using UmbracoNineDemoSite.Core.Features.Products;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Integrations.Products.Entities;
@@ -13,7 +15,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
 {
     public class ProductsContentFinderTests
     {
-        [Test]        
+        [Test]
         [TestCase(123, "any")]
         [TestCase(456, "product")]
         [TestCase(789, "name")]
@@ -27,19 +29,22 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             var productService = new Mock<IProductService>();
             productService.Setup(x => x.Get(productId)).Returns(product);
 
-            var container = Mock.Of<IPublishedContent>();
-            var contentQuery = new Mock<IPublishedContentQuery>();
-            contentQuery.Setup(x => x.ContentAtXPath($"//{ContentTypeAlias.ProductsContainer}")).Returns(new List<IPublishedContent>() { container });
+            var umbracoContextAccessor = new Mock<IUmbracoContextAccessor>();
+            var container = new Mock<IPublishedContent>();
 
-            // WIP!
+            var contentCache = new Mock<IPublishedContentCache>();
+            contentCache.Setup(request => request.GetByXPath($"//{ContentTypeAlias.ProductsContainer}")).Returns(new List<IPublishedContent>() { container.Object });
 
-            //var productsContentFinder = new ProductsContentFinder(productService.Object);
+            var umbracoContext = new Mock<IUmbracoContext>();
+            umbracoContext.Setup(context => context.Content).Returns(contentCache.Object);
 
-            //var result = productsContentFinder.TryFindContent(request.Object);
+            umbracoContextAccessor.Setup(accessor => accessor.UmbracoContext).Returns(umbracoContext.Object);
 
-            //Assert.True(result);
+            var productsContentFinder = new ProductsContentFinder(productService.Object, umbracoContextAccessor.Object);
 
+            var result = productsContentFinder.TryFindContent(request.Object);
 
+            Assert.True(result);
         }
     }
 }
