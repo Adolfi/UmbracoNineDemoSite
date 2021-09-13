@@ -38,9 +38,13 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Controllers
                 Take = model.Take
             };
 
-            var searchResults = _searchService.Search(criteria);
+            var viewModel = new SearchResultViewModel()
+            {
+                Pages = _searchService.Search(criteria),
+                Products = _searchService.SearchProducts(criteria)
+            };
 
-            TempData.Add(TempDataKey.SearchResults, JsonConvert.SerializeObject(searchResults));
+            TempData.Add(TempDataKey.SearchResults, JsonConvert.SerializeObject(viewModel));
             return RedirectToCurrentUmbracoPage();
         }
     }

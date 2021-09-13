@@ -9,7 +9,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query.Filters
     {
         public static IBooleanOperation FilterByAlias(this IQuery query, string[] aliases)
         {
-            var fields = new[] {SearchField.NodeTypeAlias};
+            var fields = new[] {SearchField.NodeTypeAlias, "type"};
             if (aliases?.Any() == true)
             {
                 return query.GroupedOr(fields, aliases);
@@ -27,7 +27,9 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query.Filters
             var searchableFields = new[]
             {
                 SearchField.Heading,
-                SearchField.BodyText
+                SearchField.BodyText,
+                SearchField.Description,
+                SearchField.Name
             };
 
             var words = searchTerm.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(x => x).ToArray();

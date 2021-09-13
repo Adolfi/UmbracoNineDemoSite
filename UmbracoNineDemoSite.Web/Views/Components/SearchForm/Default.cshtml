@@ -5,14 +5,14 @@
 @model UmbracoNineDemoSite.Core.Features.SearchPage.SearchFormModel
 @{
     var searchResultsJson = TempData[TempDataKey.SearchResults] as string;
-    var searchResults = !string.IsNullOrEmpty(searchResultsJson) ? JsonConvert.DeserializeObject<SearchResults>(searchResultsJson) : null;
+    var searchViewModel = !string.IsNullOrEmpty(searchResultsJson) ? JsonConvert.DeserializeObject<SearchResultViewModel>(searchResultsJson) : null;
 }
 @if (Model != null)
 {
     <section class="section">
         <div class="container">
             <div class="col-md-12">
-                @if (searchResults == null)
+                @if (searchViewModel?.Pages == null && searchViewModel?.Products == null)
                 {
                     using (Html.BeginUmbracoForm<SearchController>(nameof(SearchController.Search)))
                     {
@@ -28,18 +28,30 @@
                 }
                 else
                 {
-                    if (searchResults?.Results?.Any() == true)
+                    if (searchViewModel?.Pages.Results?.Any() == true)
                     {
                         <p>
-                            @Model.SearchTermText "<strong>@searchResults.SearchTerm</strong>"<br />
-                            @Model.TotalResults <span>@searchResults.TotalCount</span>
+                            @Model.SearchTermText "<strong>@searchViewModel?.Pages.SearchTerm</strong>"<br />
+                            @Model.TotalResults <span>@searchViewModel?.Pages.TotalCount</span>
                         </p>
+                        <p>Pages:</p>
                         <ul>
-                            @foreach (var result in searchResults.Results)
+                            @foreach (var result in searchViewModel?.Pages.Results)
                             {
                                 <li>
                                     <strong>@result.Heading</strong>
                                     <p>@Html.Raw(result.Description)</p>
+                                </li>
+                            }
+                        </ul>
+                        <p>Products:</p>
+                        <ul>
+                            @foreach (var result in searchViewModel?.Products.Results)
+                            {
+                                <li>
+                                    <strong>@result.Heading</strong>
+                                    <p>@Html.Raw(result.Description)</p>
+                                <a href="@result.Url">@result.Url</a>
                                 </li>
                             }
                         </ul>

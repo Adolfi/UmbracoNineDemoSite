@@ -6,5 +6,7 @@
         public const string NodeKey = "__Key";
         public const string Heading = "heading";
         public const string BodyText = "bodyText";
+        public const string Description = "description";
+        public const string Name = "name";
     }
 }

@@ -3,6 +3,6 @@
     public static class IndexNames
     {
         public const string ExternalIndex = "ExternalIndex";
-        public const string CustomIndex = "CustomIndex";
+        public const string ProductsIndex = "ProductsIndex";
     }
 }
