@@ -181,26 +181,6 @@
     <key alias="smallSort">Sortieren</key>
     <key alias="historyIncludingVariants">Verlauf (alle Variationen)</key>
   </area>
-  <area alias="changeDocType">
-    <key alias="changeDocTypeInstruction">Um den Typ des ausgewählten Dokuments zu ändern, wählen Sie bitte zunächst aus der Liste der an dieser Stelle erlaubten Dokumenttypen.</key>
-    <key alias="changeDocTypeInstruction2">Im Anschluss bestätigen oder korrigieren Sie die Zuordnung der Eigenschaften und klicken Sie auf 'Speichern'.</key>
-    <key alias="contentRepublished">Der Inhalt wurde neu veröffentlicht.</key>
-    <key alias="currentProperty">Derzeitige Eigenschaft</key>
-    <key alias="currentType">Derzeitiger Datentyp</key>
-    <key alias="docTypeCannotBeChanged">Der Typ dieses Dokuments kann nicht geändert werden, da an dieser Stelle keine Alternativen zugelassen sind. Ein alternativer Dokumenttyp kann nur dann verwendet werden, wenn er unterhalb des diesem Dokument übergeordneten Elements angelegt werden darf.</key>
-    <key alias="docTypeChanged">Dokumenttyp geändert</key>
-    <key alias="mapProperties">Eigenschaften zuordnen</key>
-    <key alias="mapToProperty">Dieser Eigenschaft zuordnen</key>
-    <key alias="newTemplate">Neue Vorlage</key>
-    <key alias="newType">Neuer Typ</key>
-    <key alias="none">keiner</key>
-    <key alias="selectedContent">Inhalt</key>
-    <key alias="selectNewDocType">Neuen Dokumenttyp auswählen</key>
-    <key alias="successMessage">Der Typ des ausgewählten Dokuments wurde erfolgreich zu [new type] geändert und die Eigenschaften wie folgend zugeordnet:</key>
-    <key alias="to">nach</key>
-    <key alias="validationErrorPropertyWithMoreThanOneMapping">Die Zuordnung der Eigenschaften kann nicht abgeschlossen werden, da mindestens eine Eigenschaft mehrfach zugeordnet werden soll.</key>
-    <key alias="validDocTypesNote">Nur an dieser Stelle erlaubte Dokumenttypen werden angezeigt.</key>
-  </area>
   <area alias="codefile">
     <key alias="createFolderFailedById">Es konnte kein Verzeichnis unter dem Knoten mit der ID %0% angelegt werden.</key>
     <key alias="createFolderFailedByName">Es konnte kein Verzeichnis unter dem Knoten mit dem Namen %0% angelegt werden.</key>
@@ -349,7 +329,7 @@
     <key alias="updateData">Wählen Sie einen Namen und einen Typ</key>
     <key alias="noDocumentTypes" version="7.0"><![CDATA[Es stehen keine erlaubten Dokumenttypen zur Verfügung. Sie müssen diese in den Einstellungen (unter "Dokumenttypen") aktivieren.]]></key>
     <key alias="noDocumentTypesWithNoSettingsAccess">Die im Inhaltsbaum ausgewählte Seite erlaubt keine Unterseiten.</key>
-    <key alias="noDocumentTypesEditPermissions">Bearbeitungsrechte für diesen Dokumenttyp</key>  
+    <key alias="noDocumentTypesEditPermissions">Bearbeitungsrechte für diesen Dokumenttyp</key>
     <key alias="noMediaTypes" version="7.0"><![CDATA[Es stehen keine erlaubten Medientypen zur Verfügung. Sie müssen diese in den Einstellungen (unter "Medientypen") aktivieren.]]></key>
     <key alias="noMediaTypesWithNoSettingsAccess">Das im Strukturbaum ausgewählte Medienelement erlaubt keine untergeordneten Elemente.</key>
     <key alias="noMediaTypesEditPermissions">Bearbeitungsrechte für diesen Medientyp</key>
@@ -1155,21 +1135,12 @@
     <key alias="deletewarning">Diese Aktion entfernt das Paket</key>
     <key alias="dropHere">Hierher ziehen zum Hochladen</key>
     <key alias="includeAllChildNodes">Alle Unterknoten einschließen</key>
-    <key alias="orClickHereToUpload">oder hier klicken, um die Paket-Datei auszuwählen</key>
-    <key alias="uploadPackage">Paket hochladen</key>
-    <key alias="localPackageDescription">
-      Wählen Sie ein Paket auf Ihrem lokalen Computer über "Datei auswählen" aus. <br />
-      Installieren Sie nur Pakete von Quellen, denen Sie vertrauen.
-    </key>
-    <key alias="uploadAnother">Ein weiteres Paket hochladen</key>
-    <key alias="cancelAndUploadAnother">Abbrechen und anderes Paket hochladen</key>
     <key alias="accept">Ich akzeptiere</key>
     <key alias="termsOfUse">Benutzungsbedingungen</key>
     <key alias="pathToFile">Dateipfad</key>
     <key alias="pathToFileDescription">Absoluter Dateipfad (z. B.: /bin/umbraco.bin)</key>
     <key alias="installed">Installiert</key>
     <key alias="installedPackages">Installierte Pakete</key>
-    <key alias="installLocal">Lokale Installation</key>
     <key alias="installFinish">Abschließen</key>
     <key alias="noConfigurationView">Diese Paket hat keine Einstellungen</key>
     <key alias="noPackagesCreated">Es wurden noche keine Pakete angelegt</key>
@@ -1181,7 +1152,6 @@
     <strong>'Pakete'</strong> rechts, oben), um es zu installieren
     ]]>
     </key>
-    <key alias="packageActions">Packet Aktionen</key>
     <key alias="packageAuthorUrl">Autor URL</key>
     <key alias="packageContent">Paketinhalt</key>
     <key alias="packageFiles">Paketdateien</key>
@@ -1229,10 +1199,10 @@
     <key alias="packageUninstalledText">Das Paket wurde erfolgreich deinstalliert</key>
     <key alias="packageUninstallHeader">Paket deinstallieren</key>
     <key alias="packageUninstallText">
-      <![CDATA[Sie können einzelne Elemente, die Sie nicht deinstallieren möchten, unten abwählen. 
+      <![CDATA[Sie können einzelne Elemente, die Sie nicht deinstallieren möchten, unten abwählen.
     Wenn Sie "Deinstallation bestätigen" klicken, werden alle markierten Elemente entfernt.<br />
-    <span style="color: Red; font-weight: bold;">Achtung:</span> alle Dokumente, Medien, etc, die von den zu entfernenden Elementen abhängen, 
-    werden nicht mehr funktionieren und im Zweifelsfall kann dass gesamte CMS instabil werden. 
+    <span style="color: Red; font-weight: bold;">Achtung:</span> alle Dokumente, Medien, etc, die von den zu entfernenden Elementen abhängen,
+    werden nicht mehr funktionieren und im Zweifelsfall kann dass gesamte CMS instabil werden.
     Bitte deinstallieren Sie also mit Vorsicht. Falls Sie unsicher sind, kontaktieren Sie den Autor des Pakets.]]>
     </key>
     <key alias="packageVersion">Paketversion</key>
@@ -1246,7 +1216,6 @@
     <key alias="installStateRestarting">Es wird neu gestartet, bitte warten...</key>
     <key alias="installStateComplete">Fertig, Ihr Browser aktualisiert jetzt, bitte warten...</key>
     <key alias="installStateCompleted">Bitte klicken Sie 'Beenden', um die Installation abzuschließen und die Seite neu zu laden.</key>
-    <key alias="installStateUploading">Paket wird hochgeladen...</key>
   </area>
   <area alias="paste">
     <key alias="doNothing">Einfügen mit Formatierung (Nicht empfohlen)</key>
@@ -1291,7 +1260,7 @@
       %0% kann nicht veröffentlicht werden, da die Veröffentlichung zeitlich geplant ist.
     </key>
     <key alias="contentPublishedFailedExpired">
-      <![CDATA[      
+      <![CDATA[
     %0% konnte nicht veröffentlicht werden, weil das Element abgelaufen ist.
     ]]>
     </key>
@@ -1517,7 +1486,7 @@
     <key alias="insertDictionaryItemDesc">Ein Wörterbuchelement ist ein Platzhalter für lokalisierbaren Text. Das macht es einfach mehrsprachige Websites zu gestalten.</key>
     <key alias="insertMacro">Makro</key>
     <key alias="insertMacroDesc">
-       Ein Makro ist eine konfigurierbare Komponente, die großartig 
+       Ein Makro ist eine konfigurierbare Komponente, die großartig
        für wiederverwendbare Teile Ihres Entwurfes sind,
       für welche Sie optionale Parameter benötigen, wie z. B. Galerien, Formulare oder Listen.
     </key>
@@ -1536,7 +1505,7 @@
     <key alias="renderBody">Untergeordnete Vorlage einfügen</key>
     <key alias="renderBodyDesc">
       <![CDATA[
-      Verarbeitet den Inhalt einer untergeordneten Vorlage durch 
+      Verarbeitet den Inhalt einer untergeordneten Vorlage durch
       Einfügen eines <code>@RenderBody()</code> Platzhalters.
       ]]>
     </key>
@@ -1544,7 +1513,7 @@
     <key alias="defineSectionDesc">
       <![CDATA[
       Definiert einen Teil Ihrer Vorlage als benannten Bereich durch Umschließen mit <code>@section { ... }</code>.
-      Dieser benannte Bereich kann in der übergeordneten Vorlage 
+      Dieser benannte Bereich kann in der übergeordneten Vorlage
       durch Verwendung von <code>@RenderSection</code> eingefügt werden.
       ]]>
     </key>
@@ -2254,5 +2223,9 @@
     <key alias="openBackofficeSearch">Back-Office Suche öffnen</key>
     <key alias="openCloseBackofficeHelp">Back-Office Hilfe öffnen / schliessen</key>
     <key alias="openCloseBackofficeProfileOptions">Ihre Profil-Einstellungen öffnen / schliessen</key>
+  </area>
+  <area alias="logViewer">
+    <key alias="selectAllLogLevelFilters">Wählen Sie Alle</key>
+    <key alias="deselectAllLogLevelFilters">Alle abwählen</key>
   </area>
 </language>

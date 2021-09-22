@@ -12,6 +12,7 @@
         var vm = this;
         vm.fresh = true;
         vm.loading = true;
+        vm.versionLoaded = false; 
         vm.working = false;
         vm.reported = false;
         vm.syncing = false;
@@ -123,6 +124,7 @@
 
             uSync8DashboardService.checkVersion()
                 .then(function (result) {
+                    vm.versionLoaded = true;
                     vm.versionInfo = result.data;
                 });
         }
@@ -374,8 +376,6 @@
                             }]
                         }
 
-                        console.log(vm.importGroup);
-
                         if (group.toLowerCase() === "forms") {
                             vm.hasuSyncForms = true;
                         }
@@ -403,7 +403,7 @@
             var options = {
                 item: item,
                 title: 'uSync Change',
-                view: "/App_Plugins/uSync8/changeDialog.html",
+                view: "/App_Plugins/uSync/changeDialog.html",
                 close: function () {
                     editorService.close();
                 }

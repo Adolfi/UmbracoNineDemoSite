@@ -68,10 +68,11 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.ContactForm
             var publishedRequest = new Mock<IPublishedRequest>();
             publishedRequest.Setup(request => request.PublishedContent).Returns(publishedContent.Object);
 
-            var umbracoContext = new Mock<IUmbracoContext>();
-            umbracoContext.Setup(context => context.PublishedRequest).Returns(publishedRequest.Object);
+            var umbracoContextMock = new Mock<IUmbracoContext>();
+            umbracoContextMock.Setup(context => context.PublishedRequest).Returns(publishedRequest.Object);
 
-            this.umbracoContextAccessor.Setup(accessor => accessor.UmbracoContext).Returns(umbracoContext.Object);
+            var umbracoContext = umbracoContextMock.Object;
+            umbracoContextAccessor.Setup(x => x.TryGetUmbracoContext(out umbracoContext)).Returns(true);
         }
     }
 }

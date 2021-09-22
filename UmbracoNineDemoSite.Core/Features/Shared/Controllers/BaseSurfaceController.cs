@@ -21,6 +21,11 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Controllers
         /// <summary>
         /// For testability purposes. SurfaceController.CurrentPage is not testable in Umbraco.Cms.Web.Website.Controllers at the moment.
         /// </summary>
-        protected override IPublishedContent CurrentPage => umbracoContextAccessor.UmbracoContext.PublishedRequest.PublishedContent;
+        protected override IPublishedContent CurrentPage {
+            get {
+                umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+                return umbracoContext?.PublishedRequest.PublishedContent;
+            }
+        }
     }
 }

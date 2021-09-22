@@ -138,7 +138,7 @@
     <key alias="saveListView">Sauver la mise en page de la liste</key>
     <key alias="schedulePublish">Planifier</key>
     <key alias="saveAndPreview">Prévisualiser</key>
-    <key alias="showPage">Prévisualiser</key>    
+    <key alias="showPage">Prévisualiser</key>
     <key alias="showPageDisabled">La prévisualisation est désactivée car aucun modèle n'a été assigné.</key>
     <key alias="styleChoose">Choisir un style</key>
     <key alias="styleShow">Afficher les styles</key>
@@ -182,26 +182,6 @@
     <key alias="smallSendToPublishVariant">Envoyer pour publication</key>
     <key alias="smallSort">Ordonner</key>
     <key alias="historyIncludingVariants">Historique (toutes variantes)</key>
-  </area>
-  <area alias="changeDocType">
-    <key alias="changeDocTypeInstruction">Pour changer le type de document du contenu séléctionné, faites d'abord un choix dans la liste des types valides à cet endroit.</key>
-    <key alias="changeDocTypeInstruction2">Puis confirmez et/ou modifiez la correspondance des propriétés du type actuel vers le nouveau, et cliquez sur Sauver.</key>
-    <key alias="contentRepublished">Le contenu a été republié.</key>
-    <key alias="currentProperty">Propriété actuelle</key>
-    <key alias="currentType">Type actuel</key>
-    <key alias="docTypeCannotBeChanged">Le type de document ne peut être changé car il n'y a pas d'alternative valide à cet endroit. Une alternative sera valide si elle est autorisée sous le parent du contenu sélectionné et si tous les éléments de contenu enfants existants peuvent être créés avec celle-ci.</key>
-    <key alias="docTypeChanged">Type de document modifié</key>
-    <key alias="mapProperties">Faire correspondre les propriétés</key>
-    <key alias="mapToProperty">Faire correspondre à la propriété</key>
-    <key alias="newTemplate">Nouveau modèle</key>
-    <key alias="newType">Nouveau type</key>
-    <key alias="none">aucun</key>
-    <key alias="selectedContent">Contenu</key>
-    <key alias="selectNewDocType">Choisir le nouveau Type de Document</key>
-    <key alias="successMessage">Le type de document du contenu séléctionné a bien été changé en [new type] et les correspondances de propriétés suivantes effectuées :</key>
-    <key alias="to">en</key>
-    <key alias="validationErrorPropertyWithMoreThanOneMapping">Impossible de terminer la correspondance des propriétés car une ou plusieurs propriétés ont plus d'une correspondance définie.</key>
-    <key alias="validDocTypesNote">Seuls les types de documents valides à cet endroit sont affichés.</key>
   </area>
   <area alias="codefile">
     <key alias="createFolderFailedById">Echec de la création d'un dossier sous le parent avec l'ID %0%</key>
@@ -320,7 +300,7 @@
   <area alias="media">
     <key alias="clickToUpload">Cliquez pour télécharger</key>
     <key alias="orClickHereToUpload">ou cliquez ici pour choisir un fichier</key>
-	<key alias="dragFilesHereToUpload">Vous pouvez faire glisser des fichiers ici pour télécharger.</key>
+	  <key alias="dragFilesHereToUpload">Vous pouvez faire glisser des fichiers ici pour télécharger.</key>
     <key alias="disallowedFileType">Ce fichier ne peut pas ête chargé, il n'est pas d'un type de fichier autorisé.</key>
     <key alias="maxFileSize">La taille maximum de fichier est</key>
     <key alias="mediaRoot">Racine du média</key>
@@ -1166,24 +1146,17 @@ Pour gérer votre site, ouvrez simplement le backoffice Umbraco et commencez à 
     <key alias="deletewarning">Ceci va supprimer le package</key>
     <key alias="dropHere">Déposez pour uploader</key>
     <key alias="includeAllChildNodes">Inclure tous les noeuds enfant</key>
-    <key alias="orClickHereToUpload">ou cliquez ici pour choisir les fichiers</key>
-    <key alias="uploadPackage">Uploader un package</key>
-    <key alias="localPackageDescription">Installez un package local en le sélectionnant sur votre ordinateur. Installez uniquement des packages de sources fiables que vous connaissez</key>
-    <key alias="uploadAnother">Uploader un autre package</key>
-    <key alias="cancelAndUploadAnother">Annuler et uploader un autre package</key>
     <key alias="accept">J'accepte</key>
     <key alias="termsOfUse">les conditions d'utilisation</key>
     <key alias="pathToFile">Chemin du fichier</key>
     <key alias="pathToFileDescription">Le chemin absolu du fichier (eg: /bin/umbraco.bin)</key>
     <key alias="installed">Installé</key>
     <key alias="installedPackages">Packages installés</key>
-    <key alias="installLocal">Installer localement</key>
     <key alias="installFinish">Terminer</key>
     <key alias="noConfigurationView">Ce package n'a pas de vue de configuration</key>
     <key alias="noPackagesCreated">Aucun package n'a encore été créé</key>
     <key alias="noPackages">Vous n'avez aucun package installé</key>
     <key alias="noPackagesDescription"><![CDATA[Vous n'avez pas de package installé. Veuillez soit installer un package local en le sélectionnant sur votre ordinateur, soit naviguer dans la liste des packages disponibles en utilisant l'icone <strong>'Packages'</strong> en haut à droite de votre écran]]></key>
-    <key alias="packageActions">Actions du package</key>
     <key alias="packageAuthorUrl">URL de l'auteur</key>
     <key alias="packageContent">Contenu du package</key>
     <key alias="packageFiles">Fichiers du package</key>
@@ -1232,14 +1205,6 @@ Pour gérer votre site, ouvrez simplement le backoffice Umbraco et commencez à 
     <key alias="packageVersionUpgrade">Mise à jour à partir de la version</key>
     <key alias="packageAlreadyInstalled">Package déjà installé</key>
     <key alias="targetVersionMismatch">Ce package ne peut pas être installé, il nécessite au minimum la version Umbraco %0%</key>
-    <key alias="installStateUninstalling">Désinstallation...</key>
-    <key alias="installStateDownloading">Téléchargement...</key>
-    <key alias="installStateImporting">Import...</key>
-    <key alias="installStateInstalling">Installation...</key>
-    <key alias="installStateRestarting">Redémarrage, veuillez patienter...</key>
-    <key alias="installStateComplete">Terminé, votre navigateur va être rafraîchi, veuillez patienter...</key>
-    <key alias="installStateCompleted">Veuillez cliquer sur terminer pour compléter l'installation et recharger la page.</key>
-    <key alias="installStateUploading">Package en cours de chargement...</key>
   </area>
   <area alias="paste">
     <key alias="doNothing">Coller en conservant le formatage (non recommandé)</key>
@@ -2232,6 +2197,8 @@ Pour gérer votre site, ouvrez simplement le backoffice Umbraco et commencez à 
   </area>
   <area alias="logViewer">
       <key alias="logLevels">Niveaux de Log</key>
+      <key alias="selectAllLogLevelFilters">Tout sélectionner</key>
+      <key alias="deselectAllLogLevelFilters">Tout déselectionner</key>
       <key alias="savedSearches">Recherches sauvegardées</key>
       <key alias="totalItems">Nombre total d'éléments</key>
       <key alias="timestamp">Date</key>

@@ -1,7 +1,7 @@
 ﻿<div ng-controller="uSync8Controller as vm">
 
 
-    <div ng-if="!vm.loading && vm.versionInfo.isCurrent != true" class="alert alert-info usync-alert">
+    <div ng-if="vm.versionLoaded && vm.versionInfo.isCurrent != true" class="alert alert-info usync-alert">
         <localize key="usync_newer"></localize> [v{{vm.versionInfo.versionInfo.Core}}]
         <span ng-if="vm.versionInfo.versionInfo.message">
             <a href="{{vm.versionInfo.versionInfo.link}}" target="_blank">
@@ -34,7 +34,7 @@
             </umb-box-content>
         </umb-box>
 
-        <umb-box class="usync-group-box">
+        <umb-box class="usync-group-box" ng-if="vm.groups.length > 1">
             <umb-box-content>
 
                 <div class="usync-group-box-title">
@@ -74,8 +74,8 @@
     </div>
 
 
-    <div ng-if="vm.warnings.Message.length > 0" class="alert alert-{{vm.warnings.Type}}">
-        <span ng-bind-html="vm.warnings.Message"></span>
+    <div ng-if="vm.warnings.message.length > 0" class="alert alert-{{vm.warnings.type}}">
+        <span ng-bind-html="vm.warnings.message"></span>
     </div>
 
     <div ng-if="vm.reported">

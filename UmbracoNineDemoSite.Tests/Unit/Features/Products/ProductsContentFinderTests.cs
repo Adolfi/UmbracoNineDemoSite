@@ -35,10 +35,11 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             var contentCache = new Mock<IPublishedContentCache>();
             contentCache.Setup(request => request.GetByXPath($"//{ContentTypeAlias.ProductsContainer}")).Returns(new List<IPublishedContent>() { container.Object });
 
-            var umbracoContext = new Mock<IUmbracoContext>();
-            umbracoContext.Setup(context => context.Content).Returns(contentCache.Object);
+            var umbracoContextMock = new Mock<IUmbracoContext>();
+            umbracoContextMock.Setup(context => context.Content).Returns(contentCache.Object);
 
-            umbracoContextAccessor.Setup(accessor => accessor.UmbracoContext).Returns(umbracoContext.Object);
+            var umbracoContext = umbracoContextMock.Object;
+            umbracoContextAccessor.Setup(x => x.TryGetUmbracoContext(out umbracoContext)).Returns(true);
 
             var productsContentFinder = new ProductsContentFinder(productService.Object, umbracoContextAccessor.Object);
 

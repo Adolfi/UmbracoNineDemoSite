@@ -34,7 +34,8 @@ namespace UmbracoNineDemoSite.Core.Features.Products
                 return false;
             }
 
-            var container = this.umbracoContextAccessor.UmbracoContext.Content.GetByXPath($"//{ContentTypeAlias.ProductsContainer}")?.FirstOrDefault();
+            umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+            var container = umbracoContext?.Content.GetByXPath($"//{ContentTypeAlias.ProductsContainer}")?.FirstOrDefault();
             if (container == null)
             {
                 return false;

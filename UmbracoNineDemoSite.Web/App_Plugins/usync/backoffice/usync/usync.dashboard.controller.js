@@ -11,21 +11,21 @@
         }
 
         vm.page = {
-            title: 'uSync 🦄-core beta',
+            title: '🦄 uSync',
             description: '...',
             navigation: [
                 {
                     'name': 'uSync',
                     'alias': 'uSync',
                     'icon': 'icon-infinity',
-                    'view': Umbraco.Sys.ServerVariables.umbracoSettings.appPluginsPath + '/usync/settings/default.html',
+                    'view': Umbraco.Sys.ServerVariables.umbracoSettings.appPluginsPath + '/uSync/settings/default.html',
                     'active': true
                 },
                 {
                     'name': 'Settings',
                     'alias': 'settings',
                     'icon': 'icon-settings',
-                    'view': Umbraco.Sys.ServerVariables.umbracoSettings.appPluginsPath + '/usync/settings/settings.html'
+                    'view': Umbraco.Sys.ServerVariables.umbracoSettings.appPluginsPath + '/uSync/settings/settings.html'
                 } 
             ]
         };
@@ -58,7 +58,7 @@
                 // }
 
                 vm.addOns.forEach(function (value, key) {
-                    if (value.View !== '') {
+                    if (value.view !== '') {
                         vm.page.navigation.splice(vm.page.navigation.length - insertOffset, 0,
                             {
                                 'name': value.displayName,
