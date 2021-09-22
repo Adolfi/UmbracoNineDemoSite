@@ -4,10 +4,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Umbraco.Cms" Version="9.0.0-beta004" />
-        <PackageReference Include="Umbraco.Cms.SqlCe" Version="9.0.0-beta004" />
+        <PackageReference Include="Umbraco.Cms" Version="9.0.0-rc003" />
+        <PackageReference Include="Umbraco.Cms.SqlCe" Version="9.0.0-rc003" />
         <PackageReference Include="Umbraco.SqlServerCE" Version="4.0.0.1" />
-        <PackageReference Include="uSync" Version="9.0.0-beta003" />
+        <PackageReference Include="uSync" Version="9.0.0-rc003" />
     </ItemGroup>
 
 
@@ -44,6 +44,7 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="umbraco\models\" />
+      <Folder Include="wwwroot\assets\img\" />
     </ItemGroup>
 
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
