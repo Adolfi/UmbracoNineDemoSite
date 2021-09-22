@@ -20,10 +20,12 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
     public class UmbracoContentComponent : IComponent
     {
         private readonly IExamineManager _examineManager;
+
         public UmbracoContentComponent(IExamineManager examineManager)
         {
             _examineManager = examineManager;
         }
+
         public void Initialize()
         {
             if (!_examineManager.TryGetIndex(IndexNames.ExternalIndex, out IIndex index))
@@ -43,7 +45,6 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
                 var newPathValue = pathValue.Replace(",", " ");
                 e.ValueSet.Set(pathKey, newPathValue);
             }
-
         }
 
         public void Terminate()
