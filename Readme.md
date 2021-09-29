@@ -8,9 +8,7 @@ This is a demo site for Umbraco v9 build in the new .NET Core v5 version.
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
 
-This is not **the way** of building Umbraco sites, it's **a way**. 
-This site is built in a way that I like to build my Umbraco sites, which is a very "backend way". 
-There are simpler ways of building Umbraco sites *(using ModelsBuilder for example)*, so if you are new to Umbraco make sure you [read the official docs](https://our.umbraco.com/documentation/) for more info.
+This is not **the way** of building Umbraco sites, it's **a way**. There are less complex ways of building Umbraco sites *(using ModelsBuilder for example, [see discussion](https://github.com/Adolfi/UmbracoNineDemoSite/issues/10))* so if you are new to Umbraco make sure you [read the official docs](https://our.umbraco.com/documentation/) and don't use this this project as your only source of inspiration.
 
 ### Content:
 - [Every page is rendered through a RenderController *(Route Hijacking)*](UmbracoNineDemoSite.Core/Features/Home/HomeController.cs).
