@@ -4,8 +4,8 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 {
-    public class SiteSettingsComposer : IUserComposer
-	{
+    public class SiteSettingsComposer : IComposer
+    {
         public void Compose(IUmbracoBuilder builder)
         {
             builder.Services.AddTransient<ISiteSettings, SiteSettings>();
