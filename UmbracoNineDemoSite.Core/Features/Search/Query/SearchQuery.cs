@@ -16,7 +16,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query
         {
             var query = _searcher.CreateQuery("content");
 
-            var filter = query.FilterByAlias(new[] {ContentTypeAlias.Page})
+            var filter = query.FilterByAlias(new[] {ContentTypeAlias.Page, ContentTypeAlias.Home})
                 .SearchByTerm(searchCriteria.SearchTerm);
 
             return filter;

@@ -8,5 +8,6 @@
         public const string BodyText = "bodyText";
         public const string Description = "description";
         public const string Name = "name";
+        public const string Preamble = "preamble";
     }
 }
