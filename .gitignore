@@ -362,7 +362,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Custom project ignores
-/UmbracoNineDemoSite.Web/umbraco/Data/*
+/UmbracoNineDemoSite.Web/umbraco/Data/
 /UmbracoNineDemoSite.Web/umbraco/config/
 /UmbracoNineDemoSite.Web/umbraco/mediacache
 /UmbracoNineDemoSite.Web/wwwroot/umbraco/
