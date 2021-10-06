@@ -5,7 +5,7 @@ using UmbracoNineDemoSite.Integrations.Products.Services;
 
 namespace UmbracoNineDemoSite.Core.Features.Products
 {
-    public class ProductsComposer : IUserComposer
+    public class ProductsComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
