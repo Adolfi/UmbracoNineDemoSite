@@ -363,6 +363,9 @@ FodyWeavers.xsd
 
 # Custom project ignores
 /UmbracoNineDemoSite.Web/umbraco/Data/*
+/UmbracoNineDemoSite.Web/umbraco/config/*
 /UmbracoNineDemoSite.Web/umbraco/mediacache
-/UmbracoNineDemoSite.Web/wwwroot/umbraco/lib/*
+/UmbracoNineDemoSite.Web/wwwroot/umbraco/
+
+/UmbracoNineDemoSite.Web/App_Plugins/usync/
 *.sdf

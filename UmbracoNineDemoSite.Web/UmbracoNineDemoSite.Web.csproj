@@ -43,6 +43,7 @@
       <ProjectReference Include="..\UmbracoNineDemoSite.Core\UmbracoNineDemoSite.Core.csproj" />
     </ItemGroup>
     <ItemGroup>
+      <Folder Include="App_Plugins\" />
       <Folder Include="umbraco\models\" />
       <Folder Include="wwwroot\assets\img\" />
     </ItemGroup>
