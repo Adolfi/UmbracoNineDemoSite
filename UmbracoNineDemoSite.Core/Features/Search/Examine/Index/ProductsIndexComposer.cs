@@ -13,7 +13,7 @@ using UmbracoNineDemoSite.Integrations.Products.Services;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
 {
-    public class ProductsIndexComposer : IUserComposer
+    public class ProductsIndexComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
