@@ -5,7 +5,7 @@ using UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 {
-    public class NavigationServiceComposer : IUserComposer
+    public class NavigationServiceComposer : IComposer
 	{
         public void Compose(IUmbracoBuilder builder)
         {
