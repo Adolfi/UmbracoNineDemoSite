@@ -12,19 +12,25 @@
 
 
     <ItemGroup>
+        <Compile Remove="App_Plugins\usync\**" />
         <Compile Remove="umbraco\Data\**" />
         <Compile Remove="umbraco\logs\**" />
         <Compile Remove="umbraco\MediaCache\**" />
+        <Compile Remove="wwwroot\umbraco\**" />
     </ItemGroup>
     <ItemGroup>
+        <EmbeddedResource Remove="App_Plugins\usync\**" />
         <EmbeddedResource Remove="umbraco\Data\**" />
         <EmbeddedResource Remove="umbraco\logs\**" />
         <EmbeddedResource Remove="umbraco\MediaCache\**" />
+        <EmbeddedResource Remove="wwwroot\umbraco\**" />
     </ItemGroup>
     <ItemGroup>
+        <None Remove="App_Plugins\usync\**" />
         <None Remove="umbraco\Data\**" />
         <None Remove="umbraco\logs\**" />
         <None Remove="umbraco\MediaCache\**" />
+        <None Remove="wwwroot\umbraco\**" />
         <None Include="config\**\*.*">
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
             <CopyToPublishDirectory>Always</CopyToPublishDirectory>
@@ -35,9 +41,11 @@
         </None>
     </ItemGroup>
     <ItemGroup>
+        <Content Remove="App_Plugins\usync\**" />
         <Content Remove="umbraco\Data\**" />
         <Content Remove="umbraco\logs\**" />
         <Content Remove="umbraco\MediaCache\**" />
+        <Content Remove="wwwroot\umbraco\**" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\UmbracoNineDemoSite.Core\UmbracoNineDemoSite.Core.csproj" />
