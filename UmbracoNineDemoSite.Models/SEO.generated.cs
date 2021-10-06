@@ -16,13 +16,13 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.GeneratedModels.Models
+namespace UmbracoNineDemoSite.Models
 {
 	// Mixin Content Type with alias "sEO"
 	/// <summary>#SEO</summary>
 	public partial interface ISEO : IPublishedContent
 	{
-		/// <summary>PageDescription</summary>
+		/// <summary>#MetaPageDescription</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string PageDescription { get; }
@@ -65,14 +65,14 @@ namespace UmbracoNineDemoSite.GeneratedModels.Models
 		// properties
 
 		///<summary>
-		/// PageDescription
+		/// #MetaPageDescription: #MetaPageDescriptionDescription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageDescription")]
 		public virtual string PageDescription => GetPageDescription(this, _publishedValueFallback);
 
-		/// <summary>Static getter for PageDescription</summary>
+		/// <summary>Static getter for #MetaPageDescription</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetPageDescription(ISEO that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "pageDescription");

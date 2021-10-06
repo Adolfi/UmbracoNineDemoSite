@@ -48,11 +48,11 @@
         <Content Remove="wwwroot\umbraco\**" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\UmbracoNineDemoSite.Core\UmbracoNineDemoSite.Core.csproj" />
-    </ItemGroup>
-    <ItemGroup>
       <Folder Include="App_Plugins\" />
       <Folder Include="wwwroot\assets\img\" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\UmbracoNineDemoSite.Core\UmbracoNineDemoSite.Core.csproj" />
     </ItemGroup>
 
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->

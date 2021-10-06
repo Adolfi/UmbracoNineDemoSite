@@ -4,7 +4,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
-using gM = UmbracoNineDemoSite.GeneratedModels.Models;
+using gM = UmbracoNineDemoSite.Models;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Content
 {

@@ -16,7 +16,7 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.GeneratedModels.Models
+namespace UmbracoNineDemoSite.Models
 {
 	/// <summary>Image</summary>
 	[PublishedModel("Image")]

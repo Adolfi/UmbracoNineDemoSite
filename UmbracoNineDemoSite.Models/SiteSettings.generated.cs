@@ -16,16 +16,16 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.GeneratedModels.Models
+namespace UmbracoNineDemoSite.Models
 {
-	/// <summary>#Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, ISEO
+	/// <summary>#SiteSettings</summary>
+	[PublishedModel("siteSettings")]
+	public partial class SiteSettings : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "siteSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
@@ -34,14 +34,14 @@ namespace UmbracoNineDemoSite.GeneratedModels.Models
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<SiteSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Home(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public SiteSettings(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,28 +50,28 @@ namespace UmbracoNineDemoSite.GeneratedModels.Models
 		// properties
 
 		///<summary>
-		/// #BackgroundImage: #BackgroundImageDescription
+		/// #CallToActionButtonLabel: #CallToActionButtonLabelDescription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("backgroundImage")]
-		public virtual string BackgroundImage => this.Value<string>(_publishedValueFallback, "backgroundImage");
+		[ImplementPropertyType("callToActionButtonLabel")]
+		public virtual string CallToActionButtonLabel => this.Value<string>(_publishedValueFallback, "callToActionButtonLabel");
 
 		///<summary>
-		/// #Blocks: #BlocksDescription
+		/// #CallToActionDescription: #CallToActionDescriptionDescription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("blocks")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Blocks => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "blocks");
+		[ImplementPropertyType("callToActionDescription")]
+		public virtual string CallToActionDescription => this.Value<string>(_publishedValueFallback, "callToActionDescription");
 
 		///<summary>
-		/// #CallToActionLabel: #CallToActionLabelDescription
+		/// #CallToActionHeader: #CallToActionHeaderDescription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callToActionLabel")]
-		public virtual string CallToActionLabel => this.Value<string>(_publishedValueFallback, "callToActionLabel");
+		[ImplementPropertyType("callToActionHeader")]
+		public virtual string CallToActionHeader => this.Value<string>(_publishedValueFallback, "callToActionHeader");
 
 		///<summary>
 		/// #CallToActionUrl: #CallToActionUrlDescription
@@ -82,35 +82,11 @@ namespace UmbracoNineDemoSite.GeneratedModels.Models
 		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent CallToActionUrl => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "callToActionUrl");
 
 		///<summary>
-		/// #Heading: #HeadingDescription
+		/// #FooterText: #FooterTextDescription
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("heading")]
-		public virtual string Heading => this.Value<string>(_publishedValueFallback, "heading");
-
-		///<summary>
-		/// #Preamble: #PreambleDescription
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("preamble")]
-		public virtual string Preamble => this.Value<string>(_publishedValueFallback, "preamble");
-
-		///<summary>
-		/// PageDescription
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageDescription")]
-		public virtual string PageDescription => global::UmbracoNineDemoSite.GeneratedModels.Models.SEO.GetPageDescription(this, _publishedValueFallback);
-
-		///<summary>
-		/// #PageTitle: #PageTitleDescription
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0+5bfab13dc5a268714aad2426a2b68ab5561a6407")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => global::UmbracoNineDemoSite.GeneratedModels.Models.SEO.GetPageTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("footerText")]
+		public virtual string FooterText => this.Value<string>(_publishedValueFallback, "footerText");
 	}
 }

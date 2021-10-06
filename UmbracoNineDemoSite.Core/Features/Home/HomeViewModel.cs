@@ -5,7 +5,7 @@ using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
 
-using gM = UmbracoNineDemoSite.GeneratedModels.Models;
+using gM = UmbracoNineDemoSite.Models;
 
 namespace UmbracoNineDemoSite.Core.Features.Home
 {
