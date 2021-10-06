@@ -5,7 +5,7 @@ using UmbracoNineDemoSite.Core.Features.Search.Services;
 
 namespace UmbracoNineDemoSite.Core.Features.Search
 {
-    public class SearchComposer : IUserComposer
+    public class SearchComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
