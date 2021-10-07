@@ -1,35 +1,34 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
-using gM = UmbracoNineDemoSite.Models;
+using gM = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Content
 {
-	public class SitePageBase : ContentModel
+	public class SitePageBase
 	{
 		private readonly gM.ISEO seoModel;
-		public SitePageBase(IPublishedContent content) : base(content)
+		public SitePageBase(IPublishedContent content)
 		{
-			seoModel = content as gM.ISEO;
-			if (seoModel == null)// necessary for test
-			{
-				seoModel = new gM.SEO(content, null);
-			}
+			SiteName = content.Root().Name;
+
+			seoModel = content as gM.ISEO ?? new gM.SEO(content, null);
 		}
 
 		public string BodyClass = "frontpage theme-font-serif theme-color-earth";
 
-		public int Id => this.Content.Id;
+		public int Id => seoModel.Id;
 
-		public string Name => this.Content.Name;
+		public string Name => seoModel.Name;
 
-		public virtual string PageTitle => seoModel.PageTitle;// this.Content.Value<string>(PropertyAlias.PageTitle);
+		public virtual string PageTitle => seoModel.PageTitle;
 
 		public virtual string PageDescription => seoModel.PageDescription;
 
-		public string SiteName => this.Content.AncestorOrSelf(1).Name;
+		public string SiteName { get; }
 	}
 }

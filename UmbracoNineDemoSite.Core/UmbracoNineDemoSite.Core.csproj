@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UmbracoNineDemoSite.Integrations.Products\UmbracoNineDemoSite.Integrations.Products.csproj" />
-    <ProjectReference Include="..\UmbracoNineDemoSite.Models\UmbracoNineDemoSite.Models.csproj" />
   </ItemGroup>
 
 </Project>

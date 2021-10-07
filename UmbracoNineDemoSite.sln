@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Integrations.Products", "UmbracoNineDemoSite.Integrations.Products\UmbracoNineDemoSite.Integrations.Products.csproj", "{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Models", "UmbracoNineDemoSite.Models\UmbracoNineDemoSite.Models.csproj", "{E0221220-389C-44E7-A687-57190AE2C959}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,10 +40,6 @@ Global
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0221220-389C-44E7-A687-57190AE2C959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0221220-389C-44E7-A687-57190AE2C959}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0221220-389C-44E7-A687-57190AE2C959}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0221220-389C-44E7-A687-57190AE2C959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

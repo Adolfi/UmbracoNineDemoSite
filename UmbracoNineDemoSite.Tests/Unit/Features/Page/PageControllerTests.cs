@@ -20,19 +20,20 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
     public class PageControllerTests
     {
         private PageController controller;
+        private Mock<IPublishedContent> publishedContent;
 
         [SetUp]
         public void SetUp()
         {
-            this.controller = new PageController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
+            controller = new PageController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
+            publishedContent = new Mock<IPublishedContent>();
         }
 
         [Test]
         [TestCase("Heading")]
         [TestCase("Other heading")]
         public void Given_PublishedContentHasHeading_When_PageAction_Then_ReturnViewModelWithHeading(string heading)
-        {
-            var publishedContent = new Mock<IPublishedContent>();
+        {            
             publishedContent.SetupPropertyValue(PropertyAlias.Heading, heading);
             var contentModel = new ContentModel(publishedContent.Object);
 
@@ -46,9 +47,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
         [TestCase("Other BodyText")]
         public void Given_PublishedContentHasBodyText_When_PageAction_Then_ReturnViewModelWithBodyText(string bodyText)
         {
-            var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);
-
-            var publishedContent = new Mock<IPublishedContent>();
+            var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);            
             publishedContent.SetupPropertyValue(PropertyAlias.BodyText, bodyTextEncodedHtml);
             var contentModel = new ContentModel(publishedContent.Object);
 
@@ -60,8 +59,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
         [Test]
         public void Given_PublishedContentHasBlocks_When_PageAction_Then_ReturnViewModelWithBlocks()
         {
-            var blockList = new BlockListModel(new List<BlockListItem>());
-            var publishedContent = new Mock<IPublishedContent>();
+            var blockList = new BlockListModel(new List<BlockListItem>());            
             publishedContent.SetupPropertyValue(PropertyAlias.Blocks, blockList);
             var contentModel = new ContentModel(publishedContent.Object);
 
