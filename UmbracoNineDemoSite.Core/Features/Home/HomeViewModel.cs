@@ -10,24 +10,14 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 {
 	public class HomeViewModel : SitePageBase, IHeadingPage
 	{
-		private readonly gM.Home gModel;
-		public HomeViewModel(IPublishedContent content) : base(content) {
-			gModel = content as gM.Home ?? new gM.Home(content, null);
-		}
+		public HomeViewModel() : base() { }
 
-		public string Heading => gModel.Heading;
-		public string Preamble => gModel.Preamble;
-		public string BackgroundImage => gModel.BackgroundImage;
-		public string CallToActionUrl => gModel.CallToActionUrl?.Url();
-		public string CallToActionLabel => gModel.CallToActionLabel;
-		public BlockListModel Blocks => gModel.Blocks;
-		public HeroViewModel Hero => new()
-		{
-			Heading = this.Heading,
-			Preamble = this.Preamble,
-			BackgroundImageUrl = this.BackgroundImage,
-			CallToActionUrl = this.CallToActionUrl,
-			CallToActionLabel = this.CallToActionLabel
-		};
+		public string Heading { get; set; }
+		public string Preamble { get; set; }
+		public string BackgroundImage { get; set; }
+		public string CallToActionUrl { get; set; }
+		public string CallToActionLabel { get; set; }
+		public BlockListModel Blocks { get; set; }
+		public HeroViewModel Hero { get; set; }
 	}
 }

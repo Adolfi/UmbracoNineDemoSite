@@ -25,6 +25,15 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
         {
             controller = new HomeController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
             publishedContent = new Mock<IPublishedContent>();
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.PageTitle).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.PageDescription).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Preamble).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.BackgroundImage).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Heading).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.CallToActionLabel).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.CallToActionUrl).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.SiteName).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Blocks).ToCamelCase(), new BlockListModel(new List<BlockListItem>()));
         }
 
         [Test]
@@ -41,8 +50,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
         }
 
         [Test]
-        [TestCase("PageTitle")]
-        [TestCase("Other PageTitle")]
+        [TestCase("PageDescription")]
+        [TestCase("Other PageDescription")]
         public void Given_PublishedContentHasHeading_When_HomeAction_Then_ReturnViewModelWithPageDescrition(string pageDescription)
         {
             publishedContent.SetupPropertyValue(nameof(HomeViewModel.PageDescription).ToCamelCase(), pageDescription);

@@ -27,6 +27,12 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
         {
             controller = new PageController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
             publishedContent = new Mock<IPublishedContent>();
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.PageTitle).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.PageDescription).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.Heading).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.BodyText).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.SiteName).ToCamelCase(), string.Empty);
+            publishedContent.SetupPropertyValue(nameof(PageViewModel.Blocks).ToCamelCase(), new BlockListModel(new List<BlockListItem>()));
         }
 
         [Test]

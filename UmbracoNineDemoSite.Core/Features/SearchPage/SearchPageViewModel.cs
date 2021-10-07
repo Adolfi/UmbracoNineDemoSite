@@ -1,27 +1,12 @@
-﻿using Umbraco.Cms.Core.Models.PublishedContent;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-
-using gM = UmbracoNineDemoSite.Core;
+﻿using UmbracoNineDemoSite.Core.Features.Shared.Content;
 
 namespace UmbracoNineDemoSite.Core.Features.SearchPage
 {
 	public class SearchPageViewModel : SitePageBase, IHeadingPage
 	{
-		private readonly gM.SearchPage gModel;
-		public SearchPageViewModel(IPublishedContent content) : base(content)
-		{
-			gModel = content as gM.SearchPage ?? new gM.SearchPage(content, null);
+		public SearchPageViewModel() : base() { }
 
-			SearchForm = new SearchFormModel
-			{
-				NoResultsFound = gModel.NoResultsFoundText,
-				TotalResults = gModel.TotalResults,
-				SearchTermText = gModel.SearchTermText
-			};
-		}
-
-		public string Heading => gModel.Heading;
-
+		public string Heading { get; set; }
 		public SearchFormModel SearchForm { get; set; }
 	}
 }

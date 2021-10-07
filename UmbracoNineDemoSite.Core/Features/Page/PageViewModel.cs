@@ -9,16 +9,18 @@ namespace UmbracoNineDemoSite.Core.Features.Page
 {
 	public class PageViewModel : SitePageBase, IHeadingPage
 	{
-		private readonly gM.Page gModel;
-		public PageViewModel(IPublishedContent content) : base(content)
-		{
-			gModel = content as gM.Page ?? new gM.Page(content, null);
-		}
+		//private readonly gM.Page gModel;
+		//public PageViewModel(IPublishedContent content) : base(content)
+		//{
+		//	gModel = content as gM.Page ?? new gM.Page(content, null);
+		//}
 
-		public string Heading => gModel.Heading;
+		public PageViewModel() : base() { }
 
-		public IHtmlEncodedString BodyText => gModel.BodyText;
+		public string Heading { get; set; } //=> gModel.Heading;
 
-		public BlockListModel Blocks => gModel.Blocks;
+		public IHtmlEncodedString BodyText { get; set; } //=> gModel.BodyText;
+
+		public BlockListModel Blocks { get; set; } //=> gModel.Blocks;
 	}
 }
