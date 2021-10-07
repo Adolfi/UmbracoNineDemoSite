@@ -35,27 +35,12 @@
 							@Model.TotalResults <span>@(searchViewModel?.Pages.TotalCount + searchViewModel?.Products.TotalCount)</span>
 						</p>
 						<p>Pages:</p>
-						<ul>
-							@foreach (var result in searchViewModel?.Pages.Results)
-							{
-								<li>
-									<strong>@result.Heading</strong>
-									<p>@Html.Raw(result.Description)</p>
-									<a href="@result.Url">@result.Url</a>
-								</li>
-							}
-						</ul>
+
+						SearchResultItem(searchViewModel?.Pages.Results);
+
 						<p>Products:</p>
-						<ul>
-							@foreach (var result in searchViewModel?.Products.Results)
-							{
-								<li>
-									<strong>@result.Heading</strong>
-									<p>@Html.Raw(result.Description)</p>
-									<a href="@result.Url">@result.Url</a>
-								</li>
-							}
-						</ul>
+
+						SearchResultItem(searchViewModel?.Products.Results);
 					}
 					else
 					{
@@ -65,4 +50,22 @@
 			</div>
 		</div>
 	</section>
+}
+@{
+	void SearchResultItem(IList<SearchResultItem> results)
+	{
+		<ul>
+			@foreach (var result in results)
+			{
+				<li>
+					<strong>@result.Heading</strong>
+					<p>
+						@Html.Raw(result.Description)<br>
+						<br>
+						<a href="@result.Url">@result.Url</a>
+					</p>
+				</li>
+			}
+		</ul>
+	}
 }
