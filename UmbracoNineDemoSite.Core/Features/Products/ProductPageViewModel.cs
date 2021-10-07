@@ -14,6 +14,7 @@ namespace UmbracoNineDemoSite.Core.Features.Products
             this.Id = product.Id;
             this.Name = product.Name;
             this.Description = product.Description;
+            this.PageDescription = product.ShortDescription;
             this.ImageUrl = product.ImageUrl;
             this.Price = product.Price;
             this.container = container;
@@ -28,5 +29,6 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 
         public string Heading => this.container.GetProperty(PropertyAlias.Heading).GetValue() as string;
         public override string PageTitle => this.Name;
+		public override string PageDescription { get; }
     }
 }
