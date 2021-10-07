@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Html;
-using Umbraco.Cms.Core.Models.Blocks;
+﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
-//using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
 
 using gM = UmbracoNineDemoSite.Core;
@@ -19,7 +17,7 @@ namespace UmbracoNineDemoSite.Core.Features.Page
 
 		public string Heading => gModel.Heading;
 
-		public IHtmlEncodedString BodyText => gModel.BodyText;//.GetProperty(PropertyAlias.BodyText).GetValue() as HtmlEncodedString;
+		public IHtmlEncodedString BodyText => gModel.BodyText;
 
 		public BlockListModel Blocks => gModel.Blocks;
 	}

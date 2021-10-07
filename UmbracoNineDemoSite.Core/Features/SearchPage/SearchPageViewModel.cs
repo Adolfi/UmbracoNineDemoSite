@@ -1,6 +1,4 @@
 ﻿using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
 
 using gM = UmbracoNineDemoSite.Core;

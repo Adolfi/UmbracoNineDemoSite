@@ -2,7 +2,6 @@
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
-//using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
 
 using gM = UmbracoNineDemoSite.Core;
@@ -16,12 +15,12 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 			gModel = content as gM.Home ?? new gM.Home(content, null);
 		}
 
-		public string Heading => gModel.Heading;// this.Content.GetProperty(PropertyAlias.Heading).GetValue() as string;
-		public string Preamble => gModel.Preamble;// this.Content.GetProperty(PropertyAlias.Preamble).GetValue() as string;
-		public string BackgroundImage => gModel.BackgroundImage;// this.Content.GetProperty(PropertyAlias.BackgroundImage).GetValue() as string;
-		public string CallToActionUrl => gModel.CallToActionUrl?.Url();// (this.Content.GetProperty(PropertyAlias.CallToActionUrl).GetValue() as IPublishedContent)?.Url();
-		public string CallToActionLabel => gModel.CallToActionLabel;// this.Content.GetProperty(PropertyAlias.CallToActionLabel).GetValue() as string;
-		public BlockListModel Blocks => gModel.Blocks;// this.Content.GetProperty(PropertyAlias.Blocks).GetValue() as BlockListModel;
+		public string Heading => gModel.Heading;
+		public string Preamble => gModel.Preamble;
+		public string BackgroundImage => gModel.BackgroundImage;
+		public string CallToActionUrl => gModel.CallToActionUrl?.Url();
+		public string CallToActionLabel => gModel.CallToActionLabel;
+		public BlockListModel Blocks => gModel.Blocks;
 		public HeroViewModel Hero => new()
 		{
 			Heading = this.Heading,

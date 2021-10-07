@@ -1,9 +1,5 @@
-﻿using System;
-using System.Runtime.Serialization;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Models.PublishedContent;
+﻿using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
 using gM = UmbracoNineDemoSite.Core;
 
