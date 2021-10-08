@@ -19,11 +19,6 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 			var mbModel = model.Content as gM.Home ?? new gM.Home(model.Content, null);
 			var viewModel = new HomeViewModel()
 			{
-				//SiteName = mbModel?.Root()?.Name,
-				//Id = mbModel.Id,
-				//Name = mbModel.Name,
-				//PageTitle = mbModel.PageTitle ?? mbModel.Name,
-				//PageDescription = mbModel.PageDescription,
 				Heading = mbModel.Heading,
 				Preamble = mbModel.Preamble,
 				BackgroundImage = mbModel.BackgroundImage,

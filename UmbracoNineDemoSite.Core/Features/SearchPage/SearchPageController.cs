@@ -19,12 +19,6 @@ namespace UmbracoNineDemoSite.Core.Features.SearchPage
 			var mbModel = model.Content as gM.SearchPage ?? new gM.SearchPage(model.Content, null);
 			var viewModel = new SearchPageViewModel()
 			{
-				//SiteName = mbModel?.Root()?.Name,
-				//Id = mbModel.Id,
-				//Name = mbModel.Name,
-				//PageTitle = mbModel.PageTitle ?? mbModel.Name,
-				//PageDescription = mbModel.PageDescription,
-
 				Heading = mbModel.Heading,
 				SearchForm = new SearchFormModel
 				{

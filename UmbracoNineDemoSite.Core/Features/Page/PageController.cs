@@ -19,11 +19,6 @@ namespace UmbracoNineDemoSite.Core.Features.Page
             var mbModel = model.Content as gM.Page ?? new gM.Page(model.Content, null);
             var viewModel = new PageViewModel()
             {
-                //SiteName = mbModel?.Root()?.Name,
-                //Id = mbModel.Id,
-                //Name = mbModel.Name,
-                //PageTitle = mbModel.PageTitle ?? mbModel.Name,
-                //PageDescription = mbModel.PageDescription,
                 Heading = mbModel.Heading,
                 BodyText = mbModel.BodyText,
                 Blocks = mbModel.Blocks
