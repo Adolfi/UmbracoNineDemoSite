@@ -36,11 +36,11 @@
 						</p>
 						<p>Pages:</p>
 
-						SearchResultItem(searchViewModel?.Pages.Results);
+						await SearchResultItem(searchViewModel?.Pages.Results);
 
 						<p>Products:</p>
 
-						SearchResultItem(searchViewModel?.Products.Results);
+						await SearchResultItem(searchViewModel?.Products.Results);
 					}
 					else
 					{
@@ -52,7 +52,7 @@
 	</section>
 }
 @{
-	void SearchResultItem(IList<SearchResultItem> results)
+	async Task SearchResultItem(IList<SearchResultItem> results)
 	{
 		<ul>
 			@foreach (var result in results)
