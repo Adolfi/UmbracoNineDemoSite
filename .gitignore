@@ -369,3 +369,4 @@ FodyWeavers.xsd
 
 /UmbracoNineDemoSite.Web/App_Plugins/usync/
 *.sdf
+/UmbracoNineDemoSite.Web/.config/dotnet-tools.json
