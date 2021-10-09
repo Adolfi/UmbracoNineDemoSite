@@ -12,10 +12,10 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Content
 		public SitePageBase() { }
 		public SitePageBase(IPublishedContent content)
 		{
-			SiteName = content?.Root()?.Name ;
+			SiteName = content?.Root()?.Name;
 
 			seoModel = content as gM.ISEO ?? new gM.SEO(content, null);
-			if(seoModel != null)
+			if (seoModel != null)
 			{
 				Id = seoModel.Id;
 				Name = seoModel.Name;
@@ -26,14 +26,14 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Content
 
 		public string BodyClass = "frontpage theme-font-serif theme-color-earth";
 
-		public int Id { get; set; } //=> ;
+		public int Id { get; set; }
 
-		public string Name { get; set; } // => seoModel.Name;
+		public string Name { get; set; }
 
-		public virtual string PageTitle { get; set; } // => seoModel.PageTitle;
+		public virtual string PageTitle { get; set; }
 
-		public virtual string PageDescription { get; set; } //=> seoModel.PageDescription;
+		public virtual string PageDescription { get; set; }
 
-		public string SiteName { get; set;  }
+		public string SiteName { get; set; }
 	}
 }

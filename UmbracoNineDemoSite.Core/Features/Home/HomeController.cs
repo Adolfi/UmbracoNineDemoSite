@@ -5,6 +5,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
+using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
 using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
 using gM = UmbracoNineDemoSite.Core;
 
@@ -26,7 +27,7 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 				CallToActionUrl = mbModel.CallToActionUrl?.Url(),
 				Blocks = mbModel.Blocks
 			};
-			viewModel.Hero = new Shared.Components.Hero.HeroViewModel()
+			viewModel.Hero = new HeroViewModel()
 			{
 				CallToActionUrl = viewModel.CallToActionUrl,
 				CallToActionLabel = viewModel.CallToActionLabel,
