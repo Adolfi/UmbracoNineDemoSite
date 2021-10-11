@@ -1,8 +1,10 @@
 ﻿using Examine;
 using Examine.Search;
+using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Search.Criteria;
 using UmbracoNineDemoSite.Core.Features.Search.Query.Filters;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoNineDemoSite.Integrations.Products.Entities;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Query
 {
@@ -18,7 +20,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query
         {
             var query = _searcher.CreateQuery("content");
 
-            var filter = query.FilterByAlias(new[] { ContentTypeAlias.ExternalProduct })
+            var filter = query.FilterByAlias(new[] { nameof(Product).ToFirstLower() })
                 .SearchByTerm(searchCriteria.SearchTerm);
 
             return filter;

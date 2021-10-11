@@ -6,50 +6,57 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
+using UmbracoNineDemoSite.Core;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Tests.Extensions;
+using gM = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
 {
-    [TestFixture]
-    public class ContentBlockViewComponentTests
-    {
-        private ContentBlockViewComponent contentBlockViewComponent;
+	[TestFixture]
+	public class ContentBlockViewComponentTests
+	{
+		private ContentBlockViewComponent contentBlockViewComponent;
+		private Mock<IPublishedContent> element;
 
-        [SetUp]
-        public void SetUp()
-        {
-            this.contentBlockViewComponent = new ContentBlockViewComponent();
-        }
+		[SetUp]
+		public void SetUp()
+		{
+			this.contentBlockViewComponent = new ContentBlockViewComponent();
+			element = new Mock<IPublishedContent>();
+			element.SetupPropertyValue(nameof(gM.Page.Heading).ToCamelCase(), string.Empty);
+			element.SetupPropertyValue(nameof(gM.Page.BodyText).ToCamelCase(), string.Empty);
+		}
 
-        [Test]
-        [TestCase("header")]
-        [TestCase("heading")]        
-        public void Given_BlockListHasHeading_When_Invoke_Then_ExpectViewModelHeading(string heading)
-        {
-            var blockElement = new Mock<IPublishedContent>();
-            blockElement.SetupPropertyValue(PropertyAlias.Heading, heading);
-            var blockListItem = new BlockListItem(new GuidUdi(ContentTypeAlias.ContentBlock, Guid.NewGuid()), blockElement.Object, null, null);
+		[Test]
+		[TestCase("header")]
+		[TestCase("heading")]
+		public void Given_BlockListHasHeading_When_Invoke_Then_ExpectViewModelHeading(string heading)
+		{
+			element.SetupPropertyValue(nameof(gM.Page.Heading).ToCamelCase(), heading);
+			var blockElement = new gM.ContentBlock(element.Object as IPublishedElement, null);
+			var blockListItem = new BlockListItem(new GuidUdi(ContentBlock.ModelTypeAlias, Guid.NewGuid()), blockElement, null, null);
 
-            var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
+			var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
 
-            Assert.AreEqual(heading, model.Heading);
-        }
-        //[Test] TODO: Investigate why this test started failing when installing RC003.
-        //[TestCase("<p>BodyText</p>")]
-        //[TestCase("<p>Other BodyText</p>")]
-        public void Given_BlockListHasBodyText_When_Invoke_Then_ExpectViewModelBodyText(string bodyText)
-        {
-            var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);
+			Assert.AreEqual(heading, model.Heading);
+		}
 
-            var blockElement = new Mock<IPublishedContent>();
-            blockElement.SetupPropertyValue(PropertyAlias.BodyText, bodyTextEncodedHtml);
-            var blockListItem = new BlockListItem(new GuidUdi(ContentTypeAlias.ContentBlock, Guid.NewGuid()), blockElement.Object, null, null);
+		[Test]
+		[TestCase("<p>BodyText</p>")]
+		[TestCase("<p>Other BodyText</p>")]
+		public void Given_BlockListHasBodyText_When_Invoke_Then_ExpectViewModelBodyText(string bodyText)
+		{
+			var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);
 
-            var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
+			element.SetupPropertyValue(nameof(gM.Page.BodyText).ToCamelCase(), bodyTextEncodedHtml);
+			var blockElement = new gM.ContentBlock(element.Object as IPublishedElement, null);
+			var blockListItem = new BlockListItem(new GuidUdi(ContentBlock.ModelTypeAlias, Guid.NewGuid()), blockElement, null, null);
 
-            Assert.AreEqual(bodyText, model.BodyText);
-        }
-    }
+			var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
+
+			Assert.AreEqual(bodyTextEncodedHtml, model.BodyText);
+		}
+	}
 }

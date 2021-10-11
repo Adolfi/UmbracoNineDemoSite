@@ -9,6 +9,7 @@ using Umbraco.Cms.Web.Common;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 using UmbracoNineDemoSite.Tests.Extensions;
+using gM = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 {
@@ -54,7 +55,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         {
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.CallToActionHeader, callToActionHeader);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            //this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
 
             var result = this.siteSettings.CallToActionHeader;
 
@@ -81,8 +82,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
             var callToActionContentReference = Mock.Of<IPublishedContent>();
 
             var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.CallToActionUrl, callToActionContentReference);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            settingsNode.SetupPropertyValue(nameof(gM.SiteSettings.CallToActionUrl).ToCamelCase(), callToActionContentReference);
+            this.MockContentQueryXPAth($"//{nameof(gM.SiteSettings).ToCamelCase()}", settingsNode.Object);
 
             var result = this.siteSettings.CallToActionUrl;
 
