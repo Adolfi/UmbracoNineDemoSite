@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Extensions;
+﻿using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Extensions
 {
 	internal static class ViewModelExtensions
 	{
-		public static void MapSitePageBase(this SitePageBase pageBase, gM.ISEO currentModel)
+		public static void MapSitePageBase(this SitePageBase pageBase, generatedModels.ISEO currentModel)
 		{
 			pageBase.SiteName = currentModel?.Root()?.Name;
 			pageBase.Id = currentModel?.Id ?? 0;

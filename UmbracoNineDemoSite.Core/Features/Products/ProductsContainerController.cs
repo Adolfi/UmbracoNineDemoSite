@@ -9,7 +9,7 @@ using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
 using UmbracoNineDemoSite.Integrations.Products.Entities;
 using UmbracoNineDemoSite.Integrations.Products.Services;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Products
 {
@@ -24,7 +24,7 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 
 		public IActionResult ProductsContainer(ContentModel model)
 		{
-			var mbModel = model.Content as gM.ProductsContainer ?? new gM.ProductsContainer(model.Content, null);
+			var mbModel = model.Content as generatedModels.ProductsContainer ?? new generatedModels.ProductsContainer(model.Content, null);
 			if (CurrentProduct == null)
 			{
 				var viewModel = new ProductsContainerViewModel()

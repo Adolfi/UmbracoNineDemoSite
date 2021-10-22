@@ -4,9 +4,8 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.SearchPage
 {
@@ -16,7 +15,7 @@ namespace UmbracoNineDemoSite.Core.Features.SearchPage
 
 		public IActionResult SearchPage(ContentModel model)
 		{
-			var mbModel = model.Content as gM.SearchPage ?? new gM.SearchPage(model.Content, null);
+			var mbModel = model.Content as generatedModels.SearchPage ?? new generatedModels.SearchPage(model.Content, null);
 			var viewModel = new SearchPageViewModel()
 			{
 				Heading = mbModel.Heading,
