@@ -1,10 +1,6 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
 using UmbracoNineDemoSite.Core.Features.Shared.Content;
-
-using gM = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Home
 {

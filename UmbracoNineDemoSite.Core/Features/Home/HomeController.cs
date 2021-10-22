@@ -7,7 +7,7 @@ using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
 using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Home
 {
@@ -17,7 +17,7 @@ namespace UmbracoNineDemoSite.Core.Features.Home
 
 		public IActionResult Home(ContentModel model)
 		{
-			var mbModel = model.Content as gM.Home ?? new gM.Home(model.Content, null);
+			var mbModel = model.Content as generatedModels.Home ?? new generatedModels.Home(model.Content, null);
 			var viewModel = new HomeViewModel()
 			{
 				Heading = mbModel.Heading,

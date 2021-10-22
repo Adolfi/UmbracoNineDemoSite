@@ -4,9 +4,8 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Page
 {
@@ -16,7 +15,7 @@ namespace UmbracoNineDemoSite.Core.Features.Page
 
         public IActionResult Page(ContentModel model)
         {
-            var mbModel = model.Content as gM.Page ?? new gM.Page(model.Content, null);
+            var mbModel = model.Content as generatedModels.Page ?? new generatedModels.Page(model.Content, null);
             var viewModel = new PageViewModel()
             {
                 Heading = mbModel.Heading,
