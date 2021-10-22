@@ -2,7 +2,7 @@
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 {
@@ -18,10 +18,10 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 		public SiteSettings(UmbracoHelper umbracoHelper)
 		{
 			this.umbracoHelper = umbracoHelper;
-			gM.Home homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault() as gM.Home;
+			generatedModels.Home homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault() as generatedModels.Home;
 			if (homeContent == null) return;
 
-			gM.SiteSettings settings = homeContent.FirstChild<gM.SiteSettings>();
+			generatedModels.SiteSettings settings = homeContent.FirstChild<generatedModels.SiteSettings>();
 
 			SiteName = homeContent.Name;
 			CallToActionDescription = settings.CallToActionDescription;

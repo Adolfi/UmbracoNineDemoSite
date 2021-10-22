@@ -1,11 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Extensions;
 using UmbracoNineDemoSite.Integrations.Products.Services;
-//using gM = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Products
 {

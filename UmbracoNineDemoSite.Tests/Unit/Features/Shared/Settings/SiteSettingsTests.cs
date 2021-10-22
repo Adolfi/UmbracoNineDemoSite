@@ -6,15 +6,13 @@ using Umbraco.Cms.Core.Dictionary;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Templates;
 using Umbraco.Cms.Web.Common;
-using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 using UmbracoNineDemoSite.Tests.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 {
-    [TestFixture]
+	[TestFixture]
     public class SiteSettingsTests
     {
         private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
@@ -33,7 +31,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
             //siteSettings.SetupPropertyValue(nameof(gM.SiteSettings.FooterText), "footerText");
             rootNode = new Mock<IPublishedContent>();
             rootNode.Setup(query => query.Children).Returns(new IPublishedContent[] { siteSettings.Object });
-            rootNode.SetupPropertyValue(nameof(gM.Home.Name), "homeName");
+            rootNode.SetupPropertyValue(nameof(generatedModels.Home.Name), "homeName");
             this.cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
             this.componentRenderer = new Mock<IUmbracoComponentRenderer>();
             this.publishedContentQuery = new Mock<IPublishedContentQuery>();
@@ -118,7 +116,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         [TestCase("Footer Text for the Umbraco 9 Demo")]
         public void Given_SettingsNodeHasFooterText_When_GetFooterText_Then_ReturnExpectedFooterText(string footerText)
         {
-            siteSettings.SetupPropertyValue(nameof(gM.SiteSettings.FooterText), footerText);
+            siteSettings.SetupPropertyValue(nameof(generatedModels.SiteSettings.FooterText), footerText);
             siteSettingsViewModel = new SiteSettings(umbracoHelper.Object);
             var result = this.siteSettingsViewModel.FooterText;
 

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Examine;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Integrations.Products.Entities;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder
 {
@@ -32,7 +30,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.ContentValueSet
 		{
 			using (var umbCxt = _umbracoContextFactory.EnsureUmbracoContext())
 			{
-				var containerPage = umbCxt.UmbracoContext.Content.GetAtRoot().FirstOrDefault().DescendantOrSelf<gM.ProductsContainer>();
+				var containerPage = umbCxt.UmbracoContext.Content.GetAtRoot().FirstOrDefault().DescendantOrSelf<generatedModels.ProductsContainer>();
 				var externalProductType = nameof(Product).ToFirstLower();
 				foreach (var product in products)
 				{

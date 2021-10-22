@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
 {
@@ -13,6 +13,6 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
             this.block = block;
         }
 
-        public string Heading => this.block.Content.Value<string>(nameof(gM.Page.Heading).ToFirstLower());        
+        public string Heading => this.block.Content.Value<string>(nameof(generatedModels.Page.Heading).ToFirstLower());        
     }
 }

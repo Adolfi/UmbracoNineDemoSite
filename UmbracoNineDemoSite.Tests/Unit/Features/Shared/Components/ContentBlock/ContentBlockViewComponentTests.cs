@@ -10,7 +10,7 @@ using UmbracoNineDemoSite.Core;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Tests.Extensions;
-using gM = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
 {
@@ -25,8 +25,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
 		{
 			this.contentBlockViewComponent = new ContentBlockViewComponent();
 			element = new Mock<IPublishedContent>();
-			element.SetupPropertyValue(nameof(gM.Page.Heading).ToCamelCase(), string.Empty);
-			element.SetupPropertyValue(nameof(gM.Page.BodyText).ToCamelCase(), string.Empty);
+			element.SetupPropertyValue(nameof(generatedModels.Page.Heading).ToCamelCase(), string.Empty);
+			element.SetupPropertyValue(nameof(generatedModels.Page.BodyText).ToCamelCase(), string.Empty);
 		}
 
 		[Test]
@@ -34,8 +34,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
 		[TestCase("heading")]
 		public void Given_BlockListHasHeading_When_Invoke_Then_ExpectViewModelHeading(string heading)
 		{
-			element.SetupPropertyValue(nameof(gM.Page.Heading).ToCamelCase(), heading);
-			var blockElement = new gM.ContentBlock(element.Object as IPublishedElement, null);
+			element.SetupPropertyValue(nameof(generatedModels.Page.Heading).ToCamelCase(), heading);
+			var blockElement = new generatedModels.ContentBlock(element.Object as IPublishedElement, null);
 			var blockListItem = new BlockListItem(new GuidUdi(ContentBlock.ModelTypeAlias, Guid.NewGuid()), blockElement, null, null);
 
 			var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
@@ -50,8 +50,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
 		{
 			var bodyTextEncodedHtml = new HtmlEncodedString(bodyText);
 
-			element.SetupPropertyValue(nameof(gM.Page.BodyText).ToCamelCase(), bodyTextEncodedHtml);
-			var blockElement = new gM.ContentBlock(element.Object as IPublishedElement, null);
+			element.SetupPropertyValue(nameof(generatedModels.Page.BodyText).ToCamelCase(), bodyTextEncodedHtml);
+			var blockElement = new generatedModels.ContentBlock(element.Object as IPublishedElement, null);
 			var blockListItem = new BlockListItem(new GuidUdi(ContentBlock.ModelTypeAlias, Guid.NewGuid()), blockElement, null, null);
 
 			var model = (ContentBlockViewModel)((ViewViewComponentResult)this.contentBlockViewComponent.Invoke(blockListItem)).ViewData.Model;
