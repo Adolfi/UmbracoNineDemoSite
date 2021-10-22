@@ -18,13 +18,12 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 		public SiteSettings(UmbracoHelper umbracoHelper)
 		{
 			this.umbracoHelper = umbracoHelper;
-			var homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault();
+			gM.Home homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault() as gM.Home;
 			if (homeContent == null) return;
 
-			gM.Home home = new(homeContent, null);
-			gM.SiteSettings settings = home.FirstChild<gM.SiteSettings>();
+			gM.SiteSettings settings = homeContent.FirstChild<gM.SiteSettings>();
 
-			SiteName = home.Name;
+			SiteName = homeContent.Name;
 			CallToActionDescription = settings.CallToActionDescription;
 			CallToActionButtonLabel = settings.CallToActionButtonLabel;
 			CallToActionHeader = settings.CallToActionHeader;

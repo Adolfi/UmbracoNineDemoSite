@@ -40,7 +40,8 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 			}
 
 			umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
-			var container = umbracoContext?.Content.GetByContentType(ProductsContainer.GetModelContentType(publishedSnapshotAccessor))?.FirstOrDefault();
+			var contentType = ProductsContainer.GetModelContentType(publishedSnapshotAccessor);
+			var container = umbracoContext?.Content.GetByContentType(contentType)?.FirstOrDefault();
 
 			if (container == null)
 			{
