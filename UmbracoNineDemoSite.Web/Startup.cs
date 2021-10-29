@@ -1,9 +1,19 @@
 using System;
+using System.IO;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Smidge;
+using Smidge.Cache;
+using Smidge.FileProcessors;
+using Smidge.InMemory;
+using Smidge.Models;
+using Smidge.Nuglify;
+using Smidge.Options;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
@@ -40,14 +50,19 @@ namespace UmbracoNineDemoSite.Web
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
-            #pragma warning disable IDE0022 // Use expression body for methods
+#pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
                 .Build();
-            #pragma warning restore IDE0022 // Use expression body for methods
+#pragma warning restore IDE0022 // Use expression body for methods
 
+
+            services.AddSmidge(_config.GetSection("smidge"));
+
+            services.AddSmidgeNuglify();
+            services.AddSmidgeInMemory();
         }
 
         /// <summary>
@@ -72,6 +87,16 @@ namespace UmbracoNineDemoSite.Web
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
+
+            app.UseSmidge(bundles =>
+            {
+                bundles.Create("js-bundle", WebFileType.Js, "~/scripts/umbraco-starterkit-app.js");
+
+                bundles.Create("css-bundle",
+                    new CssFile("~/css/umbraco-starterkit-style.css"));
+            });
+
+            app.UseSmidgeNuglify();
         }
     }
 }
