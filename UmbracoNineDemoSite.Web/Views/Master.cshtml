@@ -1,6 +1,7 @@
 ﻿@model UmbracoNineDemoSite.Core.Features.Shared.Content.SitePageBase
 @{
     Layout = null;
+    var jsUrls = await SmidgeHelper.GenerateJsUrlsAsync("js-bundle");
 }
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,14 @@
     @(await Html.PartialAsync("_MetaTags"))
     @(await Html.PartialAsync("_Stylesheets"))
     @(RenderSection("Head", required: false))
+    
+    @{
+    }
+
+    @foreach (var jsUrl in jsUrls)
+    {
+        <link rel="preload" href="@jsUrl" as="script">
+    }
 </head>
 <body class="@(Model.BodyClass)">
     @(await Html.PartialAsync("_MobileNavigation"))
