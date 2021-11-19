@@ -1,6 +1,7 @@
-﻿using System.Linq;
+using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
+using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
@@ -14,8 +15,8 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
             this.umbracoHelper = umbracoHelper;
         }
 
-        private IPublishedContent home => this.umbracoHelper.ContentAtXPath($"//{ContentTypeAlias.Home}")?.FirstOrDefault();
-        private IPublishedContent settings => this.umbracoHelper.ContentAtXPath($"//{ContentTypeAlias.SiteSettings}")?.FirstOrDefault();
+        private IPublishedContent home => this.umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == ContentTypeAlias.Home);
+        private IPublishedContent settings => home?.FirstChild(x => x.ContentType.Alias == ContentTypeAlias.SiteSettings);
 
         public string SiteName => this.home.Name;
         public string CallToActionHeader => this.settings.GetProperty(PropertyAlias.CallToActionHeader).GetValue() as string;
