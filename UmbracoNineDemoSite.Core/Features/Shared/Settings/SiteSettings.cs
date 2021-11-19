@@ -16,7 +16,7 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
         }
 
         private IPublishedContent home => this.umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == ContentTypeAlias.Home);
-        private IPublishedContent settings => home?.FirstChild(x => x.ContentType.Alias == ContentTypeAlias.SiteSettings);
+        private IPublishedContent settings => home?.Children?.FirstOrDefault(x => x.ContentType.Alias == ContentTypeAlias.SiteSettings);
 
         public string SiteName => this.home.Name;
         public string CallToActionHeader => this.settings.GetProperty(PropertyAlias.CallToActionHeader).GetValue() as string;
