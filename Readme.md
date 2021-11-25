@@ -22,6 +22,7 @@ This is not **the way** of building Umbraco sites, it's **a way**. There are les
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 - [Examine searching. (#h5yr Andrey Karandashov)](UmbracoNineDemoSite.Core/Features/Search)
 - [Products are fetched from external source and rendered using a ContentFinder](UmbracoNineDemoSite.Core/Features/Products/ProductsContentFinder.cs).
+- [Site Settings](/UmbracoNineDemoSite.Core/Features/Shared/Settings) and [Variables](UmbracoNineDemoSite.Core/Features/Shared/Variables) for managing settings. See [Variable usage example](/UmbracoNineDemoSite.Web/Views/ProductPage.cshtml).
 
 #### Unit Tests:
 - [RenderController: Home](UmbracoNineDemoSite.Tests/Unit/Features/Home/HomeControllerTests.cs)
