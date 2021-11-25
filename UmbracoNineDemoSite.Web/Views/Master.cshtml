@@ -20,6 +20,7 @@
     }
 </head>
 <body class="@(Model.BodyClass)">
+    @(await Html.PartialAsync("_MaintenanceBanner"))
     @(await Html.PartialAsync("_MobileNavigation"))
     @(await Component.InvokeAsync("Header", new { selected = Model.Id }))
     <main>
