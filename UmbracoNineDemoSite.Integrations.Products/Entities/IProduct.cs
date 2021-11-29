@@ -7,5 +7,6 @@
         string Description { get; }
         string ImageUrl { get; }
         int Price { get; }
+        string ShortDescription { get; }
     }
 }

@@ -9,7 +9,7 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 	{
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.AddTransient<INavigationService, NavigationService>();
+            builder.Services.AddScoped<INavigationService, NavigationService>();
         }
     }
 }

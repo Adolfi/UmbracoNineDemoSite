@@ -2,7 +2,7 @@
 using Examine.Search;
 using UmbracoNineDemoSite.Core.Features.Search.Criteria;
 using UmbracoNineDemoSite.Core.Features.Search.Query.Filters;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Query
 {
@@ -16,7 +16,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query
         {
             var query = _searcher.CreateQuery("content");
 
-            var filter = query.FilterByAlias(new[] {ContentTypeAlias.Page})
+            var filter = query.FilterByAlias(new[] { generatedModels.Page.ModelTypeAlias, generatedModels.Home.ModelTypeAlias})
                 .SearchByTerm(searchCriteria.SearchTerm);
 
             return filter;

@@ -2,27 +2,39 @@ using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 {
-    public class SiteSettings : ISiteSettings
-    {
-        private readonly UmbracoHelper umbracoHelper;
+	/// <summary>
+	/// Exposing simple POCO properties which are set during initialization in the constructor (ctor).
+	/// This allows a dependency injection scope of scoped (see: SiteSettingsComposer).
+	/// Thus the setup happend only once per page request, although SiteSettings are injected in several ViewComponents.
+	/// </summary>
+	public class SiteSettings : ISiteSettings
+	{
+		private readonly UmbracoHelper umbracoHelper;
 
-        public SiteSettings(UmbracoHelper umbracoHelper)
-        {
-            this.umbracoHelper = umbracoHelper;
-        }
+		public SiteSettings(UmbracoHelper umbracoHelper)
+		{
+			this.umbracoHelper = umbracoHelper;
+			generatedModels.Home homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault() as generatedModels.Home;
+			if (homeContent == null) return;
 
-        private IPublishedContent home => this.umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == ContentTypeAlias.Home);
-        private IPublishedContent settings => home?.Children?.FirstOrDefault(x => x.ContentType.Alias == ContentTypeAlias.SiteSettings);
+			generatedModels.SiteSettings settings = homeContent.FirstChild<generatedModels.SiteSettings>();
 
-        public string SiteName => this.home.Name;
-        public string CallToActionHeader => this.settings.GetProperty(PropertyAlias.CallToActionHeader).GetValue() as string;
-        public string CallToActionDescription => this.settings.GetProperty(PropertyAlias.CallToActionDescription).GetValue() as string;
-        public IPublishedContent CallToActionUrl => this.settings.GetProperty(PropertyAlias.CallToActionUrl).GetValue() as IPublishedContent;
-        public string CallToActionButtonLabel => this.settings.GetProperty(PropertyAlias.CallToActionButtonLabel).GetValue() as string;
-        public string FooterText => this.settings.GetProperty(PropertyAlias.FooterText).GetValue() as string;
-    }
+			SiteName = homeContent.Name;
+			CallToActionDescription = settings.CallToActionDescription;
+			CallToActionButtonLabel = settings.CallToActionButtonLabel;
+			CallToActionHeader = settings.CallToActionHeader;
+			CallToActionUrl = settings.CallToActionUrl;
+			FooterText = settings.FooterText;
+		}
+		public string SiteName { get; set; }
+		public string CallToActionHeader { get; set; }
+		public string CallToActionDescription { get; set; }
+		public IPublishedContent CallToActionUrl { get; set; }
+		public string CallToActionButtonLabel { get; set; }
+		public string FooterText { get; set; }
+	}
 }

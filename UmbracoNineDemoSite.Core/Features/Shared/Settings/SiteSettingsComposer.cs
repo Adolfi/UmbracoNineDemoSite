@@ -8,7 +8,9 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.AddTransient<ISiteSettings, SiteSettings>();
+            //per page request SiteSettings are called twice (Header and Footer components)
+            //therefore scoped is more efficient then transient
+            builder.Services.AddScoped<ISiteSettings, SiteSettings>();
         }
     }
 }

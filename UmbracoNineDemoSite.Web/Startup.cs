@@ -16,7 +16,6 @@ using Smidge.Nuglify;
 using Smidge.Options;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 
 namespace UmbracoNineDemoSite.Web
 {

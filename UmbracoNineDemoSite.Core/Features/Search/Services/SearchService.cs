@@ -3,6 +3,7 @@ using System.Linq;
 using Examine;
 using Examine.Search;
 using MailKit.Search;
+using Umbraco.Cms.Web.Common;
 using UmbracoNineDemoSite.Core.Features.Search.Criteria;
 using UmbracoNineDemoSite.Core.Features.Search.Models;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
@@ -81,7 +82,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Services
                 {
                     Heading = x.Values[SearchField.Heading],
                     Description = x.Values[SearchField.BodyText],
-                    Url = x.Values["url"]
+                    Id = x.Id
 
                 })?.ToList()
             };

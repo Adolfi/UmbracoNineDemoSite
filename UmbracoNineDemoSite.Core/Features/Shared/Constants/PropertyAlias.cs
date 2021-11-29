@@ -17,9 +17,9 @@
         public const string Heading = "heading";
         public const string PageTitle = "pageTitle";
         public const string Preamble = "preamble";
+        public const string ProductsContainer = "productsContainer";
         public const string NoResultsFoundText = "noResultsFoundText";
         public const string TotalResults = "totalResults";
         public const string SearchTermText = "searchTermText";
-        public const string ProductsContainer = "productsContainer";
     }
 }

@@ -21,7 +21,7 @@ namespace UmbracoNineDemoSite.Integrations.Products.Services
         /// </summary>
         private IEnumerable<Product> products => new List<Product>()
         {
-            new Product(1, "Biker Jacket", 199, "/media/sr3g0xvt/bikerjacket.jpg", "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat."),
+            new Product(1, "Biker Jacket", 199, "/media/sr3g0xvt/bikerjacket.jpg", "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.", "Explicit SEO meta description."),
             new Product(2, "Tattoo", 499, "/media/g01hjwk2/tattoo.jpg", "Cras ultricies ligula sed magna dictum porta."),
             new Product(3, "Unicorn", 249, "/media/jc2d4ta1/unicorn.jpg", "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta."),
             new Product(4, "Ping Pong Ball", 2, "/media/tkdi2gz3/pingpongball.jpg", "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta."),
