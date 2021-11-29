@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Web", "UmbracoNineDemoSite.Web\UmbracoNineDemoSite.Web.csproj", "{07681D50-DCF8-4412-BD50-5F9CCFADAEE6}"
 EndProject
@@ -10,12 +10,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23066EA5-D392-4E2D-86CE-E8711CA2B9E5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		ModelsBuilder-Setup.md = ModelsBuilder-Setup.md
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Tests", "UmbracoNineDemoSite.Tests\UmbracoNineDemoSite.Tests.csproj", "{1FB25CB2-869A-4347-9333-1E56EE98B2E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoNineDemoSite.Integrations.Products", "UmbracoNineDemoSite.Integrations.Products\UmbracoNineDemoSite.Integrations.Products.csproj", "{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNineDemoSite.Integrations.Products", "UmbracoNineDemoSite.Integrations.Products\UmbracoNineDemoSite.Integrations.Products.csproj", "{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

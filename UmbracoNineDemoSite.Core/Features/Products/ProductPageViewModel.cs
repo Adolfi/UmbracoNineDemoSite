@@ -7,16 +7,15 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 {
     public class ProductPageViewModel : SitePageBase, IHeadingPage
     {
-        private readonly IPublishedContent container;
 
-        public ProductPageViewModel(IProduct product, IPublishedContent container) : base(container)
+        public ProductPageViewModel(IProduct product) : base()
         {
             this.Id = product.Id;
             this.Name = product.Name;
             this.Description = product.Description;
+            this.PageDescription = product.ShortDescription;
             this.ImageUrl = product.ImageUrl;
             this.Price = product.Price;
-            this.container = container;
         }
 
         public new int Id { get; set; }
@@ -26,7 +25,8 @@ namespace UmbracoNineDemoSite.Core.Features.Products
         public int Price { get; set; }
         public string UrlSegment => $"{Id}/{Name}";
 
-        public string Heading => this.container.GetProperty(PropertyAlias.Heading).GetValue() as string;
+        public string Heading { get; set; }
         public override string PageTitle => this.Name;
+		public override string PageDescription { get; set; }
     }
 }

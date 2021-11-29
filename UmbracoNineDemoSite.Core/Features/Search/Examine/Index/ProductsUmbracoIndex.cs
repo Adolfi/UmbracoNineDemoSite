@@ -8,7 +8,9 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Extensions;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoNineDemoSite.Integrations.Products.Entities;
 
 namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
 {
@@ -39,7 +41,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
 
         void IIndex.IndexItems(IEnumerable<ValueSet> values)
         {
-            PerformIndexItems(values.Where(x => x.ItemType == ContentTypeAlias.ExternalProduct), OnIndexOperationComplete);
+            PerformIndexItems(values.Where(x => x.ItemType == nameof(Product).ToFirstLower()), OnIndexOperationComplete);
         }
     }
 }

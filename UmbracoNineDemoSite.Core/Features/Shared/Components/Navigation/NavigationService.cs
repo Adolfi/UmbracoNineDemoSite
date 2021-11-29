@@ -10,10 +10,14 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
     public class NavigationService : INavigationService
     {
         private readonly UmbracoHelper umbracoHelper;
-
+        private readonly IPublishedContent root;
+        private readonly List<IPublishedContent> topItems;
         public NavigationService(UmbracoHelper umbracoHelper)
         {
             this.umbracoHelper = umbracoHelper;
+            root = this.umbracoHelper.ContentAtRoot().FirstOrDefault();
+            topItems = new List<IPublishedContent>() { root };
+            topItems.AddRange(root.Children);
         }
 
         public List<IPublishedContent> GetSubNavigation(int currentId)
@@ -25,10 +29,7 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
 
         public List<IPublishedContent> GetTopNavigation()
         {
-            var root = this.umbracoHelper.ContentAtXPath($"//{ContentTypeAlias.Home}")?.FirstOrDefault();
-            var items = new List<IPublishedContent>() { root };
-            items.AddRange(root.Children);
-            return items;
+            return topItems;
         }
     }
 }

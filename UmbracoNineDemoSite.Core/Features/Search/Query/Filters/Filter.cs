@@ -29,6 +29,7 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Query.Filters
                 SearchField.Heading,
                 SearchField.BodyText,
                 SearchField.Description,
+                SearchField.Preamble,
                 SearchField.Name
             };
 
