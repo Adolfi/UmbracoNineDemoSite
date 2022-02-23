@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Dictionary;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Templates;
 using Umbraco.Cms.Web.Common;
@@ -38,9 +39,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         [TestCase("Umbraco 9 Demo")]
         public void Given_HomeNodeExistsAtXPath_When_GetSiteName_Then_ReturnExpectedSiteNameFromHomeNode(string siteName)
         {
-            var homeNode = new Mock<IPublishedContent>();
-            homeNode.Setup(home => home.Name).Returns(siteName);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.Home}", homeNode.Object);
+            this.MockSettings(new Mock<IPublishedContent>(), siteName);
 
             var result = this.siteSettings.SiteName;
 
@@ -54,7 +53,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         {
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.CallToActionHeader, callToActionHeader);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            this.MockSettings(settingsNode);
 
             var result = this.siteSettings.CallToActionHeader;
 
@@ -68,7 +67,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         {
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.CallToActionDescription, callToActionDescription);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            this.MockSettings(settingsNode);
 
             var result = this.siteSettings.CallToActionDescription;
 
@@ -82,7 +81,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.CallToActionUrl, callToActionContentReference);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            this.MockSettings(settingsNode);
 
             var result = this.siteSettings.CallToActionUrl;
 
@@ -96,7 +95,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         {
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.CallToActionButtonLabel, callToActionButtonLabel);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            this.MockSettings(settingsNode);
 
             var result = this.siteSettings.CallToActionButtonLabel;
 
@@ -110,16 +109,28 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         {
             var settingsNode = new Mock<IPublishedContent>();
             settingsNode.SetupPropertyValue(PropertyAlias.FooterText, footerText);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            this.MockSettings(settingsNode);
 
             var result = this.siteSettings.FooterText;
 
             Assert.AreEqual(footerText, result);
         }
 
-        private void MockContentQueryXPAth(string xpath, IPublishedContent content)
+        private void MockSettings(Mock<IPublishedContent> settings, string siteName = "defaultSiteName")
         {
-            this.publishedContentQuery.Setup(query => query.ContentAtXPath(xpath)).Returns(new List<IPublishedContent>() { content });
+            var homeContentType = new Mock<IPublishedContentType>();
+            homeContentType.Setup(homeType => homeType.Alias).Returns(ContentTypeAlias.Home);
+
+            var homeNode = new Mock<IPublishedContent>();
+            homeNode.Setup(home => home.Name).Returns(siteName);
+            homeNode.Setup(home => home.ContentType).Returns(homeContentType.Object);
+
+            var settingsContentType = new Mock<IPublishedContentType>();
+            settingsContentType.Setup(homeType => homeType.Alias).Returns(ContentTypeAlias.SiteSettings);
+            settings.Setup(home => home.ContentType).Returns(settingsContentType.Object);
+            homeNode.Setup(home => home.Children).Returns(new List<IPublishedContent>() { settings.Object });
+
+            this.publishedContentQuery.Setup(query => query.ContentAtRoot()).Returns(new List<IPublishedContent>() { homeNode.Object });
         }
     }
 }

@@ -17,11 +17,12 @@ This is not **the way** of building Umbraco sites, it's **a way**. There are les
 - [Page components that handles logic are rendered through ViewComponents](UmbracoNineDemoSite.Core/Features/Shared/Components/Header/HeaderViewComponent.cs).
 - [View components have Unit Tests](UmbracoNineDemoSite.Tests/Unit/Features/Shared/Components/Footer/FooterViewComponentTests.cs).
 - [Non-logic components are rendered through Partial views](UmbracoNineDemoSite.Web/Views/Partials/_SectionHeader.cshtml).
-- [Custom services are registered in the IUmbracoBuilder through an IUserComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
+- [Custom services are registered in the IUmbracoBuilder through an IComposer](UmbracoNineDemoSite.Core/Features/Shared/Settings/SiteSettingsComposer.cs).
 - [Constant classes are used when accessing content or property to avoid spreading magic strings](UmbracoNineDemoSite.Core/Features/Shared/Constants/PropertyAlias.cs).
 - [Forms are submitted through a SurfaceController](UmbracoNineDemoSite.Core/Features/Shared/Components/ContactForm).
 - [Examine searching. (#h5yr Andrey Karandashov)](UmbracoNineDemoSite.Core/Features/Search)
 - [Products are fetched from external source and rendered using a ContentFinder](UmbracoNineDemoSite.Core/Features/Products/ProductsContentFinder.cs).
+- [Site Settings](/UmbracoNineDemoSite.Core/Features/Shared/Settings) and [Variables](UmbracoNineDemoSite.Core/Features/Shared/Variables) for managing settings. See [Variable usage example](/UmbracoNineDemoSite.Web/Views/ProductPage.cshtml#L22).
 
 #### Unit Tests:
 - [RenderController: Home](UmbracoNineDemoSite.Tests/Unit/Features/Home/HomeControllerTests.cs)
