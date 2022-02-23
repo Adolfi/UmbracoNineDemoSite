@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Templates;
 using Umbraco.Cms.Web.Common;
+using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 using UmbracoNineDemoSite.Tests.Extensions;
 using generatedModels = UmbracoNineDemoSite.Core;
@@ -111,7 +112,6 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 
             Assert.AreEqual(callToActionButtonLabel, result);
         }
-        */
         [Test]
         [TestCase("Footer Text")]
         [TestCase("Footer Text for the Umbraco 9 Demo")]
@@ -125,6 +125,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 
             Assert.AreEqual(footerText, result);
         }
+        */
 
         private void MockContentQueryXPAth(string xpath, IPublishedContent content)
         {
