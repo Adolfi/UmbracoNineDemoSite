@@ -51,6 +51,11 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 				return false;
 			}
 
+			if(!segments[1].Equals(container.UrlSegment, System.StringComparison.InvariantCultureIgnoreCase))
+            {
+				return false;
+			}
+
 			request.SetPublishedContent(container);
 			return true;
 		}

@@ -29,15 +29,47 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
         public void Given_RequestContainsExistingProductId_When_TryFindContent_Then_ExpectTrue(
             string rootPath, int productId, string productName)
         {
+            IPublishedContent dummyContent;
+            bool result;
+            Mock<ProductsContainer> productsContainer;
+            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+
+            #region check result of method call
+            Assert.True(result);
+            Assert.IsNotNull(dummyContent);
+            Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
+            Assert.AreEqual(dummyContent.Id, productsContainer.Object.Id);
+            Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
+            #endregion
+        }
+
+        [Test]
+        [TestCase("xxx", 123, "any")]
+        public void Given_RequestContainsWrongRootSegment_When_TryFindContent_Then_ExpectFalse(
+            string rootPath, int productId, string productName)
+        {
+            IPublishedContent dummyContent;
+            bool result;
+            Mock<ProductsContainer> productsContainer;
+            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+
+            #region check result of method call
+            Assert.False(result);
+            Assert.IsNull(dummyContent);
+            #endregion
+        }
+
+        private void SetupAndCallTRyFindContent(string rootPath, int productId, string productName, out IPublishedContent foundContent, out bool result, out Mock<ProductsContainer> productsContainerOut)
+        {
             #region setup request Mock
             var absolutePathDecoded = $"/{rootPath}/{productId}/{productName}";
             var request = new Mock<IPublishedRequestBuilder>();
             request.Setup(s => s.AbsolutePathDecoded).Returns(absolutePathDecoded);
-            IPublishedContent dummyContent = null;
+            IPublishedContent callbackContent = null;
             request.Setup(s => s.SetPublishedContent(It.IsAny<IPublishedContent>()))
                 .Callback(new ServiceSetPublishedContent((IPublishedContent content) =>
                 {
-                    dummyContent = content;
+                    callbackContent = content;
                 }));
             #endregion
             #region setup IProductService Mock
@@ -48,34 +80,30 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             productService.Setup(x => x.Get(productId)).Returns(product.Object);
             #endregion
             #region setup IUmbracoContextAccessor Mock
-            var contentType = new Mock<IPublishedContentType>();
-            contentType.Setup(s => s.Alias)
-                .Returns(productsContainerAlias);
-            contentType.Setup(s => s.Id)
-                .Returns(1);
-            contentType.Setup(m => m.ItemType)
-                .Returns(PublishedItemType.Content);
+            var contentType = Mock.Of<IPublishedContentType>();
             var productsContainerContent = Mock.Of<IPublishedContent>();
             var productsContainerFallback = Mock.Of<IPublishedValueFallback>();
             var productsContainer = new Mock<ProductsContainer>(
                 productsContainerContent, productsContainerFallback);
             productsContainer.Setup(s => s.ContentType)
-                .Returns(contentType.Object);
+                .Returns(contentType);
             productsContainer.Setup(s => s.Id)
                 .Returns(1000);
             productsContainer.Setup(s => s.Name)
                 .Returns("Products");
+            productsContainer.Setup(s => s.UrlSegment)
+                .Returns("products");
             var publishedContentCollection = new List<IPublishedContent>
             {
                 productsContainer.Object
             };
             var contentCache = new Mock<IPublishedContentCache>();
-            contentCache.Setup(s => s.GetByContentType(contentType.Object))
+            contentCache.Setup(s => s.GetByContentType(contentType))
                 .Returns(publishedContentCollection);
             contentCache.Setup(s => s.GetContentType(1))
-                .Returns(contentType.Object);
+                .Returns(contentType);
             contentCache.Setup(s => s.GetContentType(productsContainerAlias))
-                .Returns(contentType.Object);
+                .Returns(contentType);
             var umbracoContext = new Mock<IUmbracoContext>();
             umbracoContext.Setup(s => s.Content)
                 .Returns(contentCache.Object);
@@ -107,16 +135,11 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             #region call TryFindContent of ProductsContentFinder
             var productsContentFinder = new ProductsContentFinder(productService.Object, umbracoContextAccessor.Object, publishedSnapshotAccessor.Object);
 
-            var result = productsContentFinder.TryFindContent(request.Object);
+            result = productsContentFinder.TryFindContent(request.Object);
             #endregion
 
-            #region check result of method call
-            Assert.True(result);
-            Assert.IsNotNull(dummyContent);
-            Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
-            Assert.AreEqual(dummyContent.Id, productsContainer.Object.Id);
-            Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
-            #endregion
+            foundContent = callbackContent;
+            productsContainerOut = productsContainer;
         }
     }
 }
