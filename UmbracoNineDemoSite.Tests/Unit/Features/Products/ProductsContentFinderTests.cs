@@ -1,15 +1,12 @@
 ﻿using Moq;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 using UmbracoNineDemoSite.Core;
 using UmbracoNineDemoSite.Core.Features.Products;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Integrations.Products.Entities;
 using UmbracoNineDemoSite.Integrations.Products.Services;
 
@@ -54,7 +51,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
                 .Returns(PublishedItemType.Content);
             var productsContainerContent = Mock.Of<IPublishedContent>();
             var productsContainerFallback = Mock.Of<IPublishedValueFallback>();
-            var productsContainer = new Mock<ProductsContainer>(productsContainerContent, productsContainerFallback);// new ProductsContainer(productsContainerContent, productsContainerFallback);
+            var productsContainer = new Mock<ProductsContainer>(productsContainerContent, productsContainerFallback);
             productsContainer.Setup(s => s.ContentType)
                 .Returns(contentType.Object);
             productsContainer.Setup(s => s.Id)
