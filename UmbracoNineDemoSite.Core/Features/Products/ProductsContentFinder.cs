@@ -36,12 +36,11 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 				return false;
 			}
 
-			umbracoContextAccessor
-				.TryGetUmbracoContext(out IUmbracoContext umbracoContext);
-
 			var contentType = ProductsContainer
 				.GetModelContentType(publishedSnapshotAccessor);
 
+			umbracoContextAccessor
+				.TryGetUmbracoContext(out IUmbracoContext umbracoContext);
 			var container = umbracoContext?
 				.Content
 				.GetByContentType(contentType)

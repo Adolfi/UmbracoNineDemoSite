@@ -57,7 +57,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
                 .Returns(PublishedItemType.Content);
             var productsContainerContent = Mock.Of<IPublishedContent>();
             var productsContainerFallback = Mock.Of<IPublishedValueFallback>();
-            var productsContainer = new Mock<ProductsContainer>(productsContainerContent, productsContainerFallback);
+            var productsContainer = new Mock<ProductsContainer>(
+                productsContainerContent, productsContainerFallback);
             productsContainer.Setup(s => s.ContentType)
                 .Returns(contentType.Object);
             productsContainer.Setup(s => s.Id)
