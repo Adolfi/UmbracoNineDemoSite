@@ -14,19 +14,23 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
 {
     public class ProductsContentFinderTests
     {
+        #region properties
         private delegate void ServiceTryGetPublishedSnapshot(out IPublishedSnapshot snapshot);
         private delegate void ServiceTryGetUmbracoContext(out IUmbracoContext context);
         private delegate void ServiceSetPublishedContent(IPublishedContent content);
 
         private readonly string productsContainerAlias = "productsContainer";
+        #endregion
 
         [Test]
-        [TestCase(123, "any")]
-        [TestCase(456, "product")]
-        [TestCase(789, "name")]
-        public void Given_RequestContainsExistingProductId_When_TryFindContent_Then_ExpectTrue(int productId, string productName)
+        [TestCase("products", 123, "any")]
+        [TestCase("products", 456, "product")]
+        [TestCase("products", 789, "name")]
+        public void Given_RequestContainsExistingProductId_When_TryFindContent_Then_ExpectTrue(
+            string rootPath, int productId, string productName)
         {
-            var absolutePathDecoded = $"/products/{productId}/{productName}";
+            #region setup request Mock
+            var absolutePathDecoded = $"/{rootPath}/{productId}/{productName}";
             var request = new Mock<IPublishedRequestBuilder>();
             request.Setup(s => s.AbsolutePathDecoded).Returns(absolutePathDecoded);
             IPublishedContent dummyContent = null;
@@ -35,13 +39,15 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
                 {
                     dummyContent = content;
                 }));
-
+            #endregion
+            #region setup IProductService Mock
             var product = new Mock<IProduct>();
             product.Setup(s => s.Id).Returns(productId);
             product.Setup(s => s.Name).Returns(productName);
             var productService = new Mock<IProductService>();
             productService.Setup(x => x.Get(productId)).Returns(product.Object);
-
+            #endregion
+            #region setup IUmbracoContextAccessor Mock
             var contentType = new Mock<IPublishedContentType>();
             contentType.Setup(s => s.Alias)
                 .Returns(productsContainerAlias);
@@ -81,8 +87,8 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
                 {
                     uContext = umbracoContext.Object;
                 }));
-
-
+            #endregion
+            #region setup IPublishedSnapshotAccessor Mock
             var publishedSnapshot = new Mock<IPublishedSnapshot>();
             publishedSnapshot.Setup(s => s.Content)
                 .Returns(contentCache.Object);
@@ -95,15 +101,23 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
                     snapshot = publishedSnapshot.Object;
                 }))
                 .Returns(true);
+            #endregion
 
+            #region call TryFindContent of ProductsContentFinder
             var productsContentFinder = new ProductsContentFinder(productService.Object, umbracoContextAccessor.Object, publishedSnapshotAccessor.Object);
 
             var result = productsContentFinder.TryFindContent(request.Object);
+            #endregion
 
+            #region check result of method call
             Assert.True(result);
             Assert.IsNotNull(dummyContent);
             Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
             Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
+            #endregion
         }
     }
 }
+
+
+
