@@ -113,6 +113,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             Assert.True(result);
             Assert.IsNotNull(dummyContent);
             Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
+            Assert.AreEqual(dummyContent.Id, productsContainer.Object.Id);
             Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
             #endregion
         }
