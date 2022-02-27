@@ -1,10 +1,13 @@
 ﻿using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Dictionary;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Templates;
+using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
 using UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation;
 using UmbracoNineDemoSite.Core.Features.Shared.Constants;
@@ -13,73 +16,128 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Navigation
 {
     public class NavigationServiceTests
     {
-        private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
-        private Mock<IUmbracoComponentRenderer> componentRenderer;
-        private Mock<IPublishedContentQuery> publishedContentQuery;
+        private delegate void ServiceTryGetUmbracoContext(out IUmbracoContext context);
+        private delegate void ServiceSetPublishedContentById(int id);
 
-        private UmbracoHelper umbracoHelper;
+        //private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
+        //private Mock<IUmbracoComponentRenderer> componentRenderer;
+        //private Mock<IPublishedContentQuery> publishedContentQuery;
+
+        private Mock<IPublishedContentCache> contentCache;
         private NavigationService navigationService;
+
+        private IEnumerable<IPublishedContent> topItems = new List<IPublishedContent>();
+        private List<IPublishedContent> allPages = new List<IPublishedContent>();
+        //private IPublishedContent content;
 
         [SetUp]
         public void SetUp()
         {
-            this.cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
-            this.componentRenderer = new Mock<IUmbracoComponentRenderer>();
-            this.publishedContentQuery = new Mock<IPublishedContentQuery>();
+            //cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
+            //componentRenderer = new Mock<IUmbracoComponentRenderer>();
+            //publishedContentQuery = new Mock<IPublishedContentQuery>();
 
-            this.umbracoHelper = new UmbracoHelper(this.cultureDictionaryFactory.Object, this.componentRenderer.Object, this.publishedContentQuery.Object);
-            this.navigationService = new NavigationService(this.umbracoHelper);
+            var firstSubPage = new Mock<IPublishedContent>();
+            firstSubPage.Setup(s => s.Id).Returns(1011);
+            firstSubPage.Setup(s => s.Level).Returns(3);
+            firstSubPage.Setup(s => s.Name).Returns("First Subpage");
+
+            var secondSubPage = new Mock<IPublishedContent>();
+            secondSubPage.Setup(s => s.Id).Returns(1012);
+            secondSubPage.Setup(s => s.Level).Returns(3);
+            secondSubPage.Setup(s => s.Name).Returns("Second Subpage");
+
+            var aboutChildren = new List<IPublishedContent>()
+            {
+                firstSubPage.Object,
+                secondSubPage.Object,
+            };
+            var aboutPage = new Mock<IPublishedContent>();
+            aboutPage.Setup(s => s.Id).Returns(1001);
+            aboutPage.Setup(s => s.Level).Returns(2);
+            aboutPage.Setup(s => s.Name).Returns("About us");
+            aboutPage.Setup(s => s.Children).Returns(aboutChildren);
+
+            firstSubPage.Setup(s => s.Parent).Returns(aboutPage.Object);
+            secondSubPage.Setup(s => s.Parent).Returns(aboutPage.Object);
+
+            var productsPage = new Mock<IPublishedContent>();
+            productsPage.Setup(s => s.Id).Returns(1002);
+            productsPage.Setup(s => s.Level).Returns(2);
+            productsPage.Setup(s => s.Name).Returns("Products");
+
+            var roorChildren = new List<IPublishedContent>()
+            {
+                aboutPage.Object,
+                productsPage.Object,
+            };
+            var root = new Mock<IPublishedContent>();
+            root.Setup(s => s.Id).Returns(1000);
+            root.Setup(s => s.Level).Returns(1);
+            root.Setup(s => s.Name).Returns("Home");
+            root.Setup(s => s.Children).Returns(roorChildren);
+            var pages = new List<IPublishedContent>()
+            {
+                root.Object,
+                aboutPage.Object,
+                productsPage.Object,
+            };
+            topItems = pages;
+            allPages.AddRange(pages);
+            allPages.AddRange(aboutChildren);
+
+            var roots = new List<IPublishedContent>();
+            roots.Add(root.Object);
+
+            var contentType = Mock.Of<IPublishedContentType>();
+
+            contentCache = new Mock<IPublishedContentCache>();
+            contentCache.Setup(s => s.GetAtRoot(null))
+                .Returns(pages);
+            
+            var umbracoContext = new Mock<IUmbracoContext>();
+            umbracoContext.Setup(s => s.Content)
+                .Returns(contentCache.Object);
+
+            IUmbracoContext ctx;
+            var umbracoContextAccessor = new Mock<IUmbracoContextAccessor>();
+            umbracoContextAccessor
+               .Setup(x => x.TryGetUmbracoContext(out ctx))
+               .Callback(new ServiceTryGetUmbracoContext((out IUmbracoContext uContext) =>
+               {
+                   uContext = umbracoContext.Object;
+               }));
+            navigationService = new NavigationService(umbracoContextAccessor.Object);
         }
 
         [Test]
-        [TestCase(123)]
-        [TestCase(456)]
+        [TestCase(1011)]
+        [TestCase(1012)]
         public void Given_CurrentId_When_GetSubNavigation_Then_ReturnSiblingsAsList(int currentId)
         {
-            var rootPage = new Mock<IPublishedContent>();
-            rootPage.Setup(root => root.Level).Returns(1);
+            contentCache.Setup(s => s.GetById(currentId))
+              .Returns(allPages.FirstOrDefault(c => c.Id == currentId));
 
-            var parentPage = new Mock<IPublishedContent>();
-            parentPage.Setup(parent => parent.Level).Returns(2);
-            parentPage.Setup(parent => parent.Parent).Returns(rootPage.Object);
+            var result = navigationService.GetSubNavigation(currentId);
 
-            var currentPage = new Mock<IPublishedContent>();
-            currentPage.Setup(current => current.Level).Returns(3);
-            currentPage.Setup(current => current.Parent).Returns(parentPage.Object);
-
-            var sibling = Mock.Of<IPublishedContent>();
-            var siblings = new List<IPublishedContent>()
-            {
-                currentPage.Object,
-                sibling
-            };
-            parentPage.Setup(parent => parent.Children).Returns(siblings);
-            this.publishedContentQuery.Setup(query => query.Content(currentId)).Returns(currentPage.Object);
-
-            var result = this.navigationService.GetSubNavigation(currentId);
-
+            var currentContent = allPages.FirstOrDefault(c => c.Id == currentId);
+            var parent = currentContent.Parent;
+            var siblings = parent.Children;
             Assert.AreEqual(siblings, result);
         }
 
         [Test]
         public void When_GetTopNavigation_Then_ReturnRootChildrenAndSelf()
         {
-            var root = new Mock<IPublishedContent>();
-            var firstChild = new Mock<IPublishedContent>();
-            var secondChild = new Mock<IPublishedContent>();
-            var children = new List<IPublishedContent>()
-            {
-                firstChild.Object,
-                secondChild.Object
-            };
-            root.Setup(x => x.Children).Returns(children);
-            this.publishedContentQuery.Setup(query => query.ContentAtXPath($"//{ContentTypeAlias.Home}")).Returns(new List<IPublishedContent>() { root.Object });
+            var result = navigationService.GetTopNavigation();
 
-            var result = this.navigationService.GetTopNavigation();
+            var root = topItems.FirstOrDefault(c => c.Level == 1);
+            var firstChild = root.Children.ElementAt(0);
+            var secondChild = root.Children.ElementAt(1);
 
-            Assert.True(result.Contains(root.Object));
-            Assert.True(result.Contains(firstChild.Object));
-            Assert.True(result.Contains(secondChild.Object));
+            Assert.True(result.Contains(root));
+            Assert.True(result.Contains(firstChild));
+            Assert.True(result.Contains(secondChild));
         }
     }
 }
