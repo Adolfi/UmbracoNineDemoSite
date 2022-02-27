@@ -26,7 +26,7 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
         [Test]
         [TestCase("products", "1001", "any")]
         [TestCase("products", "1001", "something")]
-        public void Given_RequestContainsExistingProductId_When_TryFindContent_Then_ExpectTrue(
+        public void Given_RequestContainsExistingProductIdInSecondSegment_When_TryFindContent_Then_ExpectTrue(
             string rootPath, string productId, string productName)
         {
             IPublishedContent dummyContent;
@@ -40,6 +40,22 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
             Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
             Assert.AreEqual(dummyContent.Id, productsContainer.Object.Id);
             Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
+            #endregion
+        }
+
+        [Test]
+        [TestCase("codegarden/products", "1001", "any")]
+        public void Given_RequestContainsExistingProductIdInWrongSegment_When_TryFindContent_Then_ExpectFalse(
+            string rootPath, string productId, string productName)
+        {
+            IPublishedContent dummyContent;
+            bool result;
+            Mock<ProductsContainer> productsContainer;
+            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+
+            #region check result of method call
+            Assert.False(result);
+            Assert.IsNull(dummyContent);
             #endregion
         }
 
