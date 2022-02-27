@@ -19,24 +19,15 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Navigation
         private delegate void ServiceTryGetUmbracoContext(out IUmbracoContext context);
         private delegate void ServiceSetPublishedContentById(int id);
 
-        //private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
-        //private Mock<IUmbracoComponentRenderer> componentRenderer;
-        //private Mock<IPublishedContentQuery> publishedContentQuery;
-
         private Mock<IPublishedContentCache> contentCache;
         private NavigationService navigationService;
 
         private IEnumerable<IPublishedContent> topItems = new List<IPublishedContent>();
         private List<IPublishedContent> allPages = new List<IPublishedContent>();
-        //private IPublishedContent content;
 
         [SetUp]
         public void SetUp()
         {
-            //cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
-            //componentRenderer = new Mock<IUmbracoComponentRenderer>();
-            //publishedContentQuery = new Mock<IPublishedContentQuery>();
-
             var firstSubPage = new Mock<IPublishedContent>();
             firstSubPage.Setup(s => s.Id).Returns(1011);
             firstSubPage.Setup(s => s.Level).Returns(3);
