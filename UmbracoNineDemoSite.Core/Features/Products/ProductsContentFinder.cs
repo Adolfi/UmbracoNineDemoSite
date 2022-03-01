@@ -36,12 +36,23 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 				return false;
 			}
 
-			umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
-			var contentType = ProductsContainer.GetModelContentType(publishedSnapshotAccessor);
-			var container = umbracoContext?.Content.GetByContentType(contentType)?.FirstOrDefault();
+			var contentType = ProductsContainer
+				.GetModelContentType(publishedSnapshotAccessor);
+
+			umbracoContextAccessor
+				.TryGetUmbracoContext(out IUmbracoContext umbracoContext);
+			var container = umbracoContext?
+				.Content
+				.GetByContentType(contentType)
+				.FirstOrDefault();
 
 			if (container == null)
 			{
+				return false;
+			}
+
+			if(!segments[1].Equals(container.UrlSegment, System.StringComparison.InvariantCultureIgnoreCase))
+            {
 				return false;
 			}
 

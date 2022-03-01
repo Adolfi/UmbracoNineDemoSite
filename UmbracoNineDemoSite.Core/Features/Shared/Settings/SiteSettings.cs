@@ -1,5 +1,6 @@
 using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
 using generatedModels = UmbracoNineDemoSite.Core;
@@ -13,15 +14,13 @@ namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
 	/// </summary>
 	public class SiteSettings : ISiteSettings
 	{
-		private readonly UmbracoHelper umbracoHelper;
-
-		public SiteSettings(UmbracoHelper umbracoHelper)
+        public SiteSettings(IUmbracoContextAccessor umbracoContextAccessor)
 		{
-			this.umbracoHelper = umbracoHelper;
-			generatedModels.Home homeContent = umbracoHelper.ContentAtRoot().FirstOrDefault() as generatedModels.Home;
-			if (homeContent == null) return;
+			umbracoContextAccessor
+				.TryGetUmbracoContext(out IUmbracoContext umbracoContext);
+            if (umbracoContext.Content.GetAtRoot().FirstOrDefault() is not generatedModels.Home homeContent) return;
 
-			generatedModels.SiteSettings settings = homeContent.FirstChild<generatedModels.SiteSettings>();
+			if (homeContent.Children.FirstOrDefault(c => c.ContentType.Alias.Equals(generatedModels.SiteSettings.ModelTypeAlias)) is not generatedModels.SiteSettings settings) return;
 
 			SiteName = homeContent.Name;
 			CallToActionDescription = settings.CallToActionDescription;

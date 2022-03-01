@@ -5,81 +5,101 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Dictionary;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Templates;
+using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
+using Umbraco.Extensions;
+using UmbracoNineDemoSite.Core.Features.Shared.Constants;
 using UmbracoNineDemoSite.Core.Features.Shared.Settings;
 using UmbracoNineDemoSite.Tests.Extensions;
 using generatedModels = UmbracoNineDemoSite.Core;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
 {
-	[TestFixture]
+    [TestFixture]
     public class SiteSettingsTests
     {
-        private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
-        private Mock<IUmbracoComponentRenderer> componentRenderer;
-        private Mock<IPublishedContentQuery> publishedContentQuery;
+        private delegate void ServiceTryGetUmbracoContext(out IUmbracoContext context);
 
-        private Mock<UmbracoHelper> umbracoHelper;
-        private Mock<IPublishedContent> siteSettings;
-        private Mock<IPublishedContent> rootNode;
+        private Mock<IPublishedContentCache> contentCache;
+
+        private Mock<generatedModels.SiteSettings> siteSettings;
+        private Mock<generatedModels.Home> homeContent;
         private SiteSettings siteSettingsViewModel;
+        private Mock<IUmbracoContextAccessor> umbracoContextAccessor;
 
         [SetUp]
         public void SetUp()
         {
-            siteSettings = new Mock<IPublishedContent>();           
-            //siteSettings.SetupPropertyValue(nameof(gM.SiteSettings.FooterText), "footerText");
-            rootNode = new Mock<IPublishedContent>();
-            rootNode.Setup(query => query.Children).Returns(new IPublishedContent[] { siteSettings.Object });
-            rootNode.SetupPropertyValue(nameof(generatedModels.Home.Name), "homeName");
-            this.cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
-            this.componentRenderer = new Mock<IUmbracoComponentRenderer>();
-            this.publishedContentQuery = new Mock<IPublishedContentQuery>();
-            publishedContentQuery.Setup(q => q.ContentAtRoot()).Returns(new List<IPublishedContent>() { rootNode.Object });
+            var productsContainerContent = Mock.Of<IPublishedContent>();
+            var productsContainerFallback = Mock.Of<IPublishedValueFallback>();
 
+            homeContent = new Mock<generatedModels.Home>(
+                productsContainerContent, productsContainerFallback);
 
-            this.umbracoHelper = new Mock<UmbracoHelper>(this.cultureDictionaryFactory.Object, this.componentRenderer.Object, this.publishedContentQuery.Object);
+            siteSettings = new Mock<generatedModels.SiteSettings>(
+                productsContainerContent, productsContainerFallback);
+            var contentType = new Mock<IPublishedContentType>();
+            contentType.Setup(s => s.Alias).Returns(generatedModels.SiteSettings.ModelTypeAlias);
+            siteSettings.Setup(s => s.ContentType).Returns(contentType.Object);
+
+            homeContent.Setup(s => s.Children)
+                .Returns(new IPublishedContent[] { siteSettings.Object });
+
+            contentCache = new Mock<IPublishedContentCache>();
+            contentCache.Setup(s => s.GetAtRoot(null))
+                .Returns(new IPublishedContent[] { homeContent.Object });
+
+            var umbracoContext = new Mock<IUmbracoContext>();
+            umbracoContext.Setup(s => s.Content)
+                .Returns(contentCache.Object);
+
+            IUmbracoContext ctx;
+            umbracoContextAccessor = new Mock<IUmbracoContextAccessor>();
+            umbracoContextAccessor
+               .Setup(x => x.TryGetUmbracoContext(out ctx))
+               .Callback(new ServiceTryGetUmbracoContext((out IUmbracoContext uContext) =>
+               {
+                   uContext = umbracoContext.Object;
+               }));
         }
-        /*
+
         [Test]
         [TestCase("Site name")]
         [TestCase("Umbraco 9 Demo")]
         public void Given_HomeNodeExistsAtXPath_When_GetSiteName_Then_ReturnExpectedSiteNameFromHomeNode(string siteName)
         {
-            var homeNode = new Mock<IPublishedContent>();
-            homeNode.Setup(home => home.Name).Returns(siteName);
-            this.MockContentQuerySiteSettings(homeNode.Object);
+            homeContent.Setup(s => s.Name).Returns(siteName);
 
-            var result = this.siteSettings.SiteName;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.SiteName;
 
             Assert.AreEqual(siteName, result);
         }
-
         [Test]
         [TestCase("Call To Action Header")]
         [TestCase("Welcome to the Umbraco 9 Demo")]
         public void Given_SettingsNodeHasCallToActionHeader_When_GetCallToActionHeader_Then_ReturnExpectedCallToActionHeader(string callToActionHeader)
         {
-            var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.CallToActionHeader, callToActionHeader);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            siteSettings.Setup(s => s.CallToActionHeader).Returns(callToActionHeader);
 
-            var result = this.siteSettings.CallToActionHeader;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.CallToActionHeader;
 
             Assert.AreEqual(callToActionHeader, result);
         }
 
+       
         [Test]
         [TestCase("Call To Action Description")]
         [TestCase("Description for the Umbraco 9 Demo")]
         public void Given_SettingsNodeHasCallToActionDescription_When_GetCallToActionDescription_Then_ReturnExpectedCallToActionDescription(string callToActionDescription)
         {
-            var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.CallToActionDescription, callToActionDescription);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            siteSettings.Setup(s => s.CallToActionDescription).Returns(callToActionDescription);
 
-            var result = this.siteSettings.CallToActionDescription;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.CallToActionDescription;
 
             Assert.AreEqual(callToActionDescription, result);
         }
@@ -88,12 +108,10 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         public void Given_SettingsNodeHasCallToActionUrl_When_GetCallToActionUrl_Then_ReturnExpectedCallToActionUrl()
         {
             var callToActionContentReference = Mock.Of<IPublishedContent>();
+            siteSettings.Setup(s => s.CallToActionUrl).Returns(callToActionContentReference);
 
-            var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.CallToActionUrl, callToActionContentReference);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
-
-            var result = this.siteSettings.CallToActionUrl;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.CallToActionUrl;
 
             Assert.AreEqual(callToActionContentReference, result);
         }
@@ -103,32 +121,24 @@ namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
         [TestCase("Label for the Umbraco 9 Demo")]
         public void Given_SettingsNodeHasCallToActionButtonLabel_When_GetCallToActionButtonLabel_Then_ReturnExpectedCallToActionButtonLabel(string callToActionButtonLabel)
         {
-            var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.CallToActionButtonLabel, callToActionButtonLabel);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            siteSettings.Setup(s => s.CallToActionButtonLabel).Returns(callToActionButtonLabel);
 
-            var result = this.siteSettings.CallToActionButtonLabel;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.CallToActionButtonLabel;
 
             Assert.AreEqual(callToActionButtonLabel, result);
         }
-        */
         [Test]
         [TestCase("Footer Text")]
         [TestCase("Footer Text for the Umbraco 9 Demo")]
         public void Given_SettingsNodeHasFooterText_When_GetFooterText_Then_ReturnExpectedFooterText(string footerText)
         {
-            var settingsNode = new Mock<IPublishedContent>();
-            settingsNode.SetupPropertyValue(PropertyAlias.FooterText, footerText);
-            this.MockContentQueryXPAth($"//{ContentTypeAlias.SiteSettings}", settingsNode.Object);
+            siteSettings.Setup(s => s.FooterText).Returns(footerText);
 
-            var result = this.siteSettings.FooterText;
+            siteSettingsViewModel = new SiteSettings(umbracoContextAccessor.Object);
+            var result = this.siteSettingsViewModel.FooterText;
 
             Assert.AreEqual(footerText, result);
-        }
-
-        private void MockContentQueryXPAth(string xpath, IPublishedContent content)
-        {
-            this.publishedContentQuery.Setup(query => query.ContentAtXPath(xpath)).Returns(new List<IPublishedContent>() { content });
         }
     }
 }

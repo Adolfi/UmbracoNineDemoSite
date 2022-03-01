@@ -1,4 +1,5 @@
-﻿@model UmbracoNineDemoSite.Core.Features.Products.ProductPageViewModel
+﻿@inject UmbracoNineDemoSite.Core.Features.Shared.Variables.ISiteVariable SiteVariable
+@model UmbracoNineDemoSite.Core.Features.Products.ProductPageViewModel
 @{
     Layout = "Master.cshtml";
 }
@@ -18,9 +19,12 @@
                     <h1>@Model.Name</h1>
                     <div class="product-price">€@Model.Price.ToString("F")</div>
                     <div class="product-teaser">@Model.Description</div>
-                    <div class="product-button">
-                        <button class="button button--border--solid">Buy</button>
-                    </div>
+                    @if (SiteVariable.Get<bool>("enableCommerce", false))
+                    {
+                        <div class="product-button">
+                            <button class="button button--border--solid">Buy</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

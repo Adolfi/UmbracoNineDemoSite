@@ -25,7 +25,8 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 		public IActionResult ProductsContainer(ContentModel model)
 		{
 			var mbModel = model.Content as generatedModels.ProductsContainer ?? new generatedModels.ProductsContainer(model.Content, null);
-			if (CurrentProduct == null)
+			var currentProduct = CurrentProduct;
+			if (currentProduct == null)
 			{
 				var viewModel = new ProductsContainerViewModel()
 				{
@@ -38,7 +39,7 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 			}
 			else
 			{
-				var viewModel = new ProductPageViewModel(CurrentProduct)
+				var viewModel = new ProductPageViewModel(currentProduct)
 				{
 					Heading = mbModel.Heading,
 					SiteName = mbModel?.Root().Name
