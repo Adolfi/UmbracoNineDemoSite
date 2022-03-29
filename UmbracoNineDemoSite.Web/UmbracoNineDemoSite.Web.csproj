@@ -4,11 +4,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Umbraco.Cms" Version="9.3.1" />
-        <PackageReference Include="Umbraco.Cms.SqlCe" Version="9.3.1" />
+        <PackageReference Include="Umbraco.Cms" Version="9.4.2" />
+        <PackageReference Include="Umbraco.Cms.SqlCe" Version="9.4.2" />
         <PackageReference Include="Umbraco.SqlServerCE" Version="4.0.0.1" />
-        <PackageReference Include="uSync" Version="9.2.0" />
-        <PackageReference Include="uSync.Core" Version="9.2.0" />
+        <PackageReference Include="uSync" Version="9.3.0" />
+        <PackageReference Include="uSync.Core" Version="9.3.0" />
     </ItemGroup>
 
 
