@@ -29,5 +29,8 @@
     @(RenderSection("Footer", required: false))
     @(await Component.InvokeAsync("Footer"))
     @(await Html.PartialAsync("_Javascripts"))
+
+    @*MiniProfile will only be rendered in Debug mode. Thus it is save to place it here.*@
+    @Html.RenderProfiler()
 </body>
 </html>
