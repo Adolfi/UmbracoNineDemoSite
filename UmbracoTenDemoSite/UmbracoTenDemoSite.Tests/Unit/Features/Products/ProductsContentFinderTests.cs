@@ -167,7 +167,7 @@ namespace UmbracoTenDemoSite.Tests.Unit.Features.Products
             #region call TryFindContent of ProductsContentFinder
             var productsContentFinder = new ProductsContentFinder(productService.Object, umbracoContextAccessor.Object, publishedSnapshotAccessor.Object);
 
-            result = productsContentFinder.TryFindContent(request.Object);
+            result = productsContentFinder.TryFindContent(request.Object).Result;
             #endregion
 
             foundContent = callbackContent;

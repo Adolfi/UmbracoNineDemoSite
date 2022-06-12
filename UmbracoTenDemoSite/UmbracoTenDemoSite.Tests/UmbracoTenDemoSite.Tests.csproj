@@ -13,4 +13,8 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj" />
+  </ItemGroup>
+
 </Project>

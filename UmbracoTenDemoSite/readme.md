@@ -13,4 +13,6 @@
 - - Import everthing, export everything without issues.
 - - Generate Models
 - - Add .Core project reference to .Web project.
-- - - Fix missing templates (usync does not import them correctly?). Copy wwwroot (without Umbraco folder) and view contents from UmbracoNineDemoSite. 
+- - - Fix missing templates (usync does not import them correctly?). Copy wwwroot (without Umbraco folder) and view contents from UmbracoNineDemoSite.
+- add and fix .Test project.
+- - ProductsContentFinderTests.cs IContentFinder.TryFindContent is async in v10.
