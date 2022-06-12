@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.Blocks;
-using generatedModels = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContentBlock
 {
 	[ViewComponent(Name = "contentBlock")]
 	public class ContentBlockViewComponent : ViewComponent

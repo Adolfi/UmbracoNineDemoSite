@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Variables
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Variables
 {
     public interface ISiteVariable
     {

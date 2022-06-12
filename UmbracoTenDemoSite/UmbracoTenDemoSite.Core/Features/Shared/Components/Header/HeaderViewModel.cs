@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Header
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Components.Header
 {
     public class HeaderViewModel
     {

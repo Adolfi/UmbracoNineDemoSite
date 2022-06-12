@@ -1,0 +1,32 @@
+﻿@inject UmbracoTenDemoSite.Core.Features.Shared.Variables.ISiteVariable SiteVariable
+@model UmbracoTenDemoSite.Core.Features.Products.ProductPageViewModel
+@{
+    Layout = "Master.cshtml";
+}
+@if (Model != null)
+{
+    @(await Html.PartialAsync("_SectionHeader"))
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="product-image-container">
+                        <img class="product-image" src="@Model.ImageUrl" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1>@Model.Name</h1>
+                    <div class="product-price">€@Model.Price.ToString("F")</div>
+                    <div class="product-teaser">@Model.Description</div>
+                    @if (SiteVariable.Get<bool>("enableCommerce", false))
+                    {
+                        <div class="product-button">
+                            <button class="button button--border--solid">Buy</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

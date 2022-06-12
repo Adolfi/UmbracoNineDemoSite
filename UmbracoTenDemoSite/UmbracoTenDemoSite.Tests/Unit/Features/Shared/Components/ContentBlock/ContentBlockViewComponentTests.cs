@@ -6,13 +6,13 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
-using UmbracoNineDemoSite.Core;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Tests.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.ContentBlock;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Tests.Extensions;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Shared.Components.Footer
 {
 	[TestFixture]
 	public class ContentBlockViewComponentTests

@@ -10,11 +10,11 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Page;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Tests.Extensions;
+using UmbracoTenDemoSite.Core.Features.Page;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Tests.Extensions;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Page
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Page
 {
     [TestFixture]
     public class PageControllerTests

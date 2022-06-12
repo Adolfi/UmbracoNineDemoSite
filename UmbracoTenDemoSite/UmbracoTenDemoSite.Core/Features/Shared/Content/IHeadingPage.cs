@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Content
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Content
 {
     public interface IHeadingPage
     {

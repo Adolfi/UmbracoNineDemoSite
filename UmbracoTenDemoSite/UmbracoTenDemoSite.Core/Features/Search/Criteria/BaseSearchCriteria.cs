@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Search.Criteria
+﻿namespace UmbracoTenDemoSite.Core.Features.Search.Criteria
 {
     public class BaseSearchCriteria
     {

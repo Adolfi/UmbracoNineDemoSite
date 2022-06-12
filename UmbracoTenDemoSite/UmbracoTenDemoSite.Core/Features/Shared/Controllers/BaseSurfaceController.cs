@@ -7,7 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Controllers
+namespace UmbracoTenDemoSite.Core.Features.Shared.Controllers
 {
     public class BaseSurfaceController : SurfaceController
     {

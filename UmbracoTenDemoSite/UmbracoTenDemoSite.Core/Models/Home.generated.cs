@@ -16,7 +16,7 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.Core
+namespace UmbracoTenDemoSite.Core
 {
 	/// <summary>#Home</summary>
 	[PublishedModel("home")]
@@ -103,7 +103,7 @@ namespace UmbracoNineDemoSite.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0-rc5+d7b015d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageDescription")]
-		public virtual string PageDescription => global::UmbracoNineDemoSite.Core.SEO.GetPageDescription(this, _publishedValueFallback);
+		public virtual string PageDescription => global::UmbracoTenDemoSite.Core.SEO.GetPageDescription(this, _publishedValueFallback);
 
 		///<summary>
 		/// #PageTitle: #PageTitleDescription
@@ -111,6 +111,6 @@ namespace UmbracoNineDemoSite.Core
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0-rc5+d7b015d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => global::UmbracoNineDemoSite.Core.SEO.GetPageTitle(this, _publishedValueFallback);
+		public virtual string PageTitle => global::UmbracoTenDemoSite.Core.SEO.GetPageTitle(this, _publishedValueFallback);
 	}
 }

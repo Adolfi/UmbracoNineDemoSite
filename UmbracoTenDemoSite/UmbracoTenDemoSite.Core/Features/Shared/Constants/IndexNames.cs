@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Constants
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Constants
 {
     public static class IndexNames
     {

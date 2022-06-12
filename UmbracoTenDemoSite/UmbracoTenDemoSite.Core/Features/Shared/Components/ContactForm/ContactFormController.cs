@@ -5,10 +5,10 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Core.Features.Shared.Controllers;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Core.Features.Shared.Controllers;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm
 {
     /// <summary>
     /// Documentation: https://our.umbraco.com/documentation/reference/templating/mvc/forms/tutorial-partial-views

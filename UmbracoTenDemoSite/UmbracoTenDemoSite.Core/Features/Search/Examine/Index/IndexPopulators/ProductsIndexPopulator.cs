@@ -2,10 +2,10 @@
 using System.Linq;
 using Examine;
 using Umbraco.Cms.Infrastructure.Examine;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
-using UmbracoNineDemoSite.Integrations.Products.Services;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
+using UmbracoTenDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.IndexPopulators
+namespace UmbracoTenDemoSite.Core.Features.Search.Examine.Index.IndexPopulators
 {
     public class ProductsIndexPopulator : IndexPopulator<ProductsUmbracoIndex>
     {

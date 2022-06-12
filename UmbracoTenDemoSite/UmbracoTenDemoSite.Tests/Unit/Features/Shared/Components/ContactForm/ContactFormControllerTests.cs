@@ -6,14 +6,14 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Umbraco.Cms.Core.Models.PublishedContent;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
 using Umbraco.Cms.Web.Website.ActionResults;
 using System;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.ContactForm
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Shared.Components.ContactForm
 {
     [TestFixture]
     public class ContactFormControllerTests

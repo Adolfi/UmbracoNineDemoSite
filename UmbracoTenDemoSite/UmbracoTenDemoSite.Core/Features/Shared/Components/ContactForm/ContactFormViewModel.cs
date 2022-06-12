@@ -1,8 +1,8 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm
 {
     public class ContactFormViewModel : ContactForm
     {

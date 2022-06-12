@@ -3,9 +3,9 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
+namespace UmbracoTenDemoSite.Core.Features.Shared.Settings
 {
 	/// <summary>
 	/// Exposing simple POCO properties which are set during initialization in the constructor (ctor).

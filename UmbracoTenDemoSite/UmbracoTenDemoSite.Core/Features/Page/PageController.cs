@@ -4,10 +4,10 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Extensions;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Page
+namespace UmbracoTenDemoSite.Core.Features.Page
 {
     public class PageController : RenderController
     {

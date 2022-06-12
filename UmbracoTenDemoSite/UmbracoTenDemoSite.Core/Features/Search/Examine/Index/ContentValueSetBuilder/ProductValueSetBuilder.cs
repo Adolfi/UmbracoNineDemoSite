@@ -4,10 +4,10 @@ using Examine;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder
+namespace UmbracoTenDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder
 {
 	public class ProductValueSetBuilder : IValueSetBuilder<IProduct>
 	{

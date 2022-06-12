@@ -5,11 +5,11 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
-using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.Hero;
+using UmbracoTenDemoSite.Core.Features.Shared.Extensions;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Home
+namespace UmbracoTenDemoSite.Core.Features.Home
 {
 	public class HomeController : RenderController
 	{

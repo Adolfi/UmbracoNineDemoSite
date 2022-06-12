@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{9E
 		upgrade-v9.4.2-to-v10-rc5.md = upgrade-v9.4.2-to-v10-rc5.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoTenDemoSite.Web", "UmbracoTenDemoSite.Web\UmbracoTenDemoSite.Web.csproj", "{7D7E3CFF-B15D-4E8C-B4A6-69BFD7FD5AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Web", "UmbracoTenDemoSite.Web\UmbracoTenDemoSite.Web.csproj", "{7D7E3CFF-B15D-4E8C-B4A6-69BFD7FD5AA1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Integrations.Products", "UmbracoTenDemoSite.Integrations.Products\UmbracoTenDemoSite.Integrations.Products.csproj", "{C6D7A9C0-CB9B-41F0-9D94-629AA7812A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoTenDemoSite.Core", "UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj", "{B27B83B9-B946-4A89-924E-757CA6D963DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Core", "UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj", "{B27B83B9-B946-4A89-924E-757CA6D963DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoTenDemoSite.Tests", "UmbracoTenDemoSite.Tests\UmbracoTenDemoSite.Tests.csproj", "{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Tests", "UmbracoTenDemoSite.Tests\UmbracoTenDemoSite.Tests.csproj", "{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,7 +36,6 @@ Global
 		{B27B83B9-B946-4A89-924E-757CA6D963DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B27B83B9-B946-4A89-924E-757CA6D963DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

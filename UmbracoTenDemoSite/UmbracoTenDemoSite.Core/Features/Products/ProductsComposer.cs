@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using UmbracoNineDemoSite.Integrations.Products.Services;
+using UmbracoTenDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoTenDemoSite.Core.Features.Products
 {
     public class ProductsComposer : IComposer
     {

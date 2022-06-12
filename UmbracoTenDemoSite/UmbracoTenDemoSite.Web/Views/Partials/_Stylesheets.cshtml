@@ -1,0 +1,10 @@
+﻿@using Smidge
+
+@{
+    var cssUrls = await SmidgeHelper.GenerateCssUrlsAsync("css-bundle");
+}
+@foreach (var cssUrl in cssUrls)
+{
+    <link rel="preload" href="@cssUrl" as="style">
+}
+@await SmidgeHelper.CssHereAsync("css-bundle")

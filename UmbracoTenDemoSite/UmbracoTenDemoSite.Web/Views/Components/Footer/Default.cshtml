@@ -1,0 +1,35 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Shared.Components.Footer.FooterViewModel
+@if (Model != null)
+{
+    if (Model.HasCallToAction)
+    {
+        <section class="section section--themed">
+            <div class="container">
+                <div class="row">
+                    <div class="ta-center">
+                        <h2>@Model.CallToActionHeader</h2>
+                        <p class="section__description mw-640 ma-h-auto">@Model.CallToActionDescription</p>
+                        @if (Model.HasCallToActionButton)
+                        {
+                            <a class="button button--border--light_solid" href="@Model.CallToActionUrl">
+                                @Model.CallToActionButtonLabel
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    if (!string.IsNullOrEmpty(Model.Text))
+    {
+        <footer class="section--themed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ta-center">
+                        @Model.Text
+                    </div>
+                </div>
+            </div>
+        </footer>
+    }
+}

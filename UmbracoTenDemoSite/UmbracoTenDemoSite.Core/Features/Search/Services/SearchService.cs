@@ -4,12 +4,12 @@ using Examine;
 using Examine.Search;
 using MailKit.Search;
 using Umbraco.Cms.Web.Common;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
-using UmbracoNineDemoSite.Core.Features.Search.Models;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using SearchResults = UmbracoNineDemoSite.Core.Features.Search.Models.SearchResults;
+using UmbracoTenDemoSite.Core.Features.Search.Criteria;
+using UmbracoTenDemoSite.Core.Features.Search.Models;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using SearchResults = UmbracoTenDemoSite.Core.Features.Search.Models.SearchResults;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Services
+namespace UmbracoTenDemoSite.Core.Features.Search.Services
 {
     public class SearchService
     {

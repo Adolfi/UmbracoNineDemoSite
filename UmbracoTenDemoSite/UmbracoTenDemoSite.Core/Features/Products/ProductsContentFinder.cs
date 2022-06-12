@@ -2,9 +2,9 @@
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
-using UmbracoNineDemoSite.Integrations.Products.Services;
+using UmbracoTenDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoTenDemoSite.Core.Features.Products
 {
 	/// <summary>
 	/// Docs: https://our.umbraco.com/Documentation/Reference/Routing/Request-Pipeline/IContentFinder
@@ -42,7 +42,7 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 			umbracoContextAccessor
 				.TryGetUmbracoContext(out IUmbracoContext umbracoContext);
 			var container = umbracoContext?
-				.Content
+				.Content?
 				.GetByContentType(contentType)
 				.FirstOrDefault();
 

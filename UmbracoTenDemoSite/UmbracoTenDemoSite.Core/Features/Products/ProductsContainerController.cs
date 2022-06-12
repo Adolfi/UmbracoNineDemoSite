@@ -6,12 +6,12 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
-using UmbracoNineDemoSite.Integrations.Products.Services;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Extensions;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
+using UmbracoTenDemoSite.Integrations.Products.Services;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoTenDemoSite.Core.Features.Products
 {
 	public class ProductsContainerController : RenderController
 	{

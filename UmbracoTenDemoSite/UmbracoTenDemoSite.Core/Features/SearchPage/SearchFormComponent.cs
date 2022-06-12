@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.Blocks;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm;
 
-namespace UmbracoNineDemoSite.Core.Features.SearchPage
+namespace UmbracoTenDemoSite.Core.Features.SearchPage
 {
 
     [ViewComponent(Name = "SearchForm")]

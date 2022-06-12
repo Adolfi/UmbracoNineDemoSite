@@ -9,10 +9,10 @@ using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Home;
-using UmbracoNineDemoSite.Tests.Extensions;
+using UmbracoTenDemoSite.Core.Features.Home;
+using UmbracoTenDemoSite.Tests.Extensions;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Home
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Home
 {
     [TestFixture]
     public class HomeControllerTests

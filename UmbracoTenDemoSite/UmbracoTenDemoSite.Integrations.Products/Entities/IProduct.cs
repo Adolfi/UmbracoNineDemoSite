@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Integrations.Products.Entities
+﻿namespace UmbracoTenDemoSite.Integrations.Products.Entities
 {
     public interface IProduct
     {

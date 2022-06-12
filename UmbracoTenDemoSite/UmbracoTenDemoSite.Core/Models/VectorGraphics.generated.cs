@@ -16,7 +16,7 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.Core
+namespace UmbracoTenDemoSite.Core
 {
 	/// <summary>Vector Graphics (SVG)</summary>
 	[PublishedModel("VectorGraphics")]

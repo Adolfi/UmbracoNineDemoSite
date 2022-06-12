@@ -1,9 +1,9 @@
 ﻿using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 
-using generatedModels = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Content
+namespace UmbracoTenDemoSite.Core.Features.Shared.Content
 {
 	public class SitePageBase
 	{

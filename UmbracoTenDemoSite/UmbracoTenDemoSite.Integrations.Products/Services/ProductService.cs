@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
 
-namespace UmbracoNineDemoSite.Integrations.Products.Services
+namespace UmbracoTenDemoSite.Integrations.Products.Services
 {
     public class ProductService : IProductService
     {

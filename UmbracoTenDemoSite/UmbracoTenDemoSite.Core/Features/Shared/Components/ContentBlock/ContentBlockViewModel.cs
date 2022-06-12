@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Strings;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContentBlock
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContentBlock
 {
 	public class ContentBlockViewModel
 	{

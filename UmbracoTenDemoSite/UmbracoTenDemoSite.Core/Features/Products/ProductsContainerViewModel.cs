@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
+using UmbracoTenDemoSite.Core.Features.Shared.Content;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoTenDemoSite.Core.Features.Products
 {
 	public class ProductsContainerViewModel : SitePageBase, IHeadingPage
 	{

@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm
 {
     public class ContactForm
     {

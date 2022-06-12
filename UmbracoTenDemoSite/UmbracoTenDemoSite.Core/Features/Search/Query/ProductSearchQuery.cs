@@ -1,12 +1,12 @@
 ﻿using Examine;
 using Examine.Search;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
-using UmbracoNineDemoSite.Core.Features.Search.Query.Filters;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
+using UmbracoTenDemoSite.Core.Features.Search.Criteria;
+using UmbracoTenDemoSite.Core.Features.Search.Query.Filters;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Query
+namespace UmbracoTenDemoSite.Core.Features.Search.Query
 {
     public class ProductSearchQuery : BaseSearchQuery<BaseSearchCriteria>
     {

@@ -9,10 +9,10 @@ using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Templates;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.Navigation;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Navigation
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Shared.Components.Navigation
 {
     public class NavigationServiceTests
     {

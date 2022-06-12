@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Footer
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Components.Footer
 {
     public class FooterViewModel
     {

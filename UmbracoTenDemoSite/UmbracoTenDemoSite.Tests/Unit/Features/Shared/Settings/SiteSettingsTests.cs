@@ -10,12 +10,12 @@ using Umbraco.Cms.Core.Templates;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
-using UmbracoNineDemoSite.Tests.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Core.Features.Shared.Settings;
+using UmbracoTenDemoSite.Tests.Extensions;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Settings
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Shared.Settings
 {
     [TestFixture]
     public class SiteSettingsTests

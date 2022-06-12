@@ -5,7 +5,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.Navigation
 {
     public class NavigationService : INavigationService
     {

@@ -1,8 +1,8 @@
 ﻿using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Shared.Content;
+using generatedModels = UmbracoTenDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Extensions
+namespace UmbracoTenDemoSite.Core.Features.Shared.Extensions
 {
 	internal static class ViewModelExtensions
 	{

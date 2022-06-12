@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.Blocks;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+namespace UmbracoTenDemoSite.Core.Features.Shared.Components.ContactForm
 {
 	[ViewComponent(Name = "contactForm")]
 	public class ContactFormComponent : ViewComponent

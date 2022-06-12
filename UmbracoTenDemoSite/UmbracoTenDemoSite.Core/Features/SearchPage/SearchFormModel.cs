@@ -1,6 +1,6 @@
-﻿using UmbracoNineDemoSite.Core.Features.Search.Models;
+﻿using UmbracoTenDemoSite.Core.Features.Search.Models;
 
-namespace UmbracoNineDemoSite.Core.Features.SearchPage
+namespace UmbracoTenDemoSite.Core.Features.SearchPage
 {
     public class SearchFormModel
     {

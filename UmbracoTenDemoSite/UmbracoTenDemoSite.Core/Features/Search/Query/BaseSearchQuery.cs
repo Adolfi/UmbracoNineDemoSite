@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Examine;
 using Examine.Search;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
+using UmbracoTenDemoSite.Core.Features.Search.Criteria;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Query
+namespace UmbracoTenDemoSite.Core.Features.Search.Query
 {
     public abstract class BaseSearchQuery<TSearchCriteria> where TSearchCriteria : BaseSearchCriteria
     {

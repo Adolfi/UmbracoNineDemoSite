@@ -1,7 +1,7 @@
 ﻿using Moq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace UmbracoNineDemoSite.Tests.Extensions
+namespace UmbracoTenDemoSite.Tests.Extensions
 {
     public static class PublishedContentMockExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Hero
+﻿namespace UmbracoTenDemoSite.Core.Features.Shared.Components.Hero
 {
     public class HeroViewModel
     {

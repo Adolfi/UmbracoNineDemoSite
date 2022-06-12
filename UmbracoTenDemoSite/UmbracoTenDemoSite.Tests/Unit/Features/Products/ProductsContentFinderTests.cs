@@ -5,12 +5,12 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
-using UmbracoNineDemoSite.Core;
-using UmbracoNineDemoSite.Core.Features.Products;
-using UmbracoNineDemoSite.Integrations.Products.Entities;
-using UmbracoNineDemoSite.Integrations.Products.Services;
+using UmbracoTenDemoSite.Core;
+using UmbracoTenDemoSite.Core.Features.Products;
+using UmbracoTenDemoSite.Integrations.Products.Entities;
+using UmbracoTenDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Products
 {
     public class ProductsContentFinderTests
     {

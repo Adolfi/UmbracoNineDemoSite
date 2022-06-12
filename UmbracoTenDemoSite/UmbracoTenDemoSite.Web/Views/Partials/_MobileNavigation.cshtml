@@ -1,0 +1,6 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Shared.Content.SitePageBase
+<div class="mobile-nav">
+    <nav class="nav-bar">
+        @(await Component.InvokeAsync("TopNavigation", new { selected = Model.Id }))
+    </nav>
+</div>

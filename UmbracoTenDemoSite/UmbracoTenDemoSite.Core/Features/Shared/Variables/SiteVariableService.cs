@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoTenDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Variables
+namespace UmbracoTenDemoSite.Core.Features.Shared.Variables
 {
     public class SiteVariableService : ISiteVariable
     {

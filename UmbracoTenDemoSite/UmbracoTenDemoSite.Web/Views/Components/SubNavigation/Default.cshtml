@@ -1,0 +1,14 @@
+﻿@using System.Linq;
+@using UmbracoTenDemoSite.Core.Features.Shared.Extensions;
+@model UmbracoTenDemoSite.Core.Features.Shared.Components.Navigation.NavigationViewModel
+@if (Model?.Items?.Any() == true)
+{
+    <div class="col-md-3">
+        <nav class="nav-bar nav-bar--list">
+            @foreach (var item in Model.Items.Where(x => x.IsVisible() && x.TemplateId != 0))
+            {
+            <a class="nav-link nav-link--black nav-link--air-bottom @(item.Id == Model.Selected ? "nav-link--active" : null)" href="@item.Url()">@(item.MenuName())</a>
+            }
+        </nav>
+    </div>
+}

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Moq;
 using NUnit.Framework;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Header;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
+using UmbracoTenDemoSite.Core.Features.Shared.Components.Header;
+using UmbracoTenDemoSite.Core.Features.Shared.Settings;
 
-namespace UmbracoNineDemoSite.Tests.Unit.Features.Shared.Components.Footer
+namespace UmbracoTenDemoSite.Tests.Unit.Features.Shared.Components.Footer
 {
     [TestFixture]
     public class HeaderViewComponentTests

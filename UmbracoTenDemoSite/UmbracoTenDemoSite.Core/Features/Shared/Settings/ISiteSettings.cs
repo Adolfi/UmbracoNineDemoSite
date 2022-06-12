@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Settings
+namespace UmbracoTenDemoSite.Core.Features.Shared.Settings
 {
     public interface ISiteSettings
     {
