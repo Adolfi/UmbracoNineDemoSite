@@ -21,19 +21,19 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 			this.umbracoContextAccessor = umbracoContextAccessor;
 			this.publishedSnapshotAccessor = publishedSnapshotAccessor;
 		}
-
-		public bool TryFindContent(IPublishedRequestBuilder request)
+		//IContentFinder.TryFindContent is now async
+		public Task<bool> TryFindContent(IPublishedRequestBuilder request)
 		{
 			var segments = request.AbsolutePathDecoded.Split("/");
 			if (!int.TryParse(segments[2], out var id))
 			{
-				return false;
+				return Task.FromResult(false);
 			}
 
 			var product = this.productService.Get(id);
 			if (product == null)
 			{
-				return false;
+				return Task.FromResult(false);
 			}
 
 			var contentType = ProductsContainer
@@ -48,16 +48,16 @@ namespace UmbracoNineDemoSite.Core.Features.Products
 
 			if (container == null)
 			{
-				return false;
+				return Task.FromResult(false);
 			}
 
 			if(!segments[1].Equals(container.UrlSegment, System.StringComparison.InvariantCultureIgnoreCase))
             {
-				return false;
+				return Task.FromResult(false);
 			}
 
 			request.SetPublishedContent(container);
-			return true;
+			return Task.FromResult(true); 
 		}
-	}
+    }
 }

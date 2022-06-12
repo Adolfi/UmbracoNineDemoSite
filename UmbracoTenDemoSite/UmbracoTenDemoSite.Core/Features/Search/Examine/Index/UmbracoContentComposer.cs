@@ -43,7 +43,11 @@ namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
             if (pathValue != null)
             {
                 var newPathValue = pathValue.Replace(",", " ");
-                e.ValueSet.Set(pathKey, newPathValue);
+
+                //ValueSet.Values are read only in Examine 3
+                //e.ValueSet.Set(pathKey, newPathValue);
+                var currentPath = e.ValueSet.GetValue(pathKey);
+                currentPath = newPathValue;//throws exception because ValueSet.Values are read only?
             }
         }
 
