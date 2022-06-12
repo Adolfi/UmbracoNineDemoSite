@@ -7,3 +7,7 @@
 - - Build error in .Core project related to: IContentFinder 
 - - - ProductsContentFinder.cs: IContentFinder.TryFindContent(IPublishedRequestBuilder request) now retuns Task<bool> instead of bool.
 - - - UmbracoContentComposer.cs: UmbracoContextIndex_TransformingIndexValues uses e.ValueSet.Set(), but in Examine 3 ValueSet.Values are of type IReadOnlyDictionary and cannot be set.
+- Add Modelsbuilder configuration to appsettings.json and appsettings.Development.json.
+- Copy usync files from UmbracoNineDemoSite.
+- - Import everthing, export everything without issues.
+- - Generate Models
