@@ -1,3 +1,7 @@
+using Smidge;
+using Smidge.Models;
+using Smidge.Nuglify;
+
 namespace UmbracoTenDemoSite.Web
 {
     public class Startup
@@ -62,6 +66,16 @@ namespace UmbracoTenDemoSite.Web
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
+
+            app.UseSmidge(bundles =>
+            {
+                bundles.Create("js-bundle", WebFileType.Js, "~/scripts/umbraco-starterkit-app.js");
+
+                bundles.Create("css-bundle",
+                    new CssFile("~/css/umbraco-starterkit-style.css"));
+            });
+
+            app.UseSmidgeNuglify();
         }
     }
 }

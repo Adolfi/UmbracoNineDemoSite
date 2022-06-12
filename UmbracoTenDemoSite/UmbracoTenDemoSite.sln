@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Integrat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Core", "UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj", "{B27B83B9-B946-4A89-924E-757CA6D963DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Tests", "UmbracoTenDemoSite.Tests\UmbracoTenDemoSite.Tests.csproj", "{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,9 +33,6 @@ Global
 		{B27B83B9-B946-4A89-924E-757CA6D963DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B27B83B9-B946-4A89-924E-757CA6D963DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B27B83B9-B946-4A89-924E-757CA6D963DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A31ABBFE-9B53-4D67-AAC7-FF622FA799AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
