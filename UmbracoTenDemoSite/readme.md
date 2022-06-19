@@ -16,3 +16,10 @@
 - - - Fix missing templates (usync does not import them correctly?). Copy wwwroot (without Umbraco folder) and view contents from UmbracoNineDemoSite.
 - add and fix .Test project.
 - - ProductsContentFinderTests.cs IContentFinder.TryFindContent is async in v10.
+
+## Upgrade from 10.0.0-rc5 to 10.0.0
+Just update NuGet packages in the following order:
+1. Umbraco.Cms.Web.Website
+2. Umbraco.Cms
+3. uSync.Core
+4. uSync
