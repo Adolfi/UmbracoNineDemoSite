@@ -23,3 +23,6 @@ Just update NuGet packages in the following order:
 2. Umbraco.Cms
 3. uSync.Core
 4. uSync
+
+Run website, goto back office, select uSync in Settings section and import Content.
+You may have to rebuild the Examine indexes.
