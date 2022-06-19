@@ -1,6 +1,6 @@
 # Umbraco 10 Demo Site 
 
-## Upgrade from 9.4.2
+## Upgrade from 9.4.2 to 10.0.0-rc5
 - Create new Umbraco 10rc5 site with sqlite db, build and run.
 - Added projects as in UmbracoNineDemoSite with v10rc5 dependencies.
 - Copied project .cs files from UmbracoNineDemoSite.
