@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using Examine;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -36,19 +37,36 @@ namespace UmbracoTenDemoSite.Core.Features.Search.Examine.Index
             index.TransformingIndexValues += UmbracoContextIndex_TransformingIndexValues;
         }
 
-        private void UmbracoContextIndex_TransformingIndexValues(object sender, global::Examine.IndexingItemEventArgs e)
+        private void UmbracoContextIndex_TransformingIndexValues(object? sender, global::Examine.IndexingItemEventArgs e)
         {
-            var pathKey = "path";
-            var pathValue = e.ValueSet.GetValue(pathKey)?.ToString();
-            if (pathValue != null)
+            var values = new Dictionary<string, IEnumerable<object>>();
+            foreach (var value in e.ValueSet.Values)
             {
-                var newPathValue = pathValue.Replace(",", " ");
-
-                //ValueSet.Values are read only in Examine 3
-                //e.ValueSet.Set(pathKey, newPathValue);
-                var currentPath = e.ValueSet.GetValue(pathKey);
-                currentPath = newPathValue;//throws exception because ValueSet.Values are read only?
+                switch (value.Key)
+                {
+                    case "path":
+                        var newPathValues = new List<string>();
+                        if (value.Value != null)
+                        {
+                            foreach (var path in value.Value)
+                            {
+                                if (path != null)
+                                {
+                                    var newPathValue = path.ToString();
+                                    if (newPathValue != null)
+                                        newPathValues.Add(newPathValue.Replace(",", " "));
+                                }
+                            }
+                            values[value.Key] = newPathValues;
+                        }
+                        break;
+                    default:
+                        if (value.Value != null)
+                            values[value.Key] = value.Value;
+                        break;
+                }
             }
+            e.SetValues(values);
         }
 
         public void Terminate()
