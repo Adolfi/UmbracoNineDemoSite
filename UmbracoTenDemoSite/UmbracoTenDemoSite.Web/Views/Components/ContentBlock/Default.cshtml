@@ -1,0 +1,18 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Shared.Components.ContentBlock.ContentBlockViewModel
+@if (Model != null)
+{
+    <section class="section">
+        <div class="container">
+            <div class="col-md-12">
+                @if (!string.IsNullOrEmpty(Model.Heading))
+                {
+                    <h2>@Model.Heading</h2>
+                }
+                @if (Model.BodyText != null)
+                {
+                    <p>@Html.Raw(Model.BodyText)</p>
+                }
+            </div>
+        </div>
+    </section>
+}

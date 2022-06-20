@@ -1,0 +1,14 @@
+﻿@inject UmbracoTenDemoSite.Core.Features.Shared.Variables.ISiteVariable SiteVariable
+@{
+    var maintenanceBanner = SiteVariable.Get<string>("maintenanceBanner", null);
+}
+@if (!string.IsNullOrEmpty(maintenanceBanner))
+{
+    <section class="section">
+        <div class="container">
+            <div class="col-md-12">
+                @Html.Raw(maintenanceBanner)
+            </div>
+        </div>
+    </section>
+}

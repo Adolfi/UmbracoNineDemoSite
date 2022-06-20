@@ -1,0 +1,15 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Shared.Components.Header.HeaderViewModel
+@if (Model != null)
+{
+    <header class="header">
+        <div class="logo">
+            <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@Model.Heading</a>
+        </div>
+        @(await Component.InvokeAsync("TopNavigation", new { selected = Model.Selected }))
+        <div class="mobile-nav-handler">
+            <div class="hamburger lines" id="toggle-nav">
+                <span></span>
+            </div>
+        </div>
+    </header>
+}

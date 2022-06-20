@@ -1,0 +1,20 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Shared.Components.Hero.HeroViewModel
+@if (Model != null)
+{
+    <section class="section section--full-height background-image-full overlay overlay--dark section--content-center section--thick-border" style="background-image: url('@Model.BackgroundImageUrl')">
+        <div class="section__hero-content">
+            @if (!string.IsNullOrEmpty(Model.Heading))
+            {
+                <h1>@Model.Heading</h1>
+            }
+            @if (!string.IsNullOrEmpty(Model.Preamble))
+            {
+                <p class="section__description">@Model.Preamble</p>
+            }
+            @if (Model.HasCallToAction)
+            {
+                <a class="button button--border--solid" href="@Model.CallToActionUrl">@Model.CallToActionLabel</a>
+            }
+        </div>
+    </section>
+}

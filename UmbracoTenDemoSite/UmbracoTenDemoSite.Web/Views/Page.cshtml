@@ -1,0 +1,21 @@
+﻿@model UmbracoTenDemoSite.Core.Features.Page.PageViewModel
+@{
+    Layout = "Master.cshtml";
+}
+@if (Model != null)
+{
+    @(await Html.PartialAsync("_SectionHeader"))
+
+    <section class="section">
+        <div class="container">
+            @(await Component.InvokeAsync("SubNavigation", new { selected = Model.Id }))
+            <div class="col-md-9">
+                <article>
+                    @Html.Raw(Model.BodyText)
+                </article>
+            </div>
+        </div>
+    </section>
+
+    @(await Html.PartialAsync("_BlockList", Model.Blocks))
+}
