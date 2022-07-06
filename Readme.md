@@ -44,5 +44,5 @@ To login to the Umbraco backoffice use these credentials:
 ### Read more:
 Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit Testing articles.
 
-### Upgrade to Umbraco v10.0.0-rc5
+### Upgrade to Umbraco v10.0.1
 Find an upgrade version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
