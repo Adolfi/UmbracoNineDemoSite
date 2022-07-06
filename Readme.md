@@ -45,5 +45,5 @@ To login to the Umbraco backoffice use these credentials:
 Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit Testing articles.
 
 ### ModelsBuilder & Umbraco Version 10
-There is an specific branch [modelsbuilder](https://github.com/Adolfi/UmbracoNineDemoSite/tree/modelsbuilder) for a _ModelsBuilder_ based approach.
+There is a specific branch [modelsbuilder](https://github.com/Adolfi/UmbracoNineDemoSite/tree/modelsbuilder) for a _ModelsBuilder_ based approach.
 This branch contains also a migration to version 10.
