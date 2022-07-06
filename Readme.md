@@ -1,5 +1,5 @@
-# Umbraco v9 Demo
-Demo site build in Umbraco v.9.0.0-rc003 and .NET Core 5.0.
+# Umbraco v9 & v10 Demo 
+Demo site build in Umbraco v.9.4.2 / v10.0.1 and .NET 6.0.
 
 ![cover image](cover.png)
 
