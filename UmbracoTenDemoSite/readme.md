@@ -24,5 +24,11 @@ Just update NuGet packages in the following order:
 3. uSync.Core
 4. uSync
 
+## Upgrade from 10.0.0 to 10.4.0
+- Same as Upgrade from 10.0.0-rc5 to 10.0.0, but unistall uSync and uSync.Core before installing uSync version 10.3.2
+- Export all in uSync
+- ModelsBuilder generate models
+
+
 Run website, goto back office, select uSync in Settings section and import Content.
 You may have to rebuild the Examine indexes.

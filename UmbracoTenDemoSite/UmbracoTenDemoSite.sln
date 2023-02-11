@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{9E8BD030-C1BD-4C13-81AB-06821CF288E1}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
-		upgrade-v9.4.2-to-v10-rc5.md = upgrade-v9.4.2-to-v10-rc5.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoTenDemoSite.Web", "UmbracoTenDemoSite.Web\UmbracoTenDemoSite.Web.csproj", "{7D7E3CFF-B15D-4E8C-B4A6-69BFD7FD5AA1}"
