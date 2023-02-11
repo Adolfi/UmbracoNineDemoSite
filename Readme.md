@@ -1,5 +1,5 @@
-# Umbraco v9 & v10 Demo 
-Demo site build in Umbraco v.9.4.2 / v10.0.1 and .NET 6.0.
+# Umbraco v9 & v11 Demo 
+Demo site build in Umbraco v.9.4.2 / v11.1.0 (.Net 7.0)
 
 ![cover image](cover.png)
 
@@ -44,5 +44,5 @@ To login to the Umbraco backoffice use these credentials:
 ### Read more:
 Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit Testing articles.
 
-### Upgrade to Umbraco v10.0.1
+### Upgrade to Umbraco v11.1.0
 Find an upgrade version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
