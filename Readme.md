@@ -46,3 +46,4 @@ Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit
 
 ### Upgrade to Umbraco v11.1.0
 Find an upgrade version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
+This version uses Sqlite and uSync.
