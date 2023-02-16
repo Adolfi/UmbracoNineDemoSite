@@ -3,9 +3,9 @@
 ## Get started
 
 - Run website (project: UmbracoElevenDemoSite.Web, launchSettings: Umbraco.Web.UI)
-- Add admin login and choose database setup
+- Add admin login and choose database setup.
 - In Settings section of the backoffice, select uSync and import all.
-- In Settings section rebuild examine indexes
+- In Settings section rebuild examine indexes.
 - Goto Content section and refresh browser or stop debugging and restart. Now the frontend should appear.
 
 - Move connectionString from appsettings.json into user-secrets:
