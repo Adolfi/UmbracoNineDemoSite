@@ -1,5 +1,9 @@
 # Umbraco 10 Demo Site 
 
+- Run website (project: UmbracoTenDemoSite.Web, launchSettings: Umbraco.Web.UI), go through setup, goto backoffice, select uSync in Settings section and import all.
+- Rebuild the Examine indexes.
+- Goto Content section and refresh browser or stop debugging and restart. Now the frontend should appear.
+
 ## Upgrade from 9.4.2 to 10.0.0-rc5
 - Create new Umbraco 10rc5 site with sqlite db, build and run.
 - Added projects as in UmbracoNineDemoSite with v10rc5 dependencies.
@@ -28,7 +32,3 @@ Just update NuGet packages in the following order:
 - Same as Upgrade from 10.0.0-rc5 to 10.0.0, but unistall uSync and uSync.Core before installing uSync version 10.3.2
 - Export all in uSync
 - ModelsBuilder generate models
-
-
-Run website, goto back office, select uSync in Settings section and import Content.
-You may have to rebuild the Examine indexes.

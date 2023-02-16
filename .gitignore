@@ -370,3 +370,4 @@ FodyWeavers.xsd
 /UmbracoNineDemoSite.Web/App_Plugins/usync/
 *.sdf
 /UmbracoNineDemoSite.Web/.config/dotnet-tools.json
+/UmbracoTenDemoSite/UmbracoTenDemoSite.Core/Models/ood.flag
