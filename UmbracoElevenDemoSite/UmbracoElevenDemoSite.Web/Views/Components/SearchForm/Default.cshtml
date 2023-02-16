@@ -1,0 +1,71 @@
+﻿@using UmbracoElevenDemoSite.Core.Features.Shared.Constants
+@using UmbracoElevenDemoSite.Core.Features.Search.Controllers
+@using UmbracoElevenDemoSite.Core.Features.Search.Models
+@using Newtonsoft.Json
+@model UmbracoElevenDemoSite.Core.Features.SearchPage.SearchFormModel
+@{
+	var searchResultsJson = TempData[TempDataKey.SearchResults] as string;
+	var searchViewModel = !string.IsNullOrEmpty(searchResultsJson) ? JsonConvert.DeserializeObject<SearchResultViewModel>(searchResultsJson) : null;
+}
+@if (Model != null)
+{
+	<section class="section">
+		<div class="container">
+			<div class="col-md-12">
+				@if (searchViewModel?.Pages == null && searchViewModel?.Products == null)
+				{
+					using (Html.BeginUmbracoForm<SearchController>(nameof(SearchController.Search)))
+					{
+						@Html.HiddenFor(x => x.Skip)
+						@Html.HiddenFor(x => x.Take)
+
+						<div>
+							@Html.LabelFor(x => Model.SearchTerm)<br />
+							@Html.EditorFor(x => Model.SearchTerm)
+						</div>
+						<input type="submit" />
+					}
+				}
+				else
+				{
+					if (searchViewModel?.Pages.Results?.Any() == true || searchViewModel?.Products.Results?.Any() == true)
+					{
+						<p>
+							@Model.SearchTermText "<strong>@searchViewModel?.Pages.SearchTerm</strong>"<br />
+							@Model.TotalResults <span>@(searchViewModel?.Pages.TotalCount + searchViewModel?.Products.TotalCount)</span>
+						</p>
+						<p>Pages:</p>
+
+						await SearchResultItem(searchViewModel?.Pages.Results);
+
+						<p>Products:</p>
+
+						await SearchResultItem(searchViewModel?.Products.Results);
+					}
+					else
+					{
+						<p>@Model.NoResultsFound</p>
+					}
+				}
+			</div>
+		</div>
+	</section>
+}
+@{
+	async Task SearchResultItem(IList<SearchResultItem> results)
+	{
+		<ul>
+			@foreach (var result in results)
+			{
+				<li>
+					<strong>@result.Heading</strong>
+					<p>
+						@Html.Raw(result.Description)<br>
+						<br>
+						<a href="@result.Url">@result.Url</a>
+					</p>
+				</li>
+			}
+		</ul>
+	}
+}
