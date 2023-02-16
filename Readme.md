@@ -1,4 +1,4 @@
-# Umbraco v9 & v11 Demo 
+# Umbraco v9, v10 & v11 Demo 
 Demo site build in Umbraco v.9.4.2 / v11.1.0 (.Net 7.0)
 
 ![cover image](cover.png)
@@ -44,6 +44,10 @@ To login to the Umbraco backoffice use these credentials:
 ### Read more:
 Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit Testing articles.
 
-### Upgrade to Umbraco v11.1.0
-Find an upgrade version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
-This version uses Sqlite and uSync.
+### Umbraco v10.4.0
+Find an upgraded version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
+This version uses uSync. You may use Sqlite as you database.
+
+### Umbraco v11.1.0
+Find an upgraded version in [UmbracoElevenDemoSite](UmbracoElevenDemoSite).
+This version uses uSync. You may use Sqlite as you database.
