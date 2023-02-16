@@ -1,10 +1,16 @@
 # Umbraco 10 Demo Site 
 
-- Run website (project: UmbracoTenDemoSite.Web, launchSettings: Umbraco.Web.UI), go through setup, goto backoffice, select uSync in Settings section and import all.
-- Rebuild the Examine indexes.
+## Get started
+
+- Run website (project: UmbracoTenDemoSite.Web, launchSettings: Umbraco.Web.UI)
+- Add admin login and choose database setup
+- In Settings section of the backoffice, select uSync and import all.
 - Goto Content section and refresh browser or stop debugging and restart. Now the frontend should appear.
 
-## Upgrade from 9.4.2 to 10.0.0-rc5
+## Upgrade History
+
+### Upgrade from 9.4.2 to 10.0.0-rc5
+
 - Create new Umbraco 10rc5 site with sqlite db, build and run.
 - Added projects as in UmbracoNineDemoSite with v10rc5 dependencies.
 - Copied project .cs files from UmbracoNineDemoSite.
@@ -21,14 +27,16 @@
 - add and fix .Test project.
 - - ProductsContentFinderTests.cs IContentFinder.TryFindContent is async in v10.
 
-## Upgrade from 10.0.0-rc5 to 10.0.0
+### Upgrade from 10.0.0-rc5 to 10.0.0
+
 Just update NuGet packages in the following order:
 1. Umbraco.Cms.Web.Website
 2. Umbraco.Cms
 3. uSync.Core
 4. uSync
 
-## Upgrade from 10.0.0 to 10.4.0
+### Upgrade from 10.0.0 to 10.4.0
+
 - Same as Upgrade from 10.0.0-rc5 to 10.0.0, but unistall uSync and uSync.Core before installing uSync version 10.3.2
 - Export all in uSync
 - ModelsBuilder generate models
