@@ -1,6 +1,23 @@
 # Umbraco 10 Demo Site 
 
-## Upgrade from 9.4.2 to 10.0.0-rc5
+## Get started
+
+- Run website (project: UmbracoTenDemoSite.Web, launchSettings: Umbraco.Web.UI)
+- Add admin login and choose database setup
+- In Settings section of the backoffice, select uSync and import all.
+- Goto Content section and refresh browser or stop debugging and restart. Now the frontend should appear.
+
+- Move connectionString from appsettings.json into user-secrets:
+- - Open terminal window for UmbracoTenDemoSite.Web
+- - Now set the values for "ConnectionStrings:umbracoDbDSN" and "ConnectionStrings:umbracoDbDSN_ProviderName" accorting to appsettings.json e.g. for sqlite: 
+- - - dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True"
+- - - dotnet user-secrets set "ConnectionStrings:umbracoDbDSN_ProviderName" "Microsoft.Data.Sqlite"
+- Now you can remove the ConnectionStrings section from appsettings.json or just undo the changes with git.
+
+## Upgrade History
+
+### Upgrade from 9.4.2 to 10.0.0-rc5
+
 - Create new Umbraco 10rc5 site with sqlite db, build and run.
 - Added projects as in UmbracoNineDemoSite with v10rc5 dependencies.
 - Copied project .cs files from UmbracoNineDemoSite.
@@ -17,22 +34,16 @@
 - add and fix .Test project.
 - - ProductsContentFinderTests.cs IContentFinder.TryFindContent is async in v10.
 
-## Upgrade from 10.0.0-rc5 to 10.0.0
+### Upgrade from 10.0.0-rc5 to 10.0.0
+
 Just update NuGet packages in the following order:
 1. Umbraco.Cms.Web.Website
 2. Umbraco.Cms
 3. uSync.Core
 4. uSync
 
-## Upgrade from 10.0.0 to 10.4.0
+### Upgrade from 10.0.0 to 10.4.0
+
 - Same as Upgrade from 10.0.0-rc5 to 10.0.0, but unistall uSync and uSync.Core before installing uSync version 10.3.2
 - Export all in uSync
-- update other dependencies: Microsoft.NET.Test.Sdk => 17.4.1, Moq => 4.18.4, NUnit3TestAdapter => 4.3.1
 - ModelsBuilder generate models
-
-## Upgrade from 10.4.0 to 11.1.0
-- Open properties of all four projects and set target framework to .Net 7.0
-- Update Umbraco and uSynv to version 11.1.0
-
-Run website, goto back office, select uSync in Settings section and import Content.
-You may have to rebuild the Examine indexes.
