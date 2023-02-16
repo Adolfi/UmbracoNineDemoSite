@@ -46,8 +46,9 @@ Go to [adolfi.dev](https://adolfi.dev) if you want to read more Umbraco and Unit
 
 ### Umbraco v10.4.0
 Find an upgraded version in [UmbracoTenDemoSite](UmbracoTenDemoSite).
-This version uses uSync. You may use Sqlite as you database.
+
+This version uses uSync and you may use SQlite as your database.
 
 ### Umbraco v11.1.0
 Find an upgraded version in [UmbracoElevenDemoSite](UmbracoElevenDemoSite).
-This version uses uSync. You may use Sqlite as you database.
+
