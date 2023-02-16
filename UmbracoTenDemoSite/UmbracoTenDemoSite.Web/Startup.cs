@@ -1,6 +1,7 @@
 using Smidge;
 using Smidge.Models;
 using Smidge.Nuglify;
+using UmbracoTenDemoSite.Core.Features.Contact;
 
 namespace UmbracoTenDemoSite.Web;
 
@@ -33,6 +34,8 @@ public class Startup
     /// </remarks>
     public void ConfigureServices(IServiceCollection services)
     {
+        services.Configure<ContactMailOptions>(_config.GetSection(ContactMailOptions.ContactMail));
+
         services.AddUmbraco(_env, _config)
             .AddBackOffice()
             .AddWebsite()
@@ -71,8 +74,8 @@ public class Startup
         {
             bundles.Create("js-bundle", WebFileType.Js, "~/scripts/umbraco-starterkit-app.js");
 
-            bundles.Create("css-bundle",
-                new CssFile("~/css/umbraco-starterkit-style.css"));
+            bundles.Create("css-bundle", new CssFile("~/css/umbraco-starterkit-style.css"));
+            //bundles.Create("css-bundle", new CssFile[] { new CssFile("~/css/umbraco-starterkit-style.css"), new CssFile("~/css/form.css") });
         });
 
         app.UseSmidgeNuglify();

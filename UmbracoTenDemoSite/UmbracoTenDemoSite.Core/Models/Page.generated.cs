@@ -20,7 +20,7 @@ namespace UmbracoTenDemoSite.Core
 {
 	/// <summary>#Page</summary>
 	[PublishedModel("page")]
-	public partial class Page : PublishedContentModel, ISEO
+	public partial class Page : PublishedContentModel, IPageSettings, ISEO
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -72,6 +72,13 @@ namespace UmbracoTenDemoSite.Core
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heading")]
 		public virtual string Heading => this.Value<string>(_publishedValueFallback, "heading");
+
+		///<summary>
+		/// #Umbraco Navi Hide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+df8fb58")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public virtual bool UmbracoNaviHide => global::UmbracoTenDemoSite.Core.PageSettings.GetUmbracoNaviHide(this, _publishedValueFallback);
 
 		///<summary>
 		/// #MetaPageDescription: #MetaPageDescriptionDescription

@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactFormModel>
+@using System.ComponentModel.DataAnnotations;
+@using Smidge;
+
+@{
+    var submitLabel = Umbraco.GetDictionaryValue("submitLabel", "submit");
+    var nameLabel = Umbraco.GetDictionaryValue("nameLabel", "Name");
+    var emailLabel = Umbraco.GetDictionaryValue("emailLabel", "Email");
+    var subjectLabel = Umbraco.GetDictionaryValue("subjectLabel", "Subject");
+    var messageLabel = Umbraco.GetDictionaryValue("messageLabel", "Message");
+    var dataConsentLabel = Umbraco.GetDictionaryValue("dataConsentLabel", "Consent for storing submitted data *");
+    var dataConsentCheckboxLabel = Umbraco.GetDictionaryValue("dataConsentCheckboxLabel", "Yes, I give permission to store and process my data.");
+
+    SmidgeHelper.RequiresCss(new Smidge.Models.CssFile("~/css/form.css"));
+    SmidgeHelper.RequiresJs(new Smidge.Models.JavaScriptFile("~/scripts/forms.js"));
+}
+
+@using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.HandleSubmit)))
+{
+    <div class="form-floating mb-3">
+        <input asp-for="FirstAndLastName" class="form-control" placeholder="@nameLabel" autocomplete="off" />
+        <label asp-for="FirstAndLastName"></label>
+        <span asp-validation-for="FirstAndLastName" class="form-text"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Email" class="form-control" placeholder="@emailLabel" autocomplete="off" />
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email" class="form-text"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Subject" class="form-control" placeholder="@subjectLabel" />
+        <label asp-for="Subject"></label>
+        <span asp-validation-for="Subject" class="form-text"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea asp-for="Message" class="form-control" placeholder="@messageLabel" style="min-height: 100px"></textarea>
+        <label asp-for="Message"></label>
+        <span asp-validation-for="Message" class="form-text"></span>
+    </div>
+
+    <div class="data-consent-wrapper mb-4">
+        <p><strong>@dataConsentLabel</strong></p>
+        <div class="form-check">
+            <input asp-for="DataConsent" class="form-check-input" type="checkbox" onchange="updateDataConsentTextField(this)">
+            <label asp-for="DataConsent" class="form-check-label">
+                @dataConsentCheckboxLabel
+            </label>
+        </div>
+
+        <input asp-for="DataConsentText" type="text" style="float: left;visibility: hidden; height: 0; margin: 0; padding: 0; border: none;">
+        <span asp-validation-for="DataConsentText" class="form-text"></span>
+    </div>
+
+    @*<div class="mb-3" asp-validation-summary="All"></div>*@
+
+    <button type="submit" class="btn btn-primary" name="Submit">@submitLabel</button>
+}

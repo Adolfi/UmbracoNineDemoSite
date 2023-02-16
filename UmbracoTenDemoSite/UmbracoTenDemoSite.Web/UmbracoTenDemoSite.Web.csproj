@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Our.Umbraco.DictionaryLocalizer" Version="1.0.3" />
     <PackageReference Include="Umbraco.Cms" Version="10.4.0" />
   </ItemGroup>
 
@@ -21,10 +22,6 @@
   <PropertyGroup>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj" />

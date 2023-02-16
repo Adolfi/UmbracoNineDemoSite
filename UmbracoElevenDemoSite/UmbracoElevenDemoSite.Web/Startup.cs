@@ -1,6 +1,7 @@
 using Smidge;
 using Smidge.Models;
 using Smidge.Nuglify;
+using UmbracoTenDemoSite.Core.Features.Contact;
 
 namespace UmbracoElevenDemoSite.Web;
 
@@ -33,6 +34,8 @@ public class Startup
     /// </remarks>
     public void ConfigureServices(IServiceCollection services)
     {
+        services.Configure<ContactMailOptions>(_config.GetSection(ContactMailOptions.ContactMail));
+
         services.AddUmbraco(_env, _config)
             .AddBackOffice()
             .AddWebsite()

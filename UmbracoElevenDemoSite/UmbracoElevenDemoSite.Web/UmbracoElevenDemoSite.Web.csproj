@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Our.Umbraco.DictionaryLocalizer" Version="1.0.3" />
     <PackageReference Include="Umbraco.Cms" Version="11.1.0" />
   </ItemGroup>
 

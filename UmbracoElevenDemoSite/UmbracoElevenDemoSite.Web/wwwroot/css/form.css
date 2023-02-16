@@ -1,0 +1,33 @@
+﻿:root {
+    --footer-color: #009;
+    --bg-primary: #006AB3;
+    --text-primary: #FDBB06;
+    --form-error-color: #c00;
+}
+
+.contact-form .umbraco-forms-form input.text,
+.contact-form .umbraco-forms-form textarea {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.contact-form label {
+    text-transform: initial;
+}
+
+.contact-form .umbraco-forms-form fieldset {
+    padding: 0;
+}
+
+.input-validation-error {
+    border-color: var(--form-error-color);
+}
+
+.field-validation-error {
+    display: block;
+    color: var(--form-error-color);
+}
+
+.validation-summary-errors {
+    color: var(--form-error-color);
+}
