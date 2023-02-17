@@ -16,14 +16,14 @@ namespace UmbracoTenDemoSite.Core.Features.Contact
 
         [Required(ErrorMessage = "#RequiredErrorMessage.email")]
         [EmailAddress(ErrorMessage = "#InvalidErrorMessage.email")]
-        [Display(Name = "#emailLabel")]
+        //[Display(Name = "#emailLabel")]
         public string? Email { get; set; }
 
-        [Display(Name = "#subjectLabel")]
+        //[Display(Name = "#subjectLabel")]
         [Required(ErrorMessage = "#RequiredErrorMessage.subject")]
         public string? Subject { get; set; }
 
-        [Display(Name = "#messageLabel")]
+        //[Display(Name = "#messageLabel")]
         [Required(ErrorMessage = "#RequiredErrorMessage.message")]
         public string? Message { get; set; }
 

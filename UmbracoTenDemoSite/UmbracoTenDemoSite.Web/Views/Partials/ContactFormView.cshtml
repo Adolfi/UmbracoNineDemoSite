@@ -3,6 +3,8 @@
 @using Smidge;
 
 @{
+    // DataAnnotation for [Display(Name= ... )] from Our.Umbraco.DictionaryLocalizer does not work! But it can be used for error messages. 
+    // See: ContactFormModel
     var submitLabel = Umbraco.GetDictionaryValue("submitLabel", "submit");
     var nameLabel = Umbraco.GetDictionaryValue("nameLabel", "Name");
     var emailLabel = Umbraco.GetDictionaryValue("emailLabel", "Email");
@@ -18,33 +20,38 @@
 @using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.HandleSubmit)))
 {
     <div class="form-floating mb-3">
-        <input asp-for="FirstAndLastName" class="form-control" placeholder="@nameLabel" autocomplete="off" />
-        <label asp-for="FirstAndLastName"></label>
+        <input asp-for="FirstAndLastName" id="FirstAndLastName" class="form-control" placeholder="@nameLabel" autocomplete="off" />
+        @*<label asp-for="FirstAndLastName"></label>*@
+        <label for="FirstAndLastName">@nameLabel</label>
         <span asp-validation-for="FirstAndLastName" class="form-text"></span>
     </div>
     <div class="form-floating mb-3">
-        <input asp-for="Email" class="form-control" placeholder="@emailLabel" autocomplete="off" />
-        <label asp-for="Email"></label>
+        <input asp-for="Email" id="Email" class="form-control" placeholder="@emailLabel" autocomplete="off" />
+        @*<label asp-for="Email"></label>*@
+        <label for="Email">@emailLabel</label>
         <span asp-validation-for="Email" class="form-text"></span>
     </div>
     <div class="form-floating mb-3">
-        <input asp-for="Subject" class="form-control" placeholder="@subjectLabel" />
-        <label asp-for="Subject"></label>
+        <input asp-for="Subject" id="Subject" class="form-control" placeholder="@subjectLabel" />
+        @*<label asp-for="Subject"></label>*@
+        <label for="Subject">@subjectLabel</label>
         <span asp-validation-for="Subject" class="form-text"></span>
     </div>
     <div class="form-floating mb-3">
-        <textarea asp-for="Message" class="form-control" placeholder="@messageLabel" style="min-height: 100px"></textarea>
-        <label asp-for="Message"></label>
+        <textarea asp-for="Message" id="Message" class="form-control" placeholder="@messageLabel" style="min-height: 100px"></textarea>
+        @*<label asp-for="Message"></label>*@
+        <label for="Message">@messageLabel</label>
         <span asp-validation-for="Message" class="form-text"></span>
     </div>
 
     <div class="data-consent-wrapper mb-4">
         <p><strong>@dataConsentLabel</strong></p>
         <div class="form-check">
-            <input asp-for="DataConsent" class="form-check-input" type="checkbox" onchange="updateDataConsentTextField(this)">
-            <label asp-for="DataConsent" class="form-check-label">
+            <input asp-for="DataConsent" id="DataConsent" class="form-check-input" type="checkbox" onchange="updateDataConsentTextField(this)">
+           @* <label asp-for="DataConsent" class="form-check-label">
                 @dataConsentCheckboxLabel
-            </label>
+            </label>*@
+            <label for="DataConsent">@dataConsentCheckboxLabel</label>
         </div>
 
         <input asp-for="DataConsentText" type="text" style="float: left;visibility: hidden; height: 0; margin: 0; padding: 0; border: none;">
