@@ -5,6 +5,7 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Common.Filters;
 using UmbracoElevenDemoSite.Core.Features.Shared.Constants;
 using UmbracoElevenDemoSite.Core.Features.Shared.Controllers;
 
@@ -22,7 +23,7 @@ namespace UmbracoElevenDemoSite.Core.Features.Shared.Components.ContactForm
         {
             // Do some emails sending magic here, not relevant for this demo.
             TempData.Add(TempDataKey.ResponseMessage, $"Thank you {model.Name}!");
-            return RedirectToUmbracoPage(CurrentPage);
+            return RedirectToCurrentUmbracoPage();
         }
     }
 }
