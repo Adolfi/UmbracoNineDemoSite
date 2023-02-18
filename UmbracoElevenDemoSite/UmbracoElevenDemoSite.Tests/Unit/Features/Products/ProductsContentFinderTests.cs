@@ -29,17 +29,23 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
         public void Given_RequestContainsExistingProductIdInSecondSegment_When_TryFindContent_Then_ExpectTrue(
             string rootPath, string productId, string productName)
         {
-            IPublishedContent dummyContent;
-            bool result;
-            Mock<ProductsContainer> productsContainer;
-            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+            SetupAndCallTRyFindContent(
+                rootPath,
+                productId,
+                productName,
+                out IPublishedContent? dummyContent,
+                out bool result,
+                out Mock<ProductsContainer>? productsContainer);
 
             #region check result of method call
-            Assert.True(result);
-            Assert.IsNotNull(dummyContent);
-            Assert.AreEqual(dummyContent.Name, productsContainer.Object.Name);
-            Assert.AreEqual(dummyContent.Id, productsContainer.Object.Id);
-            Assert.AreEqual(dummyContent.ContentType.Alias, productsContainer.Object.ContentType.Alias);
+            Assert.Multiple(() =>
+            {
+                Assert.True(result);
+                Assert.IsNotNull(dummyContent);
+                Assert.AreEqual(dummyContent?.Name, productsContainer.Object.Name);
+                Assert.AreEqual(dummyContent?.Id, productsContainer.Object.Id);
+                Assert.AreEqual(dummyContent?.ContentType.Alias, productsContainer.Object.ContentType.Alias);
+            });
             #endregion
         }
 
@@ -48,14 +54,20 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
         public void Given_RequestContainsExistingProductIdInWrongSegment_When_TryFindContent_Then_ExpectFalse(
             string rootPath, string productId, string productName)
         {
-            IPublishedContent dummyContent;
-            bool result;
-            Mock<ProductsContainer> productsContainer;
-            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+            SetupAndCallTRyFindContent(
+                rootPath, 
+                productId, 
+                productName, 
+                out IPublishedContent? dummyContent, 
+                out bool result, 
+                out Mock<ProductsContainer>? productsContainer);
 
             #region check result of method call
-            Assert.False(result);
-            Assert.IsNull(dummyContent);
+            Assert.Multiple(() =>
+            {
+                Assert.False(result);
+                Assert.IsNull(dummyContent);
+            });
             #endregion
         }
 
@@ -64,14 +76,20 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
         public void Given_RequestDoesNotContainExistingProductId_When_TryFindContent_Then_ExpectFalse(
             string rootPath, string productId, string productName)
         {
-            IPublishedContent dummyContent;
-            bool result;
-            Mock<ProductsContainer> productsContainer;
-            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+            SetupAndCallTRyFindContent(
+               rootPath,
+               productId,
+               productName,
+               out IPublishedContent? dummyContent,
+               out bool result,
+               out Mock<ProductsContainer>? productsContainer);
 
             #region check result of method call
-            Assert.False(result);
-            Assert.IsNull(dummyContent);
+            Assert.Multiple(() =>
+            {
+                Assert.False(result);
+                Assert.IsNull(dummyContent);
+            });
             #endregion
         }
 
@@ -80,24 +98,30 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
         public void Given_RequestContainsWrongRootSegment_When_TryFindContent_Then_ExpectFalse(
             string rootPath, string productId, string productName)
         {
-            IPublishedContent dummyContent;
-            bool result;
-            Mock<ProductsContainer> productsContainer;
-            SetupAndCallTRyFindContent(rootPath, productId, productName, out dummyContent, out result, out productsContainer);
+            SetupAndCallTRyFindContent(
+               rootPath,
+               productId,
+               productName,
+               out IPublishedContent? dummyContent,
+               out bool result,
+               out Mock<ProductsContainer>? productsContainer);
 
             #region check result of method call
-            Assert.False(result);
-            Assert.IsNull(dummyContent);
+            Assert.Multiple(() =>
+            {
+                Assert.False(result);
+                Assert.IsNull(dummyContent);
+            });
             #endregion
         }
 
-        private void SetupAndCallTRyFindContent(string rootPath, string productId, string productName, out IPublishedContent foundContent, out bool result, out Mock<ProductsContainer> productsContainerOut)
+        private void SetupAndCallTRyFindContent(string rootPath, string productId, string productName, out IPublishedContent? foundContent, out bool result, out Mock<ProductsContainer> productsContainerOut)
         {
             #region setup request Mock
             var absolutePathDecoded = $"/{rootPath}/{productId}/{productName}";
             var request = new Mock<IPublishedRequestBuilder>();
             request.Setup(s => s.AbsolutePathDecoded).Returns(absolutePathDecoded);
-            IPublishedContent callbackContent = null;
+            IPublishedContent? callbackContent = null;
             request.Setup(s => s.SetPublishedContent(It.IsAny<IPublishedContent>()))
                 .Callback(new ServiceSetPublishedContent((IPublishedContent content) =>
                 {
@@ -140,7 +164,7 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
             umbracoContext.Setup(s => s.Content)
                 .Returns(contentCache.Object);
 
-            IUmbracoContext ctx;
+            IUmbracoContext? ctx;
             var umbracoContextAccessor = new Mock<IUmbracoContextAccessor>();
             umbracoContextAccessor
                 .Setup(x => x.TryGetUmbracoContext(out ctx))
@@ -153,7 +177,7 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Products
             var publishedSnapshot = new Mock<IPublishedSnapshot>();
             publishedSnapshot.Setup(s => s.Content)
                 .Returns(contentCache.Object);
-            IPublishedSnapshot snapShot;
+            IPublishedSnapshot? snapShot;
             var publishedSnapshotAccessor = new Mock<IPublishedSnapshotAccessor>();
             publishedSnapshotAccessor
                 .Setup(s => s.TryGetPublishedSnapshot(out snapShot))

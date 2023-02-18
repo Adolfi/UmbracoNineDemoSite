@@ -12,15 +12,16 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using UmbracoElevenDemoSite.Core.Features.Shared.Constants;
 using Umbraco.Cms.Web.Website.ActionResults;
 using System;
+using AutoFixture.NUnit3;
 
 namespace UmbracoElevenDemoSite.Tests.Unit.Features.Shared.Components.ContactForm
 {
     [TestFixture]
     public class ContactFormControllerTests
     {
-        private Mock<ITempDataDictionary> tempData;
-        private Mock<IUmbracoContextAccessor> umbracoContextAccessor;
-        private ContactFormController controller;
+        private Mock<ITempDataDictionary>? tempData;
+        private Mock<IUmbracoContextAccessor>? umbracoContextAccessor;
+        private ContactFormController? controller;
 
         [SetUp]
         public void SetUp()
@@ -39,12 +40,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Shared.Components.ContactFor
             var key = new Guid("11f0e7f5-4985-4264-a9ae-a8e04f2cd897");
             this.SetupCurrentPage(key);
 
-            var result = (RedirectToUmbracoPageResult)controller.Submit(new Core.Features.Shared.Components.ContactForm.ContactForm());
+            var result = controller?.Submit(new Core.Features.Shared.Components.ContactForm.ContactForm()) as RedirectToUmbracoPageResult;
 
-            Assert.AreEqual(key, result.Key);
+            Assert.AreEqual(key, result?.Key);
         }
 
-        [Test]
+        [Test, AutoData]
         public void Given_ContactFormModel_And_CurrentPageExists_When_Submit_Then_ExpectTempData()
         {
             var key = new Guid("11f0e7f5-4985-4264-a9ae-a8e04f2cd897");
@@ -55,9 +56,9 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Shared.Components.ContactFor
                 Name = "John Doe"
             };
 
-            controller.Submit(contactForm);
+            controller?.Submit(contactForm);
 
-            this.tempData.Verify(mock => mock.Add(TempDataKey.ResponseMessage, $"Thank you John Doe!"));
+            this.tempData?.Verify(mock => mock.Add(TempDataKey.ResponseMessage, $"Thank you John Doe!"));
         }
 
         public void SetupCurrentPage(Guid key)
@@ -72,7 +73,7 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Shared.Components.ContactFor
             umbracoContextMock.Setup(context => context.PublishedRequest).Returns(publishedRequest.Object);
 
             var umbracoContext = umbracoContextMock.Object;
-            umbracoContextAccessor.Setup(x => x.TryGetUmbracoContext(out umbracoContext)).Returns(true);
+            umbracoContextAccessor?.Setup(x => x.TryGetUmbracoContext(out umbracoContext)).Returns(true);
         }
     }
 }

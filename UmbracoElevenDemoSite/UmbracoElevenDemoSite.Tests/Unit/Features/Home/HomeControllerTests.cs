@@ -8,6 +8,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.PublishedCache;
 using Umbraco.Cms.Web.Common.Controllers;
 using UmbracoElevenDemoSite.Core.Features.Home;
 using UmbracoElevenDemoSite.Tests.Extensions;
@@ -17,8 +18,8 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
     [TestFixture]
     public class HomeControllerTests
     {
-        private HomeController controller;
-        private Mock<IPublishedContent> publishedContent;
+        private HomeController? controller;
+        private Mock<IPublishedContent>? publishedContent;
 
         [SetUp]
         public void SetUp()
@@ -41,12 +42,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other PageTitle")]
         public void Given_PublishedContentHasHeading_When_HomeAction_Then_ReturnViewModelWithPageTitle(string pageTitle)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.PageTitle).ToCamelCase(), pageTitle);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.PageTitle).ToCamelCase(), pageTitle);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(pageTitle, viewModel.PageTitle);
+            Assert.AreEqual(pageTitle, viewModel?.PageTitle);
         }
 
         [Test]
@@ -54,12 +55,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other PageDescription")]
         public void Given_PublishedContentHasHeading_When_HomeAction_Then_ReturnViewModelWithPageDescrition(string pageDescription)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.PageDescription).ToCamelCase(), pageDescription);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.PageDescription).ToCamelCase(), pageDescription);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(pageDescription, viewModel.PageDescription);
+            Assert.AreEqual(pageDescription, viewModel?.PageDescription);
         }
 
         [Test]
@@ -67,12 +68,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other heading")]
         public void Given_PublishedContentHasHeading_When_HomeAction_Then_ReturnViewModelWithHeading(string heading)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Heading).ToCamelCase(), heading);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.Heading).ToCamelCase(), heading);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(heading, viewModel.Heading);
+            Assert.AreEqual(heading, viewModel?.Heading);
         }
 
         [Test]
@@ -80,12 +81,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other preamble")]
         public void Given_PublishedContentHasPreamble_When_HomeAction_Then_ReturnViewModelWithPreamble(string preamble)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Preamble).ToCamelCase(), preamble);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.Preamble).ToCamelCase(), preamble);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(preamble, viewModel.Preamble);
+            Assert.AreEqual(preamble, viewModel?.Preamble);
         }
 
         [Test]
@@ -93,12 +94,12 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other backgroundImage")]
         public void Given_PublishedContentHasBackgroundImage_When_HomeAction_Then_ReturnViewModelWithBackgroundImage(string backgroundImage)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.BackgroundImage).ToCamelCase(), backgroundImage);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.BackgroundImage).ToCamelCase(), backgroundImage);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(backgroundImage, viewModel.BackgroundImage);
+            Assert.AreEqual(backgroundImage, viewModel?.BackgroundImage);
         }
 
         [Test]
@@ -106,24 +107,29 @@ namespace UmbracoElevenDemoSite.Tests.Unit.Features.Home
         [TestCase("Other CallToActionLabel")]
         public void Given_PublishedContentHasCallToActionLabel_When_HomeAction_Then_ReturnViewModelWithCallToActionLabel(string callToActionLabel)
         {
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.CallToActionLabel).ToCamelCase(), callToActionLabel);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.CallToActionLabel).ToCamelCase(), callToActionLabel);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(callToActionLabel, viewModel.CallToActionLabel);
+            Assert.AreEqual(callToActionLabel, viewModel?.CallToActionLabel);
         }
 
         [Test]
         public void Given_PublishedContentHasBlocks_When_HomeAction_Then_ReturnViewModelWithBlocks()
         {
             var blockList = new BlockListModel(new List<BlockListItem>());
-            publishedContent.SetupPropertyValue(nameof(HomeViewModel.Blocks).ToCamelCase(), blockList);
-            var contentModel = new ContentModel(publishedContent.Object);
+            publishedContent?.SetupPropertyValue(nameof(HomeViewModel.Blocks).ToCamelCase(), blockList);
+            var contentModel = new ContentModel(publishedContent?.Object);
 
-            var viewModel = (HomeViewModel)((ViewResult)this.controller.Home(contentModel)).ViewData.Model;
+            var viewModel = GetHomeViewModel(contentModel);
 
-            Assert.AreEqual(blockList, viewModel.Blocks);
+            Assert.AreEqual(blockList, viewModel?.Blocks);
+        }
+
+        private HomeViewModel? GetHomeViewModel(ContentModel contentModel)
+        {
+            return controller != null ? ((ViewResult)controller.Home(contentModel)).ViewData.Model as HomeViewModel : null;
         }
     }
 }

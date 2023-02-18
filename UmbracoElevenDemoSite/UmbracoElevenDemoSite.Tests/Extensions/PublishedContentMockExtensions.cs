@@ -5,7 +5,7 @@ namespace UmbracoElevenDemoSite.Tests.Extensions
 {
     public static class PublishedContentMockExtensions
     {
-        public static void SetupPropertyValue(this Mock<IPublishedContent> publishedContentMock, string alias, object value, string culture = null, string segment = null)
+        public static void SetupPropertyValue(this Mock<IPublishedContent> publishedContentMock, string alias, object value, string? culture = null, string? segment = null)
         {
             var property = new Mock<IPublishedProperty>();
             property.Setup(x => x.Alias).Returns(alias);
