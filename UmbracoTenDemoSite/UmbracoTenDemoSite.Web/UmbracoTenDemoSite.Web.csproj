@@ -23,10 +23,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\UmbracoTenDemoSite.Core\UmbracoTenDemoSite.Core.csproj" />
   </ItemGroup>
 

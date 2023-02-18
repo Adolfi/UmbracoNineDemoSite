@@ -1,0 +1,8 @@
+﻿.input-validation-error {
+    border-color: #870000;
+    background-color: #ff00003e
+}
+
+    .input-validation-error:focus {
+        border-color: #f00;
+    }

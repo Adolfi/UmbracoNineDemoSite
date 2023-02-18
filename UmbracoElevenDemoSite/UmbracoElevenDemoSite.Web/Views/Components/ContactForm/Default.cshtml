@@ -1,8 +1,10 @@
 ﻿@using UmbracoElevenDemoSite.Core.Features.Shared.Constants
 @using UmbracoElevenDemoSite.Core.Features.Shared.Components.ContactForm
+@using Smidge
 @model UmbracoElevenDemoSite.Core.Features.Shared.Components.ContactForm.ContactFormViewModel
 @{
     var responseMessage = TempData[TempDataKey.ResponseMessage] as string;
+    SmidgeHelper.RequiresCss(new Smidge.Models.CssFile("~/css/forms.css"));
 }
 @if (Model != null)
 {
@@ -17,17 +19,17 @@
                     }
                     using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
                     {
-                        <div>
-                            @Html.LabelFor(x => Model.Name)<br/>
-                            @Html.EditorFor(x => Model.Name)
+                        <div class="form-group">
+                            @Html.LabelFor(x => Model.Name, new { @Class = "form-label" })<br />
+                            @Html.TextBoxFor(x => Model.Name, new { @Class = "form-control" })
                         </div>
-                        <div>
-                            @Html.LabelFor(x => Model.Email)<br />
-                            @Html.EditorFor(x => Model.Email)
+                        <div class="form-group">
+                            @Html.LabelFor(x => Model.Email, new { @Class = "form-label" })<br />
+                            @Html.TextBoxFor(x => Model.Email, new { @Class = "form-control" })
                         </div>
-                        <div>
-                            @Html.LabelFor(x => Model.Comment)<br />
-                            @Html.TextAreaFor(x => Model.Comment)
+                        <div class="form-group">
+                            @Html.LabelFor(x => Model.Comment, new { @Class = "form-label" })<br />
+                            @Html.TextAreaFor(x => Model.Comment, new { @Class = "form-control" })
                         </div>
                         <input type="submit" />
                     }
