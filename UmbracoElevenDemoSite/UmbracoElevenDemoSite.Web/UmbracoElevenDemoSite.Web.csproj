@@ -4,6 +4,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="uSync\**" />
+    <Content Remove="uSync\**" />
+    <EmbeddedResource Remove="uSync\**" />
+    <None Remove="uSync\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="11.1.0" />
@@ -20,10 +26,6 @@
   <PropertyGroup>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UmbracoElevenDemoSite.Core\UmbracoElevenDemoSite.Core.csproj" />
