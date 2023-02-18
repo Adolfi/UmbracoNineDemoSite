@@ -19,6 +19,8 @@
                     }
                     using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
                     {
+                        @Html.HiddenFor(x => Model.Subject)
+
                         <div class="form-group">
                             @Html.LabelFor(x => Model.Name, new { @Class = "form-label" })<br />
                             @Html.TextBoxFor(x => Model.Name, new { @Class = "form-control" })
