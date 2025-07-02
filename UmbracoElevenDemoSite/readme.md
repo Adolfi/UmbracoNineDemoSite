@@ -11,6 +11,7 @@
 - Move connectionString from appsettings.json into user-secrets:
 - - Open terminal window for UmbracoElevenDemoSite.Web
 - - Now set the values for "ConnectionStrings:umbracoDbDSN" and "ConnectionStrings:umbracoDbDSN_ProviderName" accorting to appsettings.json e.g. for sqlite: 
+- - - dotnet user-secrets init
 - - - dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True"
 - - - dotnet user-secrets set "ConnectionStrings:umbracoDbDSN_ProviderName" "Microsoft.Data.Sqlite"
 - Now you can remove the ConnectionStrings section from appsettings.json or just undo the changes with git.
