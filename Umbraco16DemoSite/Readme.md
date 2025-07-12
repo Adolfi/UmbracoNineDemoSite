@@ -3,9 +3,17 @@ Demo site build in Umbraco v.9.4.2 / v11.1.0 (.Net 7.0) / v16.0.0 (.Net 9.0)
 
 Find v16 in [Umbraco16DemoSite](Umbraco16DemoSite).
 
-![cover image](TDD-project.jpg)
+**Import _uSync_ not with the default button. Instead choose _import (Force)_ from button dropdown menu:**
+
+![uSync Import (Force)](../uSync-import-force.jpg)
+
+[Login info](#login)
+
 
 ## About this solution:
+
+![cover image](TDD-project.jpg)
+
 This is a demo site for Umbraco v9 (latest update v16) build in the new .NET Core v5 / v9 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
