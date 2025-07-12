@@ -65,7 +65,3 @@ This version uses uSync. You may use Sqlite as you database.
 ### Umbraco v16.0.0
 The solution can be found in [Umbraco16DemoSite](Umbraco16DemoSite).
 This version uses uSync. You may use Sqlite as you database.
-
-#### Testing:
-There is a new build configuration called `Testing` that will buid the _UmbracoDemoSite.Tests_ project to run all tests.
-In both other configurations thhis project will not be built!
