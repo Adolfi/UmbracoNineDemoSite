@@ -12,7 +12,7 @@ Find v16 in [Umbraco16DemoSite](Umbraco16DemoSite).
 
 ## About this solution:
 
-![cover image](TDD-project.jpg)
+![cover image](TDD-Project.jpg)
 
 This is a demo site for Umbraco v9 (latest update v16) build in the new .NET Core v5 / v9 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
