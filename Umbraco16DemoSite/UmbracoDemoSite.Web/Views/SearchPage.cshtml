@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@model UmbracoNineDemoSite.Core.Features.SearchPage.SearchPageViewModel
+@{
+    Layout = "Master.cshtml";
+}
+
+@if (Model != null)
+{
+    @(await Html.PartialAsync("_SectionHeader"))
+
+    <section class="section">
+        <div class="container">
+            <div class="col-md-9">
+                @await Component.InvokeAsync("SearchForm", new { model = Model })
+            </div>
+        </div>
+    </section>
+}

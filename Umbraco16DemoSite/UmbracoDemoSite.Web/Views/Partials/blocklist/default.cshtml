@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{
+    if (Model?.Any() != true) { return; }
+}
+<div class="umb-block-list">
+    @foreach (var block in Model)
+    {
+        if (block?.ContentKey == null) { continue; }
+        var data = block.Content;
+        var alias = block.Content.ContentType.Alias;
+        @*  if (alias.InvariantEquals("contactForm"))
+        {
+            @await Component.InvokeAsync(alias, block)
+        }
+        else
+        { *@
+        @await Html.PartialAsync("blocklist/Components/" + data.ContentType.Alias, block)
+        @* } *@
+    }
+</div>

@@ -1,0 +1,10 @@
+﻿@model UmbracoNineDemoSite.Core.Features.Home.HomeViewModel
+@{
+    Layout = "Master.cshtml";
+}
+@if (Model != null)
+{
+    @(await Component.InvokeAsync("Hero", Model.Hero))
+
+    @Html.GetBlockListHtml(Model.Blocks)
+}
