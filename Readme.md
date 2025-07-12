@@ -1,10 +1,12 @@
-# Umbraco v9, v10 & v11 Demo 
-Demo site build in Umbraco v.9.4.2 / v11.1.0 (.Net 7.0)
+﻿# Umbraco v9, v10, v11 & v16 Demo 
+Demo site build in Umbraco v.9.4.2 / v11.1.0 (.Net 7.0) / v16.0.0 (.Net 9.0)
 
-![cover image](cover.png)
+Find v16 in [Umbraco16DemoSite](Umbraco16DemoSite).
+
+![cover image](TDD-project.jpg)
 
 ## About this solution:
-This is a demo site for Umbraco v9 build in the new .NET Core v5 version. 
+This is a demo site for Umbraco v9 (latest update v16) build in the new .NET Core v5 / v9 version. 
 It is built as an experiment/investigation and should not be used as a template for your next Umbraco site.
 Use it as a reference if you will and steal whatever you like and ignore the things you dont.
 
@@ -51,3 +53,9 @@ This version uses uSync. You may use Sqlite as you database.
 ### Umbraco v11.1.0
 Find an upgraded version in [UmbracoElevenDemoSite](UmbracoElevenDemoSite).
 This version uses uSync. You may use Sqlite as you database.
+
+### Umbraco v16.0.0
+The solution can be found in [Umbraco16DemoSite](Umbraco16DemoSite).
+This version uses uSync. You may use Sqlite as you database.
+
+Just start project **UmbracoNineDemoSite.Web**, goto _Settings_section and import all with _uSync_.
