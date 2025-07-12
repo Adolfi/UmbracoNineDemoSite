@@ -9,7 +9,7 @@ using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 using UmbracoDemoSite.Integrations.Products.Entities;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder
+namespace UmbracoDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder
 {
     public class ProductValueSetBuilder : IValueSetBuilder<IProduct>
     {

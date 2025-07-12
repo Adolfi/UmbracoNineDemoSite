@@ -10,13 +10,13 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.ActionResults;
 using Umbraco.Cms.Web.Website.Controllers;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
-using UmbracoNineDemoSite.Core.Features.Search.Models;
-using UmbracoNineDemoSite.Core.Features.Search.Services;
-using UmbracoNineDemoSite.Core.Features.SearchPage;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Search.Criteria;
+using UmbracoDemoSite.Core.Features.Search.Models;
+using UmbracoDemoSite.Core.Features.Search.Services;
+using UmbracoDemoSite.Core.Features.SearchPage;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Controllers
+namespace UmbracoDemoSite.Core.Features.Search.Controllers
 {
     public class SearchController : SurfaceController
     {

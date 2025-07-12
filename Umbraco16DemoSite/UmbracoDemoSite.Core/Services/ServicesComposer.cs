@@ -2,7 +2,7 @@
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace UmbracoNineDemoSite.Core.Services
+namespace UmbracoDemoSite.Core.Services
 {
     public class ServicesComposer : IComposer
     {

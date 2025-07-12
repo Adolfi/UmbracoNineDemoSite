@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
+using UmbracoDemoSite.Core.Features.Shared.Settings;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Footer
+namespace UmbracoDemoSite.Core.Features.Shared.Components.Footer
 {
     [ViewComponent(Name = "Footer")]
     public class FooterViewComponent : ViewComponent

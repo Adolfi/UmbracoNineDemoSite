@@ -8,10 +8,10 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Web;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation;
-using UmbracoNineDemoSite.Tests.Models;
-using UmbracoNineDemoSite.Tests.Unit.Helper;
-using GM = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared.Components.Navigation;
+using UmbracoDemoSite.Tests.Models;
+using UmbracoDemoSite.Tests.Unit.Helper;
+using GM = UmbracoDemoSite.Core;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Shared.Components.Navigation
 {

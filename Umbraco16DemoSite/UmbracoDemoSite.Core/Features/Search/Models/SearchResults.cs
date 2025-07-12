@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Models
+namespace UmbracoDemoSite.Core.Features.Search.Models
 {
     public class SearchResults
     {

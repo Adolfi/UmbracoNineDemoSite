@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
+namespace UmbracoDemoSite.Core.Features.Shared.Components.Navigation
 {
     [ViewComponent(Name = "SubNavigation")]
     public class SubNavigationViewComponent : ViewComponent

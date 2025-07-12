@@ -1,4 +1,4 @@
-﻿namespace UmbracoNineDemoSite.Core.Features.Shared.Constants
+﻿namespace UmbracoDemoSite.Core.Features.Shared.Constants
 {
     /// <summary>
     /// Please remain in alphabetical order

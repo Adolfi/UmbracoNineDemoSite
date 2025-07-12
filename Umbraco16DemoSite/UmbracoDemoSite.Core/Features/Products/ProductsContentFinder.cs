@@ -8,7 +8,7 @@ using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 using UmbracoDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoDemoSite.Core.Features.Products
 {
     /// <summary>
     /// Docs: https://our.umbraco.com/Documentation/Reference/Routing/Request-Pipeline/IContentFinder

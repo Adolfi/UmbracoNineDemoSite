@@ -1,8 +1,8 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Features.Shared.Components.Hero;
+using UmbracoDemoSite.Core.Features.Shared.Content;
 
-namespace UmbracoNineDemoSite.Core.Features.Home
+namespace UmbracoDemoSite.Core.Features.Home
 {
 	public class HomeViewModel : SitePageBase, IHeadingPage
 	{

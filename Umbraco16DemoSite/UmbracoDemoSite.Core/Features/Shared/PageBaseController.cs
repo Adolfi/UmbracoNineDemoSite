@@ -2,10 +2,10 @@
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using UmbracoNineDemoSite.Core.Services;
+using UmbracoDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared;
+namespace UmbracoDemoSite.Core.Features.Shared;
 
 public class PageBaseController : RenderController
 {

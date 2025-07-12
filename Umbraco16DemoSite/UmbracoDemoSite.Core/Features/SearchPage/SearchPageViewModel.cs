@@ -1,6 +1,6 @@
-﻿using UmbracoNineDemoSite.Core.Features.Shared.Content;
+﻿using UmbracoDemoSite.Core.Features.Shared.Content;
 
-namespace UmbracoNineDemoSite.Core.Features.SearchPage
+namespace UmbracoDemoSite.Core.Features.SearchPage
 {
 	public class SearchPageViewModel : SitePageBase, IHeadingPage
 	{

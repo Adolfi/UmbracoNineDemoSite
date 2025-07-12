@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+namespace UmbracoDemoSite.Core.Features.Shared.Components.ContactForm
 {
     
     public class ContactFormModel

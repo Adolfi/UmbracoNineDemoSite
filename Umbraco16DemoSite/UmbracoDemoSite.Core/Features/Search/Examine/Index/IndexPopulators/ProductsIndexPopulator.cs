@@ -5,7 +5,7 @@ using Umbraco.Cms.Infrastructure.Examine;
 using UmbracoDemoSite.Integrations.Products.Entities;
 using UmbracoDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index.IndexPopulators
+namespace UmbracoDemoSite.Core.Features.Search.Examine.Index.IndexPopulators
 {
     public class ProductsIndexPopulator : IndexPopulator<ProductsUmbracoIndex>
     {

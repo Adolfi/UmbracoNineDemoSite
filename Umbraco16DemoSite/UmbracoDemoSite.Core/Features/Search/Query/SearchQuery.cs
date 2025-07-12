@@ -1,10 +1,10 @@
 ﻿using Examine;
 using Examine.Search;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
-using UmbracoNineDemoSite.Core.Features.Search.Query.Filters;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Search.Criteria;
+using UmbracoDemoSite.Core.Features.Search.Query.Filters;
+using generatedModels = UmbracoDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Query
+namespace UmbracoDemoSite.Core.Features.Search.Query
 {
     public class SearchQuery(ISearcher searcher) : BaseSearchQuery<BaseSearchCriteria>(searcher)
     {

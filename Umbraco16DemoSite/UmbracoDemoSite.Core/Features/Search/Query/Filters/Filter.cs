@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Examine.Search;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Query.Filters
+namespace UmbracoDemoSite.Core.Features.Search.Query.Filters
 {
     public static class Filter
     {

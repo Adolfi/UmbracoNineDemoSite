@@ -10,8 +10,8 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Web;
 using UmbracoDemoSite.Tests.Extensions;
-using UmbracoNineDemoSite.Tests.Models;
-using UmbracoNineDemoSite.Tests.Unit.Helper;
+using UmbracoDemoSite.Tests.Models;
+using UmbracoDemoSite.Tests.Unit.Helper;
 
 namespace UmbracoDemoSite.Tests.Unit.Features
 {

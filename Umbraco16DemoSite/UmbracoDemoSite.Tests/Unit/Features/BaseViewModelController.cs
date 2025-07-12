@@ -11,11 +11,11 @@ using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 using UmbracoDemoSite.Tests.Models;
 using UmbracoDemoSite.Tests.Unit.Helper;
-using UmbracoNineDemoSite.Core;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using UmbracoNineDemoSite.Core.Models;
-using UmbracoNineDemoSite.Core.Services;
-using UmbracoNineDemoSite.Tests.Extensions;
+using UmbracoDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Services;
+using UmbracoDemoSite.Tests.Extensions;
 using static Umbraco.Cms.Core.Constants.Conventions;
 
 namespace UmbracoDemoSite.Tests.Unit.Features;
@@ -46,13 +46,13 @@ public class BaseViewModelController
         var fallbackMock = new Mock<IPublishedValueFallback>();
         fallbackMock
             .Setup(f => f.TryGetValue(It.IsAny<IPublishedProperty>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Fallback>(), It.Ref<object>.IsAny, out It.Ref<object?>.IsAny))
-            .Callback(new ServiceTryGetValueFallback((property, culture, segment, fallback, defaultValue, out rVal) =>
+            .Callback(new ServiceTryGetValueFallback((IPublishedProperty property, string culture, string segment, Fallback fallback, object defaultValue, out object? rVal) =>
                 {
                     rVal = null;
                 }));
         fallbackMock
             .Setup(f => f.TryGetValue<object>(It.IsAny<IPublishedElement>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Fallback>(), It.Ref<object>.IsAny, out It.Ref<object?>.IsAny))
-            .Callback(new ServiceTryGetValueFallback<object>((property, alias, culture, segment, fallback, defaultValue, out value) =>
+            .Callback(new ServiceTryGetValueFallback<object>((IPublishedElement property, string alias, string culture, string segment, Fallback fallback, object defaultValue, out object? value) =>
                 {
                     value = null;
                 }));

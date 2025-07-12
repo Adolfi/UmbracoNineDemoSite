@@ -7,8 +7,8 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
-using Gm = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared.Settings;
+using Gm = UmbracoDemoSite.Core;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Shared.Settings
 {

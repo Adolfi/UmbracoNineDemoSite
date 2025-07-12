@@ -3,8 +3,8 @@ using Moq;
 using NUnit.Framework;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Footer;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
+using UmbracoDemoSite.Core.Features.Shared.Components.Footer;
+using UmbracoDemoSite.Core.Features.Shared.Settings;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Shared.Components.Footer
 {

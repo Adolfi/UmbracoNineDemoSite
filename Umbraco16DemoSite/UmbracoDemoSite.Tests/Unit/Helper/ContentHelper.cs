@@ -7,8 +7,8 @@ using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 using UmbracoDemoSite.Tests.Models;
-using UmbracoNineDemoSite.Core;
-using UmbracoNineDemoSite.Tests.Extensions;
+using UmbracoDemoSite.Core;
+using UmbracoDemoSite.Tests.Extensions;
 
 namespace UmbracoDemoSite.Tests.Unit.Helper;
 
@@ -83,7 +83,7 @@ public class ContentHelper
         var umbracoContextAccessor = new Mock<IUmbracoContextAccessor>();
         umbracoContextAccessor
             .Setup(x => x.TryGetUmbracoContext(out It.Ref<IUmbracoContext?>.IsAny))
-            .Callback(new ServiceTryGetUmbracoContext((out uContext) =>
+            .Callback(new ServiceTryGetUmbracoContext((out IUmbracoContext uContext) =>
             {
                 uContext = umbracoContext.Object;
             }));
@@ -165,7 +165,7 @@ public class ContentHelper
                 .Setup(s => s.TryGetChildrenKeys(
                     It.IsAny<Guid>(),
                     out It.Ref<IEnumerable<Guid>>.IsAny))
-                .Callback(new ServiceGetPublishedContentKeys((key, out keys) =>
+                .Callback(new ServiceGetPublishedContentKeys((Guid key, out IEnumerable<Guid> keys) =>
                 {
                     var map = childrenParentKeyMaps?.FirstOrDefault(c => c.ParentKey == key);
                     keys = map?.ChildKeys ?? [];

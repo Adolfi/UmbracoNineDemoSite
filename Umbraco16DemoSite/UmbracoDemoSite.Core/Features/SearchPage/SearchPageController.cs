@@ -5,13 +5,13 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Shared;
-using UmbracoNineDemoSite.Core.Features.Shared.Extensions;
-using UmbracoNineDemoSite.Core.Models;
-using UmbracoNineDemoSite.Core.Services;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared;
+using UmbracoDemoSite.Core.Features.Shared.Extensions;
+using UmbracoDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Services;
+using generatedModels = UmbracoDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.SearchPage
+namespace UmbracoDemoSite.Core.Features.SearchPage
 {
 	public class SearchPageController(
         ILogger<SearchPageController> logger,

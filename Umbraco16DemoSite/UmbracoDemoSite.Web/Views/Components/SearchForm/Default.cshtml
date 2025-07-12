@@ -1,8 +1,8 @@
-﻿@using UmbracoNineDemoSite.Core.Features.Shared.Constants
-@using UmbracoNineDemoSite.Core.Features.Search.Controllers
-@using UmbracoNineDemoSite.Core.Features.Search.Models
+﻿@using UmbracoDemoSite.Core.Features.Shared.Constants
+@using UmbracoDemoSite.Core.Features.Search.Controllers
+@using UmbracoDemoSite.Core.Features.Search.Models
 @using Newtonsoft.Json
-@model UmbracoNineDemoSite.Core.Features.SearchPage.SearchFormModel
+@model UmbracoDemoSite.Core.Features.SearchPage.SearchFormModel
 @{
 	var searchResultsJson = TempData[TempDataKey.SearchResults] as string;
 	var searchViewModel = !string.IsNullOrEmpty(searchResultsJson) ? JsonConvert.DeserializeObject<SearchResultViewModel>(searchResultsJson) : null;

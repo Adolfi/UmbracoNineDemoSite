@@ -3,7 +3,7 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using UmbracoDemoSite.Integrations.Products.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoDemoSite.Core.Features.Products
 {
     public class ProductsComposer : IComposer
     {

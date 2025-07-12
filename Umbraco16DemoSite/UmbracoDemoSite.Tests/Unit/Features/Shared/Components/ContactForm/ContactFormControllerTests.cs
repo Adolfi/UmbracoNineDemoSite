@@ -16,8 +16,8 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.ActionResults;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Shared.Components.ContactForm;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Shared.Components.ContactForm
 {
