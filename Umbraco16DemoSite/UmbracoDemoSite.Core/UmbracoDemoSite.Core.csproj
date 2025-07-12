@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Configurations>Debug;Release;Testing</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Testing|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);TESTING</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Features\Shared\Components\ContentBlock\**" />
+	  <EmbeddedResource Remove="Features\Shared\Components\ContentBlock\**" />
+	  <None Remove="Features\Shared\Components\ContentBlock\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Features\Shared\Components\ContactForm\ContactFormComponent.cs" />
+	  <Compile Remove="Features\Shared\Settings\ISiteSettings.cs" />
+	  <Compile Remove="Features\Shared\Settings\SiteSettings.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="16.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\UmbracoDemoSite.Integrations.Products\UmbracoDemoSite.Integrations.Products.csproj" />
+	</ItemGroup>
+
+</Project>
