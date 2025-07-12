@@ -1,0 +1,43 @@
+﻿@using UmbracoNineDemoSite.Core.Features.Shared.Constants
+@using UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var responseMessage = TempData[TempDataKey.ResponseMessage] as string; var formModel = new ContactFormViewModel(Model);
+}
+@if (formModel != null)
+{
+    <section class="section">
+        <div class="container">
+            <div class="col-md-12">
+                @if (string.IsNullOrEmpty(responseMessage))
+                {
+                    if (!string.IsNullOrEmpty(formModel.Heading))
+                    {
+                        <h2>@formModel.Heading</h2>
+                    }
+                    using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit), FormMethod.Post))
+                    {
+                        <div>
+                            @Html.LabelFor(x => formModel.Name) @Html.ValidationMessageFor(x => formModel.Name)<br />
+                            @Html.EditorFor(x => formModel.Name)
+                        </div>
+                        <div>
+                            @Html.LabelFor(x => formModel.Email) @Html.ValidationMessageFor(x => formModel.Email)<br />
+                            @Html.EditorFor(x => formModel.Email)
+                        </div>
+                        <div>
+                          
+                            @Html.LabelFor(x => formModel.Comment) @Html.ValidationMessageFor(x => formModel.Comment)<br />
+                            @Html.TextAreaFor(x => formModel.Comment)
+                        </div>
+                        <input type="submit" />
+                    }
+                }
+                else
+                {
+                    @Html.Raw(responseMessage)
+                }
+            </div>
+        </div>
+    </section>
+}

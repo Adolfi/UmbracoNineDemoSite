@@ -1,0 +1,24 @@
+﻿@model UmbracoNineDemoSite.Core.Features.Products.ProductsContainerViewModel
+@{
+    Layout = "Master.cshtml";
+}
+@if (Model?.Products?.Any() == true)
+{
+    @(await Html.PartialAsync("_SectionHeader"))
+
+    <section class="section">
+        <div class="container">
+            <div class="product-grid">
+                @foreach (var product in Model.Products)
+                {
+                    <a href="@product.UrlSegment" class="product-grid__item" style="background-image: url('@product.ImageUrl')">
+                        <div class="product-grid__item__overlay">
+                            <div class="product-grid__item__name">@product.Name</div>
+                            <div class="product-grid__item__price">@product.Price.ToString("F")</div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </section>
+}
