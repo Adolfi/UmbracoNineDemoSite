@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System;
 using Umbraco.Cms.Core.Models;
 using UmbracoDemoSite.Tests.Extensions;
-using UmbracoNineDemoSite.Core.Features.Home;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Home;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
+using generatedModels = UmbracoDemoSite.Core;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Home
 {

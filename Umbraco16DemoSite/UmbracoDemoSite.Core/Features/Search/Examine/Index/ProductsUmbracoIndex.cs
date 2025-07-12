@@ -10,9 +10,9 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 using UmbracoDemoSite.Integrations.Products.Entities;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
+namespace UmbracoDemoSite.Core.Features.Search.Examine.Index
 {
     public class ProductsUmbracoIndex : UmbracoExamineIndex, IUmbracoContentIndex
     {

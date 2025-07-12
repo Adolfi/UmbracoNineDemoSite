@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using UmbracoNineDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Models;
 
-namespace UmbracoNineDemoSite.Core.Services
+namespace UmbracoDemoSite.Core.Services
 {
     public interface IViewModelService
     {

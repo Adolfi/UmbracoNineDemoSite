@@ -1,9 +1,9 @@
 ﻿using Umbraco.Cms.Web.Common.Controllers;
-using UmbracoNineDemoSite.Core.Features.Search.Criteria;
-using UmbracoNineDemoSite.Core.Features.Search.Models;
-using UmbracoNineDemoSite.Core.Features.Search.Services;
+using UmbracoDemoSite.Core.Features.Search.Criteria;
+using UmbracoDemoSite.Core.Features.Search.Models;
+using UmbracoDemoSite.Core.Features.Search.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Controllers
+namespace UmbracoDemoSite.Core.Features.Search.Controllers
 {
     public class SearchApiController(SearchService searchService) : UmbracoApiController
     {

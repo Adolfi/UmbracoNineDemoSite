@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Moq;
 using NUnit.Framework;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Header;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
+using UmbracoDemoSite.Core.Features.Shared.Components.Header;
+using UmbracoDemoSite.Core.Features.Shared.Settings;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Shared.Components.Header
 {

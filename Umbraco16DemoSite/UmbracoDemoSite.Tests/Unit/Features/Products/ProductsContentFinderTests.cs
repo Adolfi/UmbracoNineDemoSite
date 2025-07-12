@@ -7,10 +7,10 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 using UmbracoDemoSite.Integrations.Products.Entities;
 using UmbracoDemoSite.Integrations.Products.Services;
-using UmbracoNineDemoSite.Core;
-using UmbracoNineDemoSite.Core.Features.Products;
-using UmbracoNineDemoSite.Tests.Models;
-using UmbracoNineDemoSite.Tests.Unit.Helper;
+using UmbracoDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Products;
+using UmbracoDemoSite.Tests.Models;
+using UmbracoDemoSite.Tests.Unit.Helper;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Products
 {

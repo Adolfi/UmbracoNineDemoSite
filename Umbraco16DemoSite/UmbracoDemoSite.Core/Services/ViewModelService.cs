@@ -4,10 +4,10 @@ using System.Linq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Services.Navigation;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using UmbracoNineDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Models;
 
-namespace UmbracoNineDemoSite.Core.Services;
+namespace UmbracoDemoSite.Core.Services;
 
 public class ViewModelService(IDocumentNavigationQueryService documentNavigationQueryService, IPublishedContentQuery publishedContentQuery) : IViewModelService
 {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using UmbracoNineDemoSite.Core.Features.Search.Services;
+using UmbracoDemoSite.Core.Features.Search.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Search
+namespace UmbracoDemoSite.Core.Features.Search
 {
     public class SearchComposer : IComposer
     {

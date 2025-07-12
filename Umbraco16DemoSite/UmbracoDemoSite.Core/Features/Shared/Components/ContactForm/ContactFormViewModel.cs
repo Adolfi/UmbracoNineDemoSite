@@ -1,9 +1,9 @@
 ﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
-using generatedModels = UmbracoNineDemoSite.Core;
+using generatedModels = UmbracoDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.ContactForm
+namespace UmbracoDemoSite.Core.Features.Shared.Components.ContactForm
 {
     public class ContactFormViewModel(IBlockReference<IPublishedElement, IPublishedElement> item) : ContactFormModel
     {

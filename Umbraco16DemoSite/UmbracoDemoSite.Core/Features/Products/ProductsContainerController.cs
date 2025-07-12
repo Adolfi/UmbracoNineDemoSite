@@ -8,12 +8,12 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 using UmbracoDemoSite.Integrations.Products.Entities;
 using UmbracoDemoSite.Integrations.Products.Services;
-using UmbracoNineDemoSite.Core.Features.Shared;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
-using UmbracoNineDemoSite.Core.Models;
-using UmbracoNineDemoSite.Core.Services;
+using UmbracoDemoSite.Core.Features.Shared;
+using UmbracoDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Services;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoDemoSite.Core.Features.Products
 {
     public class ProductsContainerController(
         ILogger<ProductsContainerController> logger,

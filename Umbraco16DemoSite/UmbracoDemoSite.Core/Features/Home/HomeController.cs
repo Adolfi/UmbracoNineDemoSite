@@ -5,12 +5,12 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
-using UmbracoNineDemoSite.Core.Features.Shared;
-using UmbracoNineDemoSite.Core.Features.Shared.Components.Hero;
-using UmbracoNineDemoSite.Core.Services;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared;
+using UmbracoDemoSite.Core.Features.Shared.Components.Hero;
+using UmbracoDemoSite.Core.Services;
+using generatedModels = UmbracoDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Home;
+namespace UmbracoDemoSite.Core.Features.Home;
 
 public class HomeController(
     ILogger<HomeController> logger,

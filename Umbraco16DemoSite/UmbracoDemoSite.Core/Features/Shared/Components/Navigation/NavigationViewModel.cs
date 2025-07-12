@@ -2,7 +2,7 @@
 using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Navigation
+namespace UmbracoDemoSite.Core.Features.Shared.Components.Navigation
 {
     public class NavigationViewModel
     {

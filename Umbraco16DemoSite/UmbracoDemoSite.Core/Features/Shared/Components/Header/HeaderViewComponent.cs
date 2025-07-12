@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UmbracoNineDemoSite.Core.Features.Shared.Settings;
+using UmbracoDemoSite.Core.Features.Shared.Settings;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Header
+namespace UmbracoDemoSite.Core.Features.Shared.Components.Header
 {
     [ViewComponent(Name = "Header")]
     public class HeaderViewComponent : ViewComponent

@@ -2,7 +2,7 @@
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Variables
+namespace UmbracoDemoSite.Core.Features.Shared.Variables
 {
     public class SiteVariableComposer : IComposer
     {

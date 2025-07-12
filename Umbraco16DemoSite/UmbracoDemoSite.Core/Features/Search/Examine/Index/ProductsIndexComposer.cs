@@ -7,11 +7,11 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Examine;
 using UmbracoDemoSite.Integrations.Products.Entities;
 using UmbracoDemoSite.Integrations.Products.Services;
-using UmbracoNineDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder;
-using UmbracoNineDemoSite.Core.Features.Search.Examine.Index.IndexPopulators;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Search.Examine.Index.ContentValueSetBuilder;
+using UmbracoDemoSite.Core.Features.Search.Examine.Index.IndexPopulators;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
+namespace UmbracoDemoSite.Core.Features.Search.Examine.Index
 {
     public class ProductsIndexComposer : IComposer
     {

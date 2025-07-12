@@ -8,9 +8,9 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Strings;
 using UmbracoDemoSite.Tests.Extensions;
-using UmbracoNineDemoSite.Core.Features.Page;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using generatedModels = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Page;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
+using generatedModels = UmbracoDemoSite.Core;
 
 namespace UmbracoDemoSite.Tests.Unit.Features.Page
 {

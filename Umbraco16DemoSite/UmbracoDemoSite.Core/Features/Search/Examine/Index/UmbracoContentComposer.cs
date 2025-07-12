@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Examine;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Examine.Index
+namespace UmbracoDemoSite.Core.Features.Search.Examine.Index
 {
     /// <summary>
     /// An example of how to subscribe to an event to transform index values.

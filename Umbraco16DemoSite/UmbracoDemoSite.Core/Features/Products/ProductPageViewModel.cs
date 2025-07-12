@@ -1,9 +1,9 @@
 ﻿using Umbraco.Cms.Core.Models.PublishedContent;
 using UmbracoDemoSite.Integrations.Products.Entities;
-using UmbracoNineDemoSite.Core.Features.Shared.Constants;
-using UmbracoNineDemoSite.Core.Features.Shared.Content;
+using UmbracoDemoSite.Core.Features.Shared.Constants;
+using UmbracoDemoSite.Core.Features.Shared.Content;
 
-namespace UmbracoNineDemoSite.Core.Features.Products
+namespace UmbracoDemoSite.Core.Features.Products
 {
     public class ProductPageViewModel : SitePageBase, IHeadingPage
     {

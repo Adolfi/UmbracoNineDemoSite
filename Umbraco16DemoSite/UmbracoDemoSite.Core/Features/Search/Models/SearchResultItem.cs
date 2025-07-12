@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace UmbracoNineDemoSite.Core.Features.Search.Models
+namespace UmbracoDemoSite.Core.Features.Search.Models
 {
     public class SearchResultItem
     {

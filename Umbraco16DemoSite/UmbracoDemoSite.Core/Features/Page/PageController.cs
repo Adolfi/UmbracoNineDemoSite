@@ -6,12 +6,12 @@ using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Web;
-using UmbracoNineDemoSite.Core.Features.Shared;
-using UmbracoNineDemoSite.Core.Models;
-using UmbracoNineDemoSite.Core.Services;
-using GM = UmbracoNineDemoSite.Core;
+using UmbracoDemoSite.Core.Features.Shared;
+using UmbracoDemoSite.Core.Models;
+using UmbracoDemoSite.Core.Services;
+using GM = UmbracoDemoSite.Core;
 
-namespace UmbracoNineDemoSite.Core.Features.Page;
+namespace UmbracoDemoSite.Core.Features.Page;
 
 public class PageController(
     ILogger<PageController> logger,

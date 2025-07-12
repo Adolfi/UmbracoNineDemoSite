@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace UmbracoNineDemoSite.Core.Models
+namespace UmbracoDemoSite.Core.Models
 {
     public interface IPublishedContentExtended
     {

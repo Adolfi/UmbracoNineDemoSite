@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Hero
+namespace UmbracoDemoSite.Core.Features.Shared.Components.Hero
 {
 	[ViewComponent(Name = "Hero")]
 	public class HeroComponent : ViewComponent
